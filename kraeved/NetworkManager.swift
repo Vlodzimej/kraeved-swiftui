@@ -7,15 +7,19 @@
 
 import SwiftUI
 
-class Network: ObservableObject {
-    @Published var geoObjects: [GeoObject] = []
+
+class NetworkManager: NSObject, ObservableObject {
+    static let shared = NetworkManager()
+    
+    @Published var geoObject: GeoObject?
     
     func getGeoObject() {
     //async -> Result<GeoObject, Error> {
-        guard let url = URL(string: "https://192.168.1.4:32768") else { fatalError("Missing URL") }
+        guard let url = URL(string: "https://192.168.1.4:5001/api/geoObjects/1") else { fatalError("Missing URL") }
         let urlRequest = URLRequest(url: url)
         
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
+        let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 print("Request error: ", error)
                 return
@@ -27,8 +31,8 @@ class Network: ObservableObject {
                 guard let data = data else { return }
                 DispatchQueue.main.async {
                     do {
-                        let decodedUsers = try JSONDecoder().decode([GeoObject].self, from: data)
-                        self.geoObjects = decodedUsers
+                        let decodedObject = try JSONDecoder().decode(GeoObject.self, from: data)
+                        self.geoObject = decodedObject
                     } catch let error {
                         print("Error decoding: ", error)
                     }
@@ -66,4 +70,10 @@ class Network: ObservableObject {
     //
     //        dataTask.resume()
     //    }
+}
+
+extension NetworkManager: URLSessionDelegate {
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+    }
 }

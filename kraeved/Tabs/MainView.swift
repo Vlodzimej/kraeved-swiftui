@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @ObservedObject var networkManager = NetworkManager.shared
+    
     var body: some View {
-        Text("Main view")
+        ScrollView {
+            Text("Main")
+        }
+        .onAppear {
+            networkManager.getGeoObject()
+        }
     }
+    
 }
 
 #Preview {

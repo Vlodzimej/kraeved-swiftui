@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct GeoObject: Decodable {
+    let id: Int
+    let name: String
+    let description: String
+    let longitude: Double
+    let latitude: Double
+}

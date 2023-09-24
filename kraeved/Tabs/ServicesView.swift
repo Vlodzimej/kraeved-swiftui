@@ -14,5 +14,5 @@ struct ServicesView: View {
 }
 
 #Preview {
-    ServiceView()
+    ServicesView()
 }
