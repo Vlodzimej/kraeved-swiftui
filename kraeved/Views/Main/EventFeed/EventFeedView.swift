@@ -9,17 +9,27 @@ import SwiftUI
 
 struct EventFeedView: View {
     let events: [HistoricalEvent]
+    let openHistoricalEvent: ((_ id: Int) -> Void)?
     
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
+    
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            //LazyVGrid(columns: gridItemLayout, spacing: 8) {
-            HStack {
-                ForEach(events, id: \.id) { event in
-                    EventFeedCellView(event: event)
+        VStack(alignment: .leading) {
+            MainTitle(title: "События", image: "titleUnderline")
+                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(events, id: \.id) { event in
+                        let isFirstElement = events.first == event
+                        let isLastElement = events.last == event
+                        
+                        EventFeedCellView(event: event, tappedAction: { selectedEvent in
+                            self.openHistoricalEvent?(selectedEvent.id)
+                        })
+                        .padding(EdgeInsets(top: 0, leading: isFirstElement ? 16 : 0, bottom: 0, trailing: isLastElement ? 16 : 0))
+                    }
                 }
-                //}
             }
         }
     }
@@ -41,6 +51,6 @@ struct EventFeedView_Previews: PreviewProvider {
     ]
     
     static var previews: some View {
-        EventFeedView(events: events)
+        EventFeedView(events: events, openHistoricalEvent: nil)
     }
 }

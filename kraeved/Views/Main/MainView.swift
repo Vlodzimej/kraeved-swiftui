@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct MainView: View {
-    
+    @State private var searchText = ""
     //@ObservedObject var networkManager = NetworkManager.shared
     
     var body: some View {
-        EventFeedView(events: [])
-//        .onAppear {
-//            //networkManager.getGeoObject()
-//        }
+        NavigationStack {
+            ScrollView([.vertical], showsIndicators: false) {
+                EventFeedView(events: EventFeedView_Previews.events, openHistoricalEvent: { eventId in
+                    print(eventId)
+                })
+            }
+            .background(Color.mainBackground)
+            Spacer()
+        }
+        .searchable(text: $searchText)
+        .onAppear {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+            appearance.backgroundColor = UIColor(Color.mainBackground)
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
     }
     
 }

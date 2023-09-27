@@ -24,6 +24,11 @@ extension Color {
         )
     }
     
+    static let mainBackground: Color = Color(hex: "FFFEF7")
     static let cellBackground: Color = Color(hex: "F4F2E5")
     static let cellTextBackground: Color = Color(hex: "ECEADD", alpha: 0.85)
+    static let cellTitleFont: Color = Color(hex: "242424")
+    
+    static let titleFontMain: Color = Color(hex: "1A8F8F")
+
 }

@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var searchText = ""
-    @State private var searchIsActive = false
+//    @State private var searchText = ""
+//    @State private var searchIsActive = false
     
     var body: some View {
         TabView {
-            NavigationView {
                 MainView()
                     .tabItem {
                         Label("Main", systemImage: "house")
@@ -34,7 +33,6 @@ struct ContentView: View {
                     .tabItem {
                         Label("Profile", systemImage: "gear")
                     }
-            }
         }
     }
 }

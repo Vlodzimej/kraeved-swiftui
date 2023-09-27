@@ -19,6 +19,7 @@ struct EventFeedCellView: View {
     }
     
     let event: HistoricalEvent
+    let tappedAction: ((_ event: HistoricalEvent) -> Void)?
     
     var body: some View {
         ZStack {
@@ -31,17 +32,20 @@ struct EventFeedCellView: View {
                 Spacer()
                 ZStack(alignment: .leading) {
                     Color.cellTextBackground
-                    Text("Здесь должен быть текст не особо длинный в две строчки.")
+                    Text(event.name)
                         .font(.system(size: UIConstants.fontSize))
+                        .foregroundColor(.cellTitleFont)
                         .padding(UIConstants.textPadding)
                         .lineLimit(UIConstants.maxTextLines)
                 }
                 .frame(width: UIConstants.size, height: UIConstants.bottomTextPanel)
             }
-            
         }
         .frame(width: UIConstants.size, height: UIConstants.size, alignment: .center)
         .clipShape(.rect(cornerRadius: UIConstants.cornerRadius))
+        .onTapGesture {
+            self.tappedAction?(event)
+        }
     }
 }
 
@@ -49,6 +53,6 @@ struct EventFeedCellView_Previews: PreviewProvider {
     static let event = HistoricalEvent(id: 0, name: "Name", desctiption: "Description", date: Date.now, imageUrl: "https://cdn.tripster.ru/thumbs2/cf69e9ba-f0ea-11ea-beeb-b6b555681a2b.800x600.jpg")
     
     static var previews: some View {
-        EventFeedCellView(event: event)
+        EventFeedCellView(event: event, tappedAction: nil)
     }
 }
