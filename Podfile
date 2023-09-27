@@ -6,7 +6,7 @@ target 'kraeved' do
   use_frameworks!
 
   # Pods for kraeved
-  pod 'YandexMapsMobile', '4.3.1-full'
+  # pod 'YandexMapsMobile', '4.3.1-full'
 
   target 'kraevedTests' do
     inherit! :search_paths

@@ -13,26 +13,28 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            MainView()
-                .tabItem {
-                    Label("Main", systemImage: "house")
-                }
-            SearchView()
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-            MapView()
-                .tabItem {
-                    Label("Map", systemImage: "map")
-                }
-            ServicesView()
-                .tabItem {
-                    Label("Services", systemImage: "app")
-                }
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "gear")
-                }
+            NavigationView {
+                MainView()
+                    .tabItem {
+                        Label("Main", systemImage: "house")
+                    }
+                SearchView()
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                    }
+                MapView()
+                    .tabItem {
+                        Label("Map", systemImage: "map")
+                    }
+                ServicesView()
+                    .tabItem {
+                        Label("Services", systemImage: "app")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "gear")
+                    }
+            }
         }
     }
 }

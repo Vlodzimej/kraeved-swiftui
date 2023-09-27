@@ -9,15 +9,13 @@ import SwiftUI
 
 struct MainView: View {
     
-    @ObservedObject var networkManager = NetworkManager.shared
+    //@ObservedObject var networkManager = NetworkManager.shared
     
     var body: some View {
-        ScrollView {
-            Text("Main")
-        }
-        .onAppear {
-            networkManager.getGeoObject()
-        }
+        EventFeedView(events: [])
+//        .onAppear {
+//            //networkManager.getGeoObject()
+//        }
     }
     
 }
