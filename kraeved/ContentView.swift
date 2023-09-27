@@ -13,6 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
+            Group {
                 MainView()
                     .tabItem {
                         Label("Main", systemImage: "house")
@@ -33,6 +34,21 @@ struct ContentView: View {
                     .tabItem {
                         Label("Profile", systemImage: "gear")
                     }
+            }
+            .toolbarBackground(Color.Kraeved.mainBackground, for: .tabBar)
+            .toolbarBackground(.visible, for: .tabBar)
+            .toolbarColorScheme(.none, for: .tabBar)
+        }
+        .onAppear() {
+            UISearchBar.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).setImage(UIImage.magnifyingGlass, for: .search, state: .normal)
+
+            UISearchBar.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).setImage(nil, for: .clear, state: .normal)
+
+            UISearchBar.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).tintColor = UIColor.Kraeved.titleFontMain
+
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = UIColor.Kraeved.mainBackground
+
+            UISearchTextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "Search", attributes: [.foregroundColor: UIColor.Kraeved.searchFont])
         }
     }
 }

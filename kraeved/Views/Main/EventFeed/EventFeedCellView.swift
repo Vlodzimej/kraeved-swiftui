@@ -23,18 +23,37 @@ struct EventFeedCellView: View {
     
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: event.imageUrl)) { image in
-                image.resizable(resizingMode: .stretch)
-            } placeholder: {
-                Color.cellBackground
+            AsyncImage(url: URL(string: event.imageUrl)) { phase in
+                switch phase {
+                case .empty:
+                    EmptyView()
+                case .success(let image):
+                    image.resizable()
+                         .aspectRatio(contentMode: .fill)
+                         .frame(maxWidth: 128, maxHeight: 128)
+                case .failure:
+                    ZStack {
+                        Color.Kraeved.cellBackground
+                        Image(systemName: "photo")
+                    }
+
+                @unknown default:
+                    // Since the AsyncImagePhase enum isn't frozen,
+                    // we need to add this currently unused fallback
+                    // to handle any new cases that might be added
+                    // in the future:
+                    EmptyView()
+                }
+                
+                //image.resizable(resizingMode: .stretch)
             }
             VStack {
                 Spacer()
                 ZStack(alignment: .leading) {
-                    Color.cellTextBackground
+                    Color.Kraeved.cellTextBackground
                     Text(event.name)
                         .font(.system(size: UIConstants.fontSize))
-                        .foregroundColor(.cellTitleFont)
+                        .foregroundColor(Color.Kraeved.cellTitleFont)
                         .padding(UIConstants.textPadding)
                         .lineLimit(UIConstants.maxTextLines)
                 }
@@ -50,7 +69,7 @@ struct EventFeedCellView: View {
 }
 
 struct EventFeedCellView_Previews: PreviewProvider {
-    static let event = HistoricalEvent(id: 0, name: "Name", desctiption: "Description", date: Date.now, imageUrl: "https://cdn.tripster.ru/thumbs2/cf69e9ba-f0ea-11ea-beeb-b6b555681a2b.800x600.jpg")
+    static let event = HistoricalEvent(id: 0, name: "Name", desctiption: "Description", date: Date.now, imageUrl: "kaluga1")
     
     static var previews: some View {
         EventFeedCellView(event: event, tappedAction: nil)

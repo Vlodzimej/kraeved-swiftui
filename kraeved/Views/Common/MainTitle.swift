@@ -16,7 +16,7 @@ struct MainTitle: View {
         VStack(alignment: .leading) {
             Text(title)
                 .offset(CGSize(width: 16, height: 8))
-                .foregroundColor(.titleFontMain)
+                .foregroundColor(Color.Kraeved.titleFontMain)
             Image(image)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }

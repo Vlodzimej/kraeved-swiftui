@@ -9,7 +9,15 @@ import SwiftUI
 
 extension Color {
     init(hex: String, alpha: Double = 1) {
-        let scanner = Scanner(string: hex)
+        var hexColor: String
+        if hex.hasPrefix("#") {
+            let start = hex.index(hex.startIndex, offsetBy: 1)
+            hexColor = String(hex[start...])
+        } else {
+            hexColor = hex
+        }
+        
+        let scanner = Scanner(string: hexColor)
         var rgbValue: UInt64 = 0
         scanner.scanHexInt64(&rgbValue)
         
@@ -24,11 +32,13 @@ extension Color {
         )
     }
     
-    static let mainBackground: Color = Color(hex: "FFFEF7")
-    static let cellBackground: Color = Color(hex: "F4F2E5")
-    static let cellTextBackground: Color = Color(hex: "ECEADD", alpha: 0.85)
-    static let cellTitleFont: Color = Color(hex: "242424")
-    
-    static let titleFontMain: Color = Color(hex: "1A8F8F")
+    struct Kraeved {
+        static let mainBackground      = Color(hex: ColorConstants.mainBackground)
+        static let cellBackground      = Color(hex: ColorConstants.cellBackground)
+        static let cellTextBackground  = Color(hex: ColorConstants.cellTextBackground, alpha: 0.85)
+        static let cellTitleFont       = Color(hex: ColorConstants.cellTitleFont)
+        static let titleFontMain       = Color(hex: ColorConstants.titleFontMain)
+        static let searchFont          = Color(hex: ColorConstants.searchFont)
+    }
 
 }
