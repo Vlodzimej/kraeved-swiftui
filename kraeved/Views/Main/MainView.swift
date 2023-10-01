@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-let attractions: [GeoObject] = [
-    .init(id: 0, name: "Тестовый объект", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil),
-    .init(id: 1, name: "Тестовый объект 2", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil),
-    .init(id: 2, name: "Тестовый объект 3", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil),
-    .init(id: 3, name: "Тестовый объект 4", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil),
-    .init(id: 4, name: "Тестовый объект 5", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil)
+let attractions: [GeoObjectBrief] = [
+    .init(id: 0, name: "Тестовый объект", shortDescription: nil, longitude: nil, latitude: nil, imageUrl: nil)
 ]
 
 let events: [HistoricalEvent] = [
@@ -27,7 +23,7 @@ let events: [HistoricalEvent] = [
 
 struct MainView: View {
     @State private var searchText = ""
-    //@ObservedObject var networkManager = NetworkManager.shared
+    @ObservedObject var apiManager = APIManager.shared
     
     var body: some View {
         NavigationStack {
@@ -35,12 +31,11 @@ struct MainView: View {
                 EventFeedView(events: events, openHistoricalEvent: { eventId in
                     print(eventId)
                 })
-                AttractionsView(geoObjects: attractions) { geoObjectId in
+                AttractionsView(geoObjects: apiManager.geoObjects) { geoObjectId in
                     print(geoObjectId)
                 }
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer)
-
             .background(Color.Kraeved.mainBackground)
             Spacer()
         }
@@ -51,6 +46,9 @@ struct MainView: View {
             appearance.shadowColor = .clear
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+        .task {
+            await apiManager.getGeoObjects(regionId: Constants.defaultRegion)
         }
     }
     

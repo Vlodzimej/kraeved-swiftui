@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AttractionsView: View {
-    let geoObjects: [GeoObject]
+    let geoObjects: [GeoObjectBrief]
     let openGeoObject: ((_ id: Int) -> Void)
     
     var body: some View {
@@ -30,12 +30,8 @@ struct AttractionsView: View {
 }
 
 #Preview {
-    let attractions: [GeoObject] = [
-        .init(id: 0, name: "Тестовый объект", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil),
-        .init(id: 1, name: "Тестовый объект 2", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil),
-        .init(id: 2, name: "Тестовый объект 3", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil),
-        .init(id: 3, name: "Тестовый объект 4", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil),
-        .init(id: 4, name: "Тестовый объект 5", description: "Описание для тестового объекта", longitude: 0, latitude: 0, type: .museum, imageUrl: nil)
+    let attractions: [GeoObjectBrief] = [
+        .init(id: 0, name: "Тестовый объект", shortDescription: nil, longitude: 0, latitude: 0, imageUrl: nil)
     ]
     
     return AttractionsView(geoObjects: attractions, openGeoObject: { geoObject in

@@ -15,7 +15,7 @@ struct GeoObject: Decodable, Equatable {
         case description
         case longitude
         case latitude
-        case type
+        //case type
         case imageUrl
     }
     
@@ -24,7 +24,7 @@ struct GeoObject: Decodable, Equatable {
     let description: String
     let longitude: Double
     let latitude: Double
-    let type: GeoObjectType
+    //let type: GeoObjectType
     let imageUrl: String?
     
     init(from decoder: Decoder) throws {
@@ -34,7 +34,7 @@ struct GeoObject: Decodable, Equatable {
         description = try values.decode(String.self, forKey: .description)
         longitude = try values.decode(Double.self, forKey: .longitude)
         latitude = try values.decode(Double.self, forKey: .latitude)
-        type = try values.decode(GeoObjectType.self, forKey: .type)
+        //type = try values.decode(GeoObjectType.self, forKey: .type)
         imageUrl = try values.decodeIfPresent(String.self, forKey: .imageUrl)
     }
     
@@ -44,7 +44,7 @@ struct GeoObject: Decodable, Equatable {
         self.description = description
         self.longitude = longitude
         self.latitude = latitude
-        self.type = type
+        //self.type = type
         self.imageUrl = imageUrl
     }
     
