@@ -11,6 +11,7 @@ import MapKit
 struct Constants {
     static let initialLocation = CLLocationCoordinate2D(latitude: 54.513891, longitude: 36.261191)
     static let defaultRegion: Int = 40
+    static let baseUrl: String = "https://127.0.0.4:5001/api"
 }
 
 struct ColorConstants {

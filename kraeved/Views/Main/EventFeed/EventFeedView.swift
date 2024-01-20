@@ -11,29 +11,27 @@ struct EventFeedView: View {
     let events: [HistoricalEvent]
     let openHistoricalEvent: ((_ id: Int) -> Void)
     
-    var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    
-    
     var body: some View {
         VStack(alignment: .leading) {
-            MainTitle(title: "События", image: "titleUnderline")
-                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
+            MainTitle(title: "historical-events-title", image: "titleUnderline")
+                .padding(EdgeInsets(top: 0, leading: 16, bottom: -8, trailing: 0))
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(events, id: \.id) { event in
                         let isFirstElement = events.first == event
                         let isLastElement = events.last == event
                         
-                        EventFeedCellView(event: event, tappedAction: { selectedEvent in
-                            self.openHistoricalEvent(selectedEvent.id)
-                        })
-                        .padding(EdgeInsets(top: 0, leading: isFirstElement ? 16 : 0, bottom: 0, trailing: isLastElement ? 16 : 0))
+                        EventFeedCellView(event: event)
+                            .padding(EdgeInsets(top: 0, leading: isFirstElement ? 16 : 0, bottom: 0, trailing: isLastElement ? 16 : 0))
+                        
                     }
                 }
+                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
             }
         }
     }
 }
+
 
 #Preview {
     let events: [HistoricalEvent] = [
@@ -45,7 +43,7 @@ struct EventFeedView: View {
         .init(id: 5, name: "Name6", desctiption: "Description6", date: Date.now, imageUrl: "https://cdn.tripster.ru/thumbs2/cf69e9ba-f0ea-11ea-beeb-b6b555681a2b.800x600.jpg"),
         .init(id: 6, name: "Name7", desctiption: "Description7", date: Date.now, imageUrl: "https://cdn.tripster.ru/thumbs2/cf69e9ba-f0ea-11ea-beeb-b6b555681a2b.800x600.jpg")
     ]
-
+    
     return EventFeedView(events: events, openHistoricalEvent: { eventId in
         print(eventId)
     })

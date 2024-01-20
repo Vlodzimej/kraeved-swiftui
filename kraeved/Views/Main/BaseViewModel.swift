@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+@MainActor class BaseViewModel: ObservableObject {
+    
+    @Published var isShowAlert: Bool = false
+    @Published var isLoading: Bool = false
+    
+    var networkManager: NetworkManager
+    
+    init(networkManager: NetworkManager = NetworkManager.shared) {
+        self.networkManager = networkManager
+    }
+}

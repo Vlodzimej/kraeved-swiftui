@@ -7,52 +7,57 @@
 
 import SwiftUI
 
-protocol NetworkManagerProtocol: AnyObject {
-
-}
-
-enum KraevedError: Error {
-    case wrongUrl
-    case badRequest
-}
-
-class NetworkManager: NSObject, NetworkManagerProtocol, ObservableObject {
-    @Published var isLoading = false
+//MARK: - NetworkManager
+final class NetworkManager: NSObject, ObservableObject {
     
-    func fetch<T: Decodable>(urlString: String) async -> Result<T, Error> {
+    static let shared = NetworkManager()
+    
+    @Published var isLoading = false
+    @Published var isFailed = false
+    
+    func getGeoObjects(regionId: Int?, name: String?) async -> Result<[GeoObjectBrief], Error> {
+        await fetch(urlString: "GeoObjects?name=\(name ?? "")&regionId=\(regionId ?? Constants.defaultRegion)")
+    }
+    
+    func getGeoObject(id: Int) async ->  Result<GeoObject, Error> {
+        await fetch(urlString: "GeoObjects/\(id)")
+    }
+    
+    private func fetch<T: Decodable>(urlString: String) async -> Result<T, Error> {
         await MainActor.run {
             isLoading = true
         }
         
         do {
-            guard let url = URL(string: Constants.baseUrl + "/" + urlString) else {
-                throw KraevedError.wrongUrl
+            guard let url = URL(string: Settings.instance.baseUrl + "/" + urlString) else {
+                throw NetworkError.wrongUrl
             }
+            print("URL CHECK", url.absoluteString)
             let urlRequest = URLRequest(url: url)
             let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
             let (data, response) = try await session.data(for: urlRequest)
+
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                throw NetworkError.badRequest
+            }
+            
+            let decodedObject = try JSONDecoder().decode(NetworkResponse<T>.self, from: data)
             
             await MainActor.run {
                 isLoading = false
             }
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                throw KraevedError.badRequest
-            }
-            
-            let decodedObject = try JSONDecoder().decode(KraevedResponse<T>.self, from: data)
-
             return .success(decodedObject.data)
         } catch let error {
-            #if DEBUG
-                debugPrint("Error: ", error)
-            #endif
+#if DEBUG
+            debugPrint("CHECK Error: ", error.localizedDescription)
+#endif
             
-            return .failure(error)
+            await MainActor.run {
+                isLoading = false
+                isFailed = true
+            }
 
-        }
-        
-        await MainActor.run {
-            isLoading = false
+            return .failure(error)
         }
     }
 }

@@ -19,7 +19,6 @@ struct EventFeedCellView: View {
     }
     
     let event: HistoricalEvent
-    let tappedAction: ((_ event: HistoricalEvent) -> Void)?
     
     var body: some View {
         ZStack {
@@ -49,7 +48,7 @@ struct EventFeedCellView: View {
             }
             VStack {
                 Spacer()
-                ZStack(alignment: .leading) {
+                ZStack(alignment: .center) {
                     Color.Kraeved.cellTextBackground
                     Text(event.name)
                         .font(.system(size: UIConstants.fontSize))
@@ -61,10 +60,10 @@ struct EventFeedCellView: View {
             }
         }
         .frame(width: UIConstants.size, height: UIConstants.size, alignment: .center)
-        .clipShape(.rect(cornerRadius: UIConstants.cornerRadius))
-        .onTapGesture {
-            self.tappedAction?(event)
-        }
+        .clipShape(
+            RoundedRectangle(cornerRadius: UIConstants.cornerRadius)
+        )
+        .shadow(radius: 2)
     }
 }
 
@@ -72,6 +71,6 @@ struct EventFeedCellView_Previews: PreviewProvider {
     static let event = HistoricalEvent(id: 0, name: "Name", desctiption: "Description", date: Date.now, imageUrl: "kaluga1")
     
     static var previews: some View {
-        EventFeedCellView(event: event, tappedAction: nil)
+        EventFeedCellView(event: event)
     }
 }

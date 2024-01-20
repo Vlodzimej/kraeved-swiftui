@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+//MARK: - NetworkError
+enum NetworkError: Error {
+    case wrongUrl
+    case badRequest
+}

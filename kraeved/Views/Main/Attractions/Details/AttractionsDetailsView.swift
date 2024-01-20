@@ -1,5 +1,5 @@
 //
-//  AttractionsDetailView.swift
+//  AttractionsDetailsView.swift
 //  kraeved
 //
 //  Created by Владимир Амелькин on 02.10.2023.
@@ -7,36 +7,39 @@
 
 import SwiftUI
 
-struct AttractionsDetailView: View {
+//MARK: - AttractionsDetailsView
+struct AttractionsDetailsView: View {
     
-    @ObservedObject var viewModel: ViewModel
-    
-    let geoObjectId: Int
-    
+    //MARK: Properties
+    let id: Int?
+    @ObservedObject var viewModel = ViewModel()
+
+    //MARK: Body
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text(networkManager.geoObject?.name ?? "")
+                Text(viewModel.attraction?.name ?? "")
                     .font(.title)
                 Spacer()
-                Text(networkManager.geoObject?.description ?? "")
+                Text(viewModel.attraction?.description ?? "")
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
             }
             .padding()
             .task {
-                viewModel.
+                guard let id else { return }
+                await self.viewModel.getAttraction(id: id)
             }
         }
     }
     
 }
 
-#Preview {
-    AttractionsDetailView(geoObjectId: 1)
-        .environmentObject({ () -> NetworkManager in
-            let envObj = NetworkManager()
-            envObj.geoObject = mockGeoObject
-            return envObj
-        }())
-}
+//#Preview {
+//    AttractionsDetailsView(geoObjectId: 1)
+//        .environmentObject({ () -> NetworkManager in
+//            let envObj = NetworkManager()
+//            envObj.geoObject = mockGeoObject
+//            return envObj
+//        }())
+//}

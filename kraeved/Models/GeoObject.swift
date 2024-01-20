@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GeoObject: Decodable, Equatable {
+struct GeoObject: Decodable, Equatable, Hashable {
     
     private enum CodingKeys: String, CodingKey {
         case id

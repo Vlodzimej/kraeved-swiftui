@@ -7,21 +7,21 @@
 
 import SwiftUI
 
+//MARK: - AttractionsFeedView
 struct AttractionsFeedView: View {
-    @EnvironmentObject private var networkManager: NetworkManager
+    
+    //MARK: Properties
     @ObservedObject private var viewModel = ViewModel()
     
-    @State private var didFail = true
-    
+    //MARK: Body
     var body: some View {
         VStack(alignment: .leading) {
-            MainTitle(title: "Популярное в городе", image: "titleUnderline2")
+            MainTitle(title: "popular-places", image: "titleUnderline2")
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
             ScrollView {
-                ForEach(viewModel.attractions) { geoObject in
-                    NavigationLink(destination: AttractionsDetailView(geoObjectId: geoObject.id)) {
-                        AttractionsFeedCellView(geoObject: geoObject)
-//                            .redacted(reason: viewModel.isLoading ? .placeholder : [])
+                ForEach(viewModel.attractions ?? .init(repeating: .init(), count: 6)) { attractionBrief in
+                    NavigationLink(destination: AttractionsDetailsView(id: attractionBrief.id)) {
+                        AttractionsFeedCellView(attractionBrief: attractionBrief)
                             .background(.clear)
                     }
                 }
@@ -31,11 +31,10 @@ struct AttractionsFeedView: View {
         .task {
             await viewModel.getAttractions()
         }
-        .onAppear {
-            self.viewModel.setup(networkManager)
-        }
     }
 }
+
+
 
 #Preview {
     return AttractionsFeedView()

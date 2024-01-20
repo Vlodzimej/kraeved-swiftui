@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainTitle: View {
     
-    let title: String
+    let title: LocalizedStringKey
     let image: String
     
     var body: some View {
@@ -19,6 +19,8 @@ struct MainTitle: View {
                 .foregroundColor(Color.Kraeved.titleFontMain)
             Image(image)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            Spacer()
+                .frame(maxWidth: .infinity)
         }
     }
 }
