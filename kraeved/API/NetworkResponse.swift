@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct KraevedResponse<DataType: Decodable>: Decodable {
+struct NetworkResponse<DataType: Decodable>: Decodable {
     let requestUrl: String
     let data: DataType
     let error: String
