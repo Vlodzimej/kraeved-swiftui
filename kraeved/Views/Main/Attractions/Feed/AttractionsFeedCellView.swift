@@ -53,9 +53,9 @@ struct AttractionsFeedCellView: View {
 }
 
 //MARK: - AttractionsFeedCellView_Previews
-struct AttractionsFeedCellView_Previews: PreviewProvider {
-    static let geoObject = GeoObjectBrief(id: 0, name: "Дом народного творчества и кино Центральный", shortDescription: "Здание кинотеатра «Центральный» было построено в 1935 году. Проектирование и строительство велось 5 лет, начиная с 1930 года. Это было первое специальное здание для кинотеатра в Калуге. Автор проекта — архитектор Госкино Михаил Черкасов. На торжественное открытие кинотеатра приезжал Семён Будённый.", longitude: 0, latitude: 0, imageUrl: nil)
-    static var previews: some View {
-        AttractionsFeedCellView(attractionBrief: geoObject)
-    }
-}
+//struct AttractionsFeedCellView_Previews: PreviewProvider {
+//    static let geoObject = GeoObjectBrief(id: 0, name: "Дом народного творчества и кино Центральный", shortDescription: "Здание кинотеатра «Центральный» было построено в 1935 году. Проектирование и строительство велось 5 лет, начиная с 1930 года. Это было первое специальное здание для кинотеатра в Калуге. Автор проекта — архитектор Госкино Михаил Черкасов. На торжественное открытие кинотеатра приезжал Семён Будённый.", longitude: 0, latitude: 0, imageUrl: nil)
+//    static var previews: some View {
+//        AttractionsFeedCellView(attractionBrief: geoObject)
+//    }
+//}

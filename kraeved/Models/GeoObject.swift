@@ -16,36 +16,40 @@ struct GeoObject: Decodable, Equatable, Hashable {
         case longitude
         case latitude
         //case type
-        case imageUrl
+        case imageUrls
+        case thumbnailUrl
     }
     
     let id: Int
-    let name: String
-    let description: String
-    let longitude: Double
-    let latitude: Double
+    let name: String?
+    let description: String?
+    let longitude: Double?
+    let latitude: Double?
     //let type: GeoObjectType
-    let imageUrl: String?
+    let imageUrls: [URL]?
+    let thumbnailUrl: URL?
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(Int.self, forKey: .id)
-        name = try values.decode(String.self, forKey: .name)
-        description = try values.decode(String.self, forKey: .description)
-        longitude = try values.decode(Double.self, forKey: .longitude)
-        latitude = try values.decode(Double.self, forKey: .latitude)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        description = try values.decodeIfPresent(String.self, forKey: .description)
+        longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
+        latitude = try values.decodeIfPresent(Double.self, forKey: .latitude)
         //type = try values.decode(GeoObjectType.self, forKey: .type)
-        imageUrl = try values.decodeIfPresent(String.self, forKey: .imageUrl)
+        imageUrls = try values.decodeIfPresent([URL].self, forKey: .imageUrls)
+        thumbnailUrl = try values.decodeIfPresent(URL.self, forKey: .thumbnailUrl)
     }
     
-    init(id: Int, name: String, description: String, longitude: Double, latitude: Double, type: GeoObjectType, imageUrl: String?) {
+    init(id: Int, name: String?, description: String?, longitude: Double?, latitude: Double?, imageUrls: [URL]?, thumbnailUrl: URL?) {
         self.id = id
         self.name = name
         self.description = description
         self.longitude = longitude
         self.latitude = latitude
         //self.type = type
-        self.imageUrl = imageUrl
+        self.imageUrls = imageUrls
+        self.thumbnailUrl = thumbnailUrl
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {

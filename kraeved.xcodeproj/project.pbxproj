@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6616102C2AC99B6D00D32C84 /* GeoObjectBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616102B2AC99B6D00D32C84 /* GeoObjectBrief.swift */; };
-		661610302AC9DDC000D32C84 /* Attractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616102F2AC9DDC000D32C84 /* Attractions.swift */; };
 		661610352ACAC3E400D32C84 /* AttractionsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661610342ACAC3E400D32C84 /* AttractionsDetailsView.swift */; };
 		662096592B583CD9003D489B /* ServerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662096582B583CD9003D489B /* ServerLocation.swift */; };
 		6620965B2B583E2C003D489B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620965A2B583E2C003D489B /* Settings.swift */; };
@@ -16,6 +15,9 @@
 		662096672B584335003D489B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662096662B584335003D489B /* Configuration.swift */; };
 		6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */; };
 		6629540B2AC7489300E2B155 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629540A2AC7489300E2B155 /* NetworkResponse.swift */; };
+		66464E092B618E1A00F0034C /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E082B618E1A00F0034C /* ImageObject.swift */; };
+		66464E0D2B61923600F0034C /* EventFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0C2B61923600F0034C /* EventFeedViewModel.swift */; };
+		66464E0F2B61925D00F0034C /* HistoricalEventBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */; };
 		665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B91412B5C4729009523BD /* BaseViewModel.swift */; };
 		665B915C2B5C66AD009523BD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 665B915B2B5C66AD009523BD /* Localizable.xcstrings */; };
 		6678653D2AC0BCF400EDA776 /* EventFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678653C2AC0BCF400EDA776 /* EventFeedView.swift */; };
@@ -74,7 +76,6 @@
 		54084E112EEB41F7BFF49857 /* Pods-kraeved.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.testing.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.testing.xcconfig"; sourceTree = "<group>"; };
 		60C0AD42AB9142E0CEB4A079 /* Pods-kraeved.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.development.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.development.xcconfig"; sourceTree = "<group>"; };
 		6616102B2AC99B6D00D32C84 /* GeoObjectBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectBrief.swift; sourceTree = "<group>"; };
-		6616102F2AC9DDC000D32C84 /* Attractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attractions.swift; sourceTree = "<group>"; };
 		661610342ACAC3E400D32C84 /* AttractionsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsView.swift; sourceTree = "<group>"; };
 		662096582B583CD9003D489B /* ServerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLocation.swift; sourceTree = "<group>"; };
 		6620965A2B583E2C003D489B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -82,6 +83,9 @@
 		662096662B584335003D489B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsViewModel.swift; sourceTree = "<group>"; };
 		6629540A2AC7489300E2B155 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		66464E082B618E1A00F0034C /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
+		66464E0C2B61923600F0034C /* EventFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeedViewModel.swift; sourceTree = "<group>"; };
+		66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventBrief.swift; sourceTree = "<group>"; };
 		665B91412B5C4729009523BD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		665B915B2B5C66AD009523BD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		6678653C2AC0BCF400EDA776 /* EventFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeedView.swift; sourceTree = "<group>"; };
@@ -190,14 +194,6 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		6616102E2AC9DDA700D32C84 /* MockData */ = {
-			isa = PBXGroup;
-			children = (
-				6616102F2AC9DDC000D32C84 /* Attractions.swift */,
-			);
-			path = MockData;
-			sourceTree = "<group>";
-		};
 		662096682B59894C003D489B /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,11 +224,28 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		66464E0A2B6191F900F0034C /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				6678653C2AC0BCF400EDA776 /* EventFeedView.swift */,
+				667865402AC0BFEA00EDA776 /* EventFeedCellView.swift */,
+				66464E0C2B61923600F0034C /* EventFeedViewModel.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		66464E0B2B61920300F0034C /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		6678653B2AC0BCCC00EDA776 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				66E443792AC44D4300D1943F /* Attractions */,
-				66E443772AC4388000D1943F /* EventFeed */,
+				66E443772AC4388000D1943F /* HistoricalEvents */,
 				66FEAD5A2ABDFCD500ADC551 /* MainView.swift */,
 				665B91412B5C4729009523BD /* BaseViewModel.swift */,
 			);
@@ -247,13 +260,13 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		66E443772AC4388000D1943F /* EventFeed */ = {
+		66E443772AC4388000D1943F /* HistoricalEvents */ = {
 			isa = PBXGroup;
 			children = (
-				6678653C2AC0BCF400EDA776 /* EventFeedView.swift */,
-				667865402AC0BFEA00EDA776 /* EventFeedCellView.swift */,
+				66464E0B2B61920300F0034C /* Details */,
+				66464E0A2B6191F900F0034C /* Feed */,
 			);
-			path = EventFeed;
+			path = HistoricalEvents;
 			sourceTree = "<group>";
 		};
 		66E443792AC44D4300D1943F /* Attractions */ = {
@@ -290,7 +303,6 @@
 		66FEAD2D2ABDF90E00ADC551 /* kraeved */ = {
 			isa = PBXGroup;
 			children = (
-				6616102E2AC9DDA700D32C84 /* MockData */,
 				662954092AC7486E00E2B155 /* API */,
 				66B5371E2AC05EFA00F93C71 /* Info.plist */,
 				66FEAD6A2AC022E100ADC551 /* Core */,
@@ -349,7 +361,9 @@
 			children = (
 				66FEAD682ABE31D000ADC551 /* GeoObject.swift */,
 				6678653E2AC0BE9E00EDA776 /* HistoricalEvent.swift */,
+				66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */,
 				6616102B2AC99B6D00D32C84 /* GeoObjectBrief.swift */,
+				66464E082B618E1A00F0034C /* ImageObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -623,9 +637,11 @@
 				66E4437D2AC46E6700D1943F /* UIColor.swift in Sources */,
 				66FEAD602ABDFD3E00ADC551 /* MapView.swift in Sources */,
 				66E4437B2AC44D6400D1943F /* AttractionsFeedView.swift in Sources */,
-				661610302AC9DDC000D32C84 /* Attractions.swift in Sources */,
+				66464E0F2B61925D00F0034C /* HistoricalEventBrief.swift in Sources */,
+				66464E092B618E1A00F0034C /* ImageObject.swift in Sources */,
 				66FEAD5B2ABDFCD500ADC551 /* MainView.swift in Sources */,
 				66E443762AC4387000D1943F /* MainTitle.swift in Sources */,
+				66464E0D2B61923600F0034C /* EventFeedViewModel.swift in Sources */,
 				66FEAD6C2AC022F000ADC551 /* Constants.swift in Sources */,
 				6678653D2AC0BCF400EDA776 /* EventFeedView.swift in Sources */,
 				662096672B584335003D489B /* Configuration.swift in Sources */,

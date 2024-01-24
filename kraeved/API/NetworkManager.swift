@@ -15,8 +15,12 @@ final class NetworkManager: NSObject, ObservableObject {
     @Published var isLoading = false
     @Published var isFailed = false
     
-    func getGeoObjects(regionId: Int?, name: String?) async -> Result<[GeoObjectBrief], Error> {
-        await fetch(urlString: "GeoObjects?name=\(name ?? "")&regionId=\(regionId ?? Constants.defaultRegion)")
+    func getGeoObjects(regionId: Int = Constants.defaultRegion, name: String = "") async -> Result<[GeoObjectBrief], Error> {
+        await fetch(urlString: "GeoObjects?regionId=\(regionId)")
+    }
+    
+    func getHistoricalEvents(regionId: Int = Constants.defaultRegion, name: String = "") async -> Result<[HistoricalEventBrief], Error> {
+        await fetch(urlString: "HistoricalEvents?name=\(name)&regionId=\(regionId)>")
     }
     
     func getGeoObject(id: Int) async ->  Result<GeoObject, Error> {

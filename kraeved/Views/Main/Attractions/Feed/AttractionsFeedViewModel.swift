@@ -16,10 +16,10 @@ extension AttractionsFeedView {
         @Published private(set) var attractions: [GeoObjectBrief]?
 
         //MARK: Public Methods
-        func getAttractions(regionId: Int? = nil, name: String? = nil) async {
+        func getAttractions() async {
             isLoading = true
             Task {
-                let result = await networkManager.getGeoObjects(regionId: regionId, name: name)
+                let result = await networkManager.getGeoObjects()
                 switch result {
                     case .success(let attractions):
                         self.attractions = attractions
