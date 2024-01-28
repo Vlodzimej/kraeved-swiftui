@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import Pulse
 
 @main
 struct KraevedApp: App {
+    init() {
+        URLSessionProxyDelegate.enableAutomaticRegistration()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

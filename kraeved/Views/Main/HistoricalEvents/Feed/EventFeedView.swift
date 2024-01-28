@@ -17,9 +17,6 @@ struct EventFeedView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(viewModel.historicalEvents ?? .init(repeating: .init(), count: 6), id: \.id) { event in
-//                        let isFirstElement = events.first == event
-//                        let isLastElement = events.last == event
-                        
                         EventFeedCellView(event: event)
                             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                         

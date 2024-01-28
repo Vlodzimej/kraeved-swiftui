@@ -19,14 +19,8 @@ extension AttractionsFeedView {
         func getAttractions() async {
             isLoading = true
             Task {
-                let result = await networkManager.getGeoObjects()
-                switch result {
-                    case .success(let attractions):
-                        self.attractions = attractions
-                    case .failure(let error):
-                        isShowAlert = true
-                        print(error)
-                }
+                let result = await kraevedAPI.getGeoObjects()
+                attractions = result
             }
         }
     }

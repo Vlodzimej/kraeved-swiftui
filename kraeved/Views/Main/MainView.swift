@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: - MainView
 struct MainView: View {
     @State private var geoObjects: [GeoObjectBrief] = []
     @State private var searchText = ""

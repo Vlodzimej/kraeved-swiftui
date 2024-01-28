@@ -14,7 +14,7 @@
 		6620965D2B584217003D489B /* KraevedLocalDevelopment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6620965C2B584217003D489B /* KraevedLocalDevelopment.xcconfig */; };
 		662096672B584335003D489B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662096662B584335003D489B /* Configuration.swift */; };
 		6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */; };
-		6629540B2AC7489300E2B155 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629540A2AC7489300E2B155 /* NetworkResponse.swift */; };
+		6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629540A2AC7489300E2B155 /* KraevedResponse.swift */; };
 		66464E092B618E1A00F0034C /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E082B618E1A00F0034C /* ImageObject.swift */; };
 		66464E0D2B61923600F0034C /* EventFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0C2B61923600F0034C /* EventFeedViewModel.swift */; };
 		66464E0F2B61925D00F0034C /* HistoricalEventBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */; };
@@ -23,6 +23,16 @@
 		6678653D2AC0BCF400EDA776 /* EventFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678653C2AC0BCF400EDA776 /* EventFeedView.swift */; };
 		6678653F2AC0BE9E00EDA776 /* HistoricalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678653E2AC0BE9E00EDA776 /* HistoricalEvent.swift */; };
 		667865412AC0BFEA00EDA776 /* EventFeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667865402AC0BFEA00EDA776 /* EventFeedCellView.swift */; };
+		66D12B242B6660D9009A6403 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B232B6660D9009A6403 /* Notifications.swift */; };
+		66D12B272B66610A009A6403 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B262B66610A009A6403 /* UIWindow.swift */; };
+		66D12B292B666173009A6403 /* DeviceShakeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B282B666173009A6403 /* DeviceShakeViewModifier.swift */; };
+		66D12B2B2B6661D5009A6403 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B2A2B6661D5009A6403 /* View.swift */; };
+		66D12B2D2B666392009A6403 /* PulseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 66D12B2C2B666392009A6403 /* PulseUI */; };
+		66D12B2F2B666396009A6403 /* Pulse in Frameworks */ = {isa = PBXBuildFile; productRef = 66D12B2E2B666396009A6403 /* Pulse */; };
+		66D12B312B6668FD009A6403 /* LoggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B302B6668FD009A6403 /* LoggerView.swift */; };
+		66D12B332B666B6B009A6403 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B322B666B6B009A6403 /* Logger.swift */; };
+		66D12B382B66E2F6009A6403 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 66D12B372B66E2F6009A6403 /* Alamofire */; };
+		66D12B3A2B66E68A009A6403 /* KraevedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B392B66E68A009A6403 /* KraevedAPI.swift */; };
 		66E443712AC411F500D1943F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E443702AC411F500D1943F /* Color.swift */; };
 		66E443762AC4387000D1943F /* MainTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E443752AC4387000D1943F /* MainTitle.swift */; };
 		66E4437B2AC44D6400D1943F /* AttractionsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4437A2AC44D6400D1943F /* AttractionsFeedView.swift */; };
@@ -82,7 +92,7 @@
 		6620965C2B584217003D489B /* KraevedLocalDevelopment.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = KraevedLocalDevelopment.xcconfig; sourceTree = "<group>"; };
 		662096662B584335003D489B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsViewModel.swift; sourceTree = "<group>"; };
-		6629540A2AC7489300E2B155 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		6629540A2AC7489300E2B155 /* KraevedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedResponse.swift; sourceTree = "<group>"; };
 		66464E082B618E1A00F0034C /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
 		66464E0C2B61923600F0034C /* EventFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeedViewModel.swift; sourceTree = "<group>"; };
 		66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventBrief.swift; sourceTree = "<group>"; };
@@ -92,6 +102,13 @@
 		6678653E2AC0BE9E00EDA776 /* HistoricalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEvent.swift; sourceTree = "<group>"; };
 		667865402AC0BFEA00EDA776 /* EventFeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeedCellView.swift; sourceTree = "<group>"; };
 		66B5371E2AC05EFA00F93C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		66D12B232B6660D9009A6403 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		66D12B262B66610A009A6403 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		66D12B282B666173009A6403 /* DeviceShakeViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceShakeViewModifier.swift; sourceTree = "<group>"; };
+		66D12B2A2B6661D5009A6403 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		66D12B302B6668FD009A6403 /* LoggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerView.swift; sourceTree = "<group>"; };
+		66D12B322B666B6B009A6403 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		66D12B392B66E68A009A6403 /* KraevedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedAPI.swift; sourceTree = "<group>"; };
 		66E443702AC411F500D1943F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		66E443752AC4387000D1943F /* MainTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitle.swift; sourceTree = "<group>"; };
 		66E4437A2AC44D6400D1943F /* AttractionsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsFeedView.swift; sourceTree = "<group>"; };
@@ -133,6 +150,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D12B2F2B666396009A6403 /* Pulse in Frameworks */,
+				66D12B382B66E2F6009A6403 /* Alamofire in Frameworks */,
+				66D12B2D2B666392009A6403 /* PulseUI in Frameworks */,
 				E76E0B958048552D89EADFFE /* Pods_kraeved.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				66FEAD652ABE10E600ADC551 /* NetworkManager.swift */,
-				6629540A2AC7489300E2B155 /* NetworkResponse.swift */,
+				66D12B392B66E68A009A6403 /* KraevedAPI.swift */,
+				6629540A2AC7489300E2B155 /* KraevedResponse.swift */,
 				66E6129B2ACC4F3900EBB283 /* NetworkError.swift */,
 				662096582B583CD9003D489B /* ServerLocation.swift */,
 			);
@@ -247,9 +268,25 @@
 				66E443792AC44D4300D1943F /* Attractions */,
 				66E443772AC4388000D1943F /* HistoricalEvents */,
 				66FEAD5A2ABDFCD500ADC551 /* MainView.swift */,
-				665B91412B5C4729009523BD /* BaseViewModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		66D12B252B6660FF009A6403 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				66D12B262B66610A009A6403 /* UIWindow.swift */,
+				66D12B2A2B6661D5009A6403 /* View.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		66D12B3B2B66F60C009A6403 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				665B91412B5C4729009523BD /* BaseViewModel.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		66E443722AC4384800D1943F /* Common */ = {
@@ -346,12 +383,14 @@
 		66FEAD5C2ABDFD0300ADC551 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66D12B3B2B66F60C009A6403 /* Base */,
 				6616102D2AC99FA400D32C84 /* Map */,
 				66E443722AC4384800D1943F /* Common */,
 				6678653B2AC0BCCC00EDA776 /* Main */,
 				66FEAD632ABDFD9100ADC551 /* ProfileView.swift */,
 				66FEAD5D2ABDFD1900ADC551 /* SearchView.swift */,
 				66FEAD612ABDFD6F00ADC551 /* ServicesView.swift */,
+				66D12B302B6668FD009A6403 /* LoggerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,11 +410,15 @@
 		66FEAD6A2AC022E100ADC551 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				66D12B252B6660FF009A6403 /* extensions */,
 				66FEAD6B2AC022F000ADC551 /* Constants.swift */,
 				66E443702AC411F500D1943F /* Color.swift */,
 				66E4437C2AC46E6700D1943F /* UIColor.swift */,
 				6620965A2B583E2C003D489B /* Settings.swift */,
 				662096662B584335003D489B /* Configuration.swift */,
+				66D12B232B6660D9009A6403 /* Notifications.swift */,
+				66D12B282B666173009A6403 /* DeviceShakeViewModifier.swift */,
+				66D12B322B666B6B009A6403 /* Logger.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -398,6 +441,11 @@
 			dependencies = (
 			);
 			name = kraeved;
+			packageProductDependencies = (
+				66D12B2C2B666392009A6403 /* PulseUI */,
+				66D12B2E2B666396009A6403 /* Pulse */,
+				66D12B372B66E2F6009A6403 /* Alamofire */,
+			);
 			productName = kraeved;
 			productReference = 66FEAD2B2ABDF90E00ADC551 /* kraeved.app */;
 			productType = "com.apple.product-type.application";
@@ -473,6 +521,10 @@
 				en,
 			);
 			mainGroup = 66FEAD222ABDF90E00ADC551;
+			packageReferences = (
+				66D12B222B663B10009A6403 /* XCRemoteSwiftPackageReference "Pulse" */,
+				66D12B362B66E2F6009A6403 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 66FEAD2C2ABDF90E00ADC551 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -620,6 +672,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D12B292B666173009A6403 /* DeviceShakeViewModifier.swift in Sources */,
 				667865412AC0BFEA00EDA776 /* EventFeedCellView.swift in Sources */,
 				6616102C2AC99B6D00D32C84 /* GeoObjectBrief.swift in Sources */,
 				6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */,
@@ -628,12 +681,15 @@
 				66E443712AC411F500D1943F /* Color.swift in Sources */,
 				6678653F2AC0BE9E00EDA776 /* HistoricalEvent.swift in Sources */,
 				66E6129E2ACC4FA500EBB283 /* AttractionsFeedViewModel.swift in Sources */,
+				66D12B242B6660D9009A6403 /* Notifications.swift in Sources */,
 				66FEAD5E2ABDFD1900ADC551 /* SearchView.swift in Sources */,
-				6629540B2AC7489300E2B155 /* NetworkResponse.swift in Sources */,
+				6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */,
 				661610352ACAC3E400D32C84 /* AttractionsDetailsView.swift in Sources */,
 				66FEAD312ABDF90E00ADC551 /* ContentView.swift in Sources */,
+				66D12B312B6668FD009A6403 /* LoggerView.swift in Sources */,
 				66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */,
 				662096592B583CD9003D489B /* ServerLocation.swift in Sources */,
+				66D12B272B66610A009A6403 /* UIWindow.swift in Sources */,
 				66E4437D2AC46E6700D1943F /* UIColor.swift in Sources */,
 				66FEAD602ABDFD3E00ADC551 /* MapView.swift in Sources */,
 				66E4437B2AC44D6400D1943F /* AttractionsFeedView.swift in Sources */,
@@ -642,13 +698,16 @@
 				66FEAD5B2ABDFCD500ADC551 /* MainView.swift in Sources */,
 				66E443762AC4387000D1943F /* MainTitle.swift in Sources */,
 				66464E0D2B61923600F0034C /* EventFeedViewModel.swift in Sources */,
+				66D12B332B666B6B009A6403 /* Logger.swift in Sources */,
 				66FEAD6C2AC022F000ADC551 /* Constants.swift in Sources */,
 				6678653D2AC0BCF400EDA776 /* EventFeedView.swift in Sources */,
 				662096672B584335003D489B /* Configuration.swift in Sources */,
 				665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */,
 				66FEAD622ABDFD6F00ADC551 /* ServicesView.swift in Sources */,
+				66D12B2B2B6661D5009A6403 /* View.swift in Sources */,
 				66FEAD642ABDFD9100ADC551 /* ProfileView.swift in Sources */,
 				66FEAD2F2ABDF90E00ADC551 /* KraevedApp.swift in Sources */,
+				66D12B3A2B66E68A009A6403 /* KraevedAPI.swift in Sources */,
 				66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */,
 				66E443812AC4935400D1943F /* AttractionsFeedCellView.swift in Sources */,
 			);
@@ -1300,6 +1359,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		66D12B222B663B10009A6403 /* XCRemoteSwiftPackageReference "Pulse" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Pulse";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.5;
+			};
+		};
+		66D12B362B66E2F6009A6403 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		66D12B2C2B666392009A6403 /* PulseUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66D12B222B663B10009A6403 /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = PulseUI;
+		};
+		66D12B2E2B666396009A6403 /* Pulse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66D12B222B663B10009A6403 /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = Pulse;
+		};
+		66D12B372B66E2F6009A6403 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66D12B362B66E2F6009A6403 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 66FEAD232ABDF90E00ADC551 /* Project object */;
 }

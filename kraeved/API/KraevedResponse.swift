@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: - NetworkResponse
-struct NetworkResponse<DataType: Decodable>: Decodable {
+struct KraevedResponse<DataType: Decodable>: Decodable {
     let requestUrl: String
     let data: DataType
     let statusCode: Int

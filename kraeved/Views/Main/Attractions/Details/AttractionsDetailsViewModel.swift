@@ -17,15 +17,7 @@ extension AttractionsDetailsView {
         
         //MARK: Public Methods
         func getAttraction(id: Int) async {
-            let result = await networkManager.getGeoObject(id: id)
-            switch result {
-                case .success(let attraction):
-                    await MainActor.run {
-                        self.attraction = attraction
-                    }
-                case .failure(let error):
-                    break
-            }
+            attraction = await kraevedAPI.getGeoObject(id: id)
         }
     }
 }
