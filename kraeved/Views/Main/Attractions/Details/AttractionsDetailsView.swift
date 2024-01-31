@@ -28,7 +28,7 @@ struct AttractionsDetailsView: View {
             .padding()
             .task {
                 guard let id else { return }
-                await self.viewModel.getAttraction(id: id)
+                await viewModel.getAttraction(id: id)
             }
         }
     }

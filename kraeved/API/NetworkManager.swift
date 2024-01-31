@@ -43,11 +43,8 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                                 userInfo["code"] = error.code
                                 
                                 self.log(label: error.localizedDescription, level: .error, message: "", userInfo: userInfo)
-                                continuation.resume(returning: nil)
-                                return
                             }
                             continuation.resume(returning: result?.data)
-                            return
                         case .failure:
                             continuation.resume(returning: nil)
                     }

@@ -17,9 +17,10 @@ struct HistoricalEventFeedView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(viewModel.historicalEvents ?? .init(repeating: .init(), count: 6), id: \.id) { event in
-                        HistoricalEventFeedCellView(event: event)
-                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-                        
+                        NavigationLink(destination: HistoricalEventDetailsView(id: event.id)) {
+                            HistoricalEventFeedCellView(event: event)
+                                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                        }
                     }
                 }
                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
