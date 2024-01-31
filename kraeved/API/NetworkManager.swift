@@ -10,7 +10,7 @@ import Pulse
 import Alamofire
 
 protocol NetworkManagerProtocol: ApplicationLoggerProtocol {
-    func get(url: String, parameters: Parameters?) async throws -> Data 
+    func get<T: Decodable>(url: String, parameters: Parameters?) async -> T?
 }
 
 //MARK: - NetworkManager
@@ -21,24 +21,54 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
     @Published var isLoading = false
     @Published var isFailed = false
     
-    func get(url: String, parameters: Parameters?) async throws -> Data {
-       // You must resume the continuation exactly once
-        return try await withCheckedThrowingContinuation { continuation in
-            AF.request(
-                Settings.instance.baseUrl + "/" + url,
-                parameters: parameters
-                //headers: commonHeaders,
-                //requestModifier: { $0.timeoutInterval = self.maxWaitTime }
-            )
-            .responseData { response in
-                switch(response.result) {
-                case let .success(data):
-                    continuation.resume(returning: data)
-                case let .failure(error):
-                    continuation.resume(throwing: self.handleError(error: error))
+    func get<T: Decodable>(url: String, parameters: Parameters?) async -> T? {
+        do {
+            return try await withCheckedThrowingContinuation { continuation in
+                AF.request(
+                    Settings.instance.baseUrl + "/" + url,
+                    parameters: parameters
+                    //headers: commonHeaders,
+                    //requestModifier: { $0.timeoutInterval = self.maxWaitTime }
+                )
+                .responseData { response in
+                    switch(response.result) {
+                        case let .success(data):
+                            var result: KraevedResponse<T>? = nil
+                            do {
+                                result = try Self.parseData(data: data)
+                            }
+                            catch var error as NSError {
+                                var userInfo = error.userInfo
+                                userInfo["url"] = url
+                                userInfo["code"] = error.code
+                                
+                                self.log(label: error.localizedDescription, level: .error, message: "", userInfo: userInfo)
+                                continuation.resume(returning: nil)
+                                return
+                            }
+                            continuation.resume(returning: result?.data)
+                            return
+                        case .failure:
+                            continuation.resume(returning: nil)
+                    }
                 }
             }
         }
+        catch {
+            return nil
+        }
+    }
+    
+    private static func parseData<T: Decodable>(data: Data) throws -> T{
+        guard let decodedData = try? JSONDecoder().decode(T.self, from: data)
+        else {
+            throw NSError(
+                domain: "NetworkAPIError",
+                code: 3,
+                userInfo: [NSLocalizedDescriptionKey: "JSON decode error"]
+            )
+        }
+        return decodedData
     }
     
     private func handleError(error: AFError) -> Error {

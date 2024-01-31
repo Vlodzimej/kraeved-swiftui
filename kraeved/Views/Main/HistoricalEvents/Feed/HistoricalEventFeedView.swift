@@ -1,5 +1,5 @@
 //
-//  EventFeedView.swift
+//  HistoricalEventFeedView.swift
 //  kraeved
 //
 //  Created by Владимир Амелькин on 24.09.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventFeedView: View {
+struct HistoricalEventFeedView: View {
     @ObservedObject private var viewModel = ViewModel()
     
     var body: some View {
@@ -17,7 +17,7 @@ struct EventFeedView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(viewModel.historicalEvents ?? .init(repeating: .init(), count: 6), id: \.id) { event in
-                        EventFeedCellView(event: event)
+                        HistoricalEventFeedCellView(event: event)
                             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                         
                     }
@@ -26,6 +26,12 @@ struct EventFeedView: View {
             }
         }
         .task {
+            await reload()
+        }
+    }
+    
+    func reload() async {
+        Task {
             await viewModel.getHistoricalEvents()
         }
     }

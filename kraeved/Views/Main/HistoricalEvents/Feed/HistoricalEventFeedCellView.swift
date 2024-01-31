@@ -1,5 +1,5 @@
 //
-//  EventFeedCellView.swift
+//  HistoricalEventFeedCellView.swift
 //  kraeved
 //
 //  Created by Владимир Амелькин on 24.09.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventFeedCellView: View {
+struct HistoricalEventFeedCellView: View {
     
     struct UIConstants {
         static let size: CGFloat = 128

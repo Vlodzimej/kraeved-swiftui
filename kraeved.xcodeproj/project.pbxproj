@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6610E3402B6AB10D0053E378 /* HistoricalEventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */; };
+		6610E3422B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E3412B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift */; };
+		6610E3452B6AB5530053E378 /* KraevedAPI+GeoObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E3442B6AB5530053E378 /* KraevedAPI+GeoObjects.swift */; };
+		6610E3472B6AB5740053E378 /* KraevedAPI+HistoricalEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E3462B6AB5740053E378 /* KraevedAPI+HistoricalEvents.swift */; };
 		6616102C2AC99B6D00D32C84 /* GeoObjectBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616102B2AC99B6D00D32C84 /* GeoObjectBrief.swift */; };
 		661610352ACAC3E400D32C84 /* AttractionsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661610342ACAC3E400D32C84 /* AttractionsDetailsView.swift */; };
 		662096592B583CD9003D489B /* ServerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662096582B583CD9003D489B /* ServerLocation.swift */; };
@@ -16,13 +20,13 @@
 		6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */; };
 		6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629540A2AC7489300E2B155 /* KraevedResponse.swift */; };
 		66464E092B618E1A00F0034C /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E082B618E1A00F0034C /* ImageObject.swift */; };
-		66464E0D2B61923600F0034C /* EventFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0C2B61923600F0034C /* EventFeedViewModel.swift */; };
+		66464E0D2B61923600F0034C /* HistoricalEventFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0C2B61923600F0034C /* HistoricalEventFeedViewModel.swift */; };
 		66464E0F2B61925D00F0034C /* HistoricalEventBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */; };
 		665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B91412B5C4729009523BD /* BaseViewModel.swift */; };
 		665B915C2B5C66AD009523BD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 665B915B2B5C66AD009523BD /* Localizable.xcstrings */; };
-		6678653D2AC0BCF400EDA776 /* EventFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678653C2AC0BCF400EDA776 /* EventFeedView.swift */; };
+		6678653D2AC0BCF400EDA776 /* HistoricalEventFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678653C2AC0BCF400EDA776 /* HistoricalEventFeedView.swift */; };
 		6678653F2AC0BE9E00EDA776 /* HistoricalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678653E2AC0BE9E00EDA776 /* HistoricalEvent.swift */; };
-		667865412AC0BFEA00EDA776 /* EventFeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667865402AC0BFEA00EDA776 /* EventFeedCellView.swift */; };
+		667865412AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667865402AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift */; };
 		66D12B242B6660D9009A6403 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B232B6660D9009A6403 /* Notifications.swift */; };
 		66D12B272B66610A009A6403 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B262B66610A009A6403 /* UIWindow.swift */; };
 		66D12B292B666173009A6403 /* DeviceShakeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B282B666173009A6403 /* DeviceShakeViewModifier.swift */; };
@@ -85,6 +89,10 @@
 		2ED2B1421BC060648CDA5F81 /* Pods-kraeved-kraevedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved-kraevedUITests.release.xcconfig"; path = "Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		54084E112EEB41F7BFF49857 /* Pods-kraeved.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.testing.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.testing.xcconfig"; sourceTree = "<group>"; };
 		60C0AD42AB9142E0CEB4A079 /* Pods-kraeved.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.development.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.development.xcconfig"; sourceTree = "<group>"; };
+		6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventDetailsView.swift; sourceTree = "<group>"; };
+		6610E3412B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventDetailsViewModel.swift; sourceTree = "<group>"; };
+		6610E3442B6AB5530053E378 /* KraevedAPI+GeoObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KraevedAPI+GeoObjects.swift"; sourceTree = "<group>"; };
+		6610E3462B6AB5740053E378 /* KraevedAPI+HistoricalEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KraevedAPI+HistoricalEvents.swift"; sourceTree = "<group>"; };
 		6616102B2AC99B6D00D32C84 /* GeoObjectBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectBrief.swift; sourceTree = "<group>"; };
 		661610342ACAC3E400D32C84 /* AttractionsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsView.swift; sourceTree = "<group>"; };
 		662096582B583CD9003D489B /* ServerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLocation.swift; sourceTree = "<group>"; };
@@ -94,13 +102,13 @@
 		6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsViewModel.swift; sourceTree = "<group>"; };
 		6629540A2AC7489300E2B155 /* KraevedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedResponse.swift; sourceTree = "<group>"; };
 		66464E082B618E1A00F0034C /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
-		66464E0C2B61923600F0034C /* EventFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeedViewModel.swift; sourceTree = "<group>"; };
+		66464E0C2B61923600F0034C /* HistoricalEventFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventFeedViewModel.swift; sourceTree = "<group>"; };
 		66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventBrief.swift; sourceTree = "<group>"; };
 		665B91412B5C4729009523BD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		665B915B2B5C66AD009523BD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		6678653C2AC0BCF400EDA776 /* EventFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeedView.swift; sourceTree = "<group>"; };
+		6678653C2AC0BCF400EDA776 /* HistoricalEventFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventFeedView.swift; sourceTree = "<group>"; };
 		6678653E2AC0BE9E00EDA776 /* HistoricalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEvent.swift; sourceTree = "<group>"; };
-		667865402AC0BFEA00EDA776 /* EventFeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeedCellView.swift; sourceTree = "<group>"; };
+		667865402AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventFeedCellView.swift; sourceTree = "<group>"; };
 		66B5371E2AC05EFA00F93C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		66D12B232B6660D9009A6403 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		66D12B262B66610A009A6403 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
@@ -206,6 +214,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6610E3432B6AB5380053E378 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6610E3442B6AB5530053E378 /* KraevedAPI+GeoObjects.swift */,
+				6610E3462B6AB5740053E378 /* KraevedAPI+HistoricalEvents.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		6616102D2AC99FA400D32C84 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +253,7 @@
 		662954092AC7486E00E2B155 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				6610E3432B6AB5380053E378 /* extensions */,
 				66FEAD652ABE10E600ADC551 /* NetworkManager.swift */,
 				66D12B392B66E68A009A6403 /* KraevedAPI.swift */,
 				6629540A2AC7489300E2B155 /* KraevedResponse.swift */,
@@ -248,9 +266,9 @@
 		66464E0A2B6191F900F0034C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				6678653C2AC0BCF400EDA776 /* EventFeedView.swift */,
-				667865402AC0BFEA00EDA776 /* EventFeedCellView.swift */,
-				66464E0C2B61923600F0034C /* EventFeedViewModel.swift */,
+				6678653C2AC0BCF400EDA776 /* HistoricalEventFeedView.swift */,
+				667865402AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift */,
+				66464E0C2B61923600F0034C /* HistoricalEventFeedViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -258,6 +276,8 @@
 		66464E0B2B61920300F0034C /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */,
+				6610E3412B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -673,9 +693,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D12B292B666173009A6403 /* DeviceShakeViewModifier.swift in Sources */,
-				667865412AC0BFEA00EDA776 /* EventFeedCellView.swift in Sources */,
+				667865412AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift in Sources */,
 				6616102C2AC99B6D00D32C84 /* GeoObjectBrief.swift in Sources */,
 				6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */,
+				6610E3472B6AB5740053E378 /* KraevedAPI+HistoricalEvents.swift in Sources */,
 				6620965B2B583E2C003D489B /* Settings.swift in Sources */,
 				66E6129C2ACC4F3900EBB283 /* NetworkError.swift in Sources */,
 				66E443712AC411F500D1943F /* Color.swift in Sources */,
@@ -686,6 +707,7 @@
 				6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */,
 				661610352ACAC3E400D32C84 /* AttractionsDetailsView.swift in Sources */,
 				66FEAD312ABDF90E00ADC551 /* ContentView.swift in Sources */,
+				6610E3452B6AB5530053E378 /* KraevedAPI+GeoObjects.swift in Sources */,
 				66D12B312B6668FD009A6403 /* LoggerView.swift in Sources */,
 				66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */,
 				662096592B583CD9003D489B /* ServerLocation.swift in Sources */,
@@ -694,13 +716,14 @@
 				66FEAD602ABDFD3E00ADC551 /* MapView.swift in Sources */,
 				66E4437B2AC44D6400D1943F /* AttractionsFeedView.swift in Sources */,
 				66464E0F2B61925D00F0034C /* HistoricalEventBrief.swift in Sources */,
+				6610E3402B6AB10D0053E378 /* HistoricalEventDetailsView.swift in Sources */,
 				66464E092B618E1A00F0034C /* ImageObject.swift in Sources */,
 				66FEAD5B2ABDFCD500ADC551 /* MainView.swift in Sources */,
 				66E443762AC4387000D1943F /* MainTitle.swift in Sources */,
-				66464E0D2B61923600F0034C /* EventFeedViewModel.swift in Sources */,
+				66464E0D2B61923600F0034C /* HistoricalEventFeedViewModel.swift in Sources */,
 				66D12B332B666B6B009A6403 /* Logger.swift in Sources */,
 				66FEAD6C2AC022F000ADC551 /* Constants.swift in Sources */,
-				6678653D2AC0BCF400EDA776 /* EventFeedView.swift in Sources */,
+				6678653D2AC0BCF400EDA776 /* HistoricalEventFeedView.swift in Sources */,
 				662096672B584335003D489B /* Configuration.swift in Sources */,
 				665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */,
 				66FEAD622ABDFD6F00ADC551 /* ServicesView.swift in Sources */,
@@ -709,6 +732,7 @@
 				66FEAD2F2ABDF90E00ADC551 /* KraevedApp.swift in Sources */,
 				66D12B3A2B66E68A009A6403 /* KraevedAPI.swift in Sources */,
 				66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */,
+				6610E3422B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift in Sources */,
 				66E443812AC4935400D1943F /* AttractionsFeedCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

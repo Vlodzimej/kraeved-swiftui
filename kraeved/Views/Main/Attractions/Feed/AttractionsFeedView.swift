@@ -32,6 +32,12 @@ struct AttractionsFeedView: View {
             await viewModel.getAttractions()
         }
     }
+    
+    func reload() async {
+        Task {
+            await viewModel.getAttractions()
+        }
+    }
 }
 
 

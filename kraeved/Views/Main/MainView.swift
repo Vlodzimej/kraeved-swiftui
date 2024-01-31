@@ -12,13 +12,19 @@ struct MainView: View {
     @State private var geoObjects: [GeoObjectBrief] = []
     @State private var searchText = ""
     
+    let eventFeedView = HistoricalEventFeedView()
+    let attractionsFeedView = AttractionsFeedView()
+    
     var body: some View {
         NavigationView {
             ScrollView {
-                EventFeedView()
-                AttractionsFeedView()
+                eventFeedView
+                attractionsFeedView
             }
             .background(Color.Kraeved.mainBackground)
+            .refreshable {
+                await reload()
+            }
         }
         //.searchable(text: $searchText, placement: .navigationBarDrawer)
         .onAppear {
@@ -31,6 +37,10 @@ struct MainView: View {
         }
     }
     
+    private func reload() async {
+        await eventFeedView.reload()
+        await attractionsFeedView.reload()
+    }
 }
 
 #Preview {
