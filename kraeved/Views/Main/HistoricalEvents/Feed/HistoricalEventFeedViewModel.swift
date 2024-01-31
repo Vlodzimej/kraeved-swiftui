@@ -17,11 +17,7 @@ extension HistoricalEventFeedView {
 
         //MARK: Public Methods
         func getHistoricalEvents() async {
-            historicalEvents = .init(repeating: .init(), count: 6)
-            
-            Task {
-                historicalEvents = await kraevedAPI.getHistoricalEvents()
-            }
+            historicalEvents = await kraevedAPI.getHistoricalEvents()
         }
     }
 }

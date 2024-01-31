@@ -17,12 +17,8 @@ extension AttractionsFeedView {
 
         //MARK: Public Methods
         func getAttractions() async {
-            attractions = .init(repeating: .init(), count: 6)
-            
-            Task {
-                let result = await kraevedAPI.getGeoObjects()
-                attractions = result
-            }
+            let result = await kraevedAPI.getGeoObjects()
+            attractions = result
         }
     }
 }
