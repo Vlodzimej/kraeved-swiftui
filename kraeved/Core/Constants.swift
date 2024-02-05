@@ -16,9 +16,13 @@ struct Constants {
 
 struct ColorConstants {
     static let mainBackground       = "#FFFEF7"
+    static let secondBackground     = "#FAFAF4"
     static let cellBackground       = "#F4F2E5"
     static let cellTextBackground   = "#ECEADD"
     static let cellTitleFont        = "#242424"
     static let titleFontMain        = "#1A8F8F"
     static let searchFont           = "#80BAAF"
+    static let mainStroke           = "#93C5BB"
+    static let buttonText           = "#424242"
+    static let divider              = "#4E9494"
 }

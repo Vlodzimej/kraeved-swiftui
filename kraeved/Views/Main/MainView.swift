@@ -9,8 +9,8 @@ import SwiftUI
 
 //MARK: - MainView
 struct MainView: View {
-    @State private var geoObjects: [GeoObjectBrief] = []
-    @State private var searchText = ""
+    //@State private var geoObjects: [GeoObjectBrief] = []
+    //@State private var searchText = ""
     
     let eventFeedView = HistoricalEventFeedView()
     let attractionsFeedView = AttractionsFeedView()

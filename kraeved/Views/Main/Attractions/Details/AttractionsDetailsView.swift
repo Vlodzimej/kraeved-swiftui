@@ -12,7 +12,7 @@ struct AttractionsDetailsView: View {
     
     //MARK: Properties
     let id: Int?
-    @ObservedObject var viewModel = ViewModel()
+    @ObservedObject private var viewModel = ViewModel()
 
     //MARK: Body
     var body: some View {
@@ -32,7 +32,6 @@ struct AttractionsDetailsView: View {
             }
         }
     }
-    
 }
 
 //#Preview {

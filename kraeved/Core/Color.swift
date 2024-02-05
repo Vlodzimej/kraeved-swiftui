@@ -34,11 +34,15 @@ extension Color {
     
     struct Kraeved {
         static let mainBackground      = Color(hex: ColorConstants.mainBackground)
+        static let secondBackground    = Color(hex: ColorConstants.secondBackground)
         static let cellBackground      = Color(hex: ColorConstants.cellBackground)
         static let cellTextBackground  = Color(hex: ColorConstants.cellTextBackground, alpha: 0.85)
         static let cellTitleFont       = Color(hex: ColorConstants.cellTitleFont)
         static let titleFontMain       = Color(hex: ColorConstants.titleFontMain)
         static let searchFont          = Color(hex: ColorConstants.searchFont)
+        static let mainStroke          = Color(hex: ColorConstants.mainStroke)
+        static let buttonText          = Color(hex: ColorConstants.buttonText)
+        static let divider             = Color(hex: ColorConstants.divider)
     }
 
 }

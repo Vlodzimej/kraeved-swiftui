@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HistoricalEventFeedView: View {
-    @ObservedObject private var viewModel = ViewModel()
+    @ObservedObject private(set) var viewModel = ViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {

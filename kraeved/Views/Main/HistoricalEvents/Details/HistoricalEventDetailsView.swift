@@ -12,7 +12,7 @@ struct HistoricalEventDetailsView: View {
     
     //MARK: Properties
     let id: Int?
-    @ObservedObject var viewModel = ViewModel()
+    @ObservedObject private var viewModel = ViewModel()
     
     var body: some View {
         ScrollView {

@@ -15,7 +15,7 @@ struct GeoObject: Decodable, Equatable, Hashable {
         case description
         case longitude
         case latitude
-        //case type
+        case type
         case imageUrls
         case thumbnailUrl
     }
@@ -25,7 +25,7 @@ struct GeoObject: Decodable, Equatable, Hashable {
     let description: String?
     let longitude: Double?
     let latitude: Double?
-    //let type: GeoObjectType
+    let type: GenericTypeDto?
     let imageUrls: [URL]?
     let thumbnailUrl: URL?
     
@@ -36,18 +36,18 @@ struct GeoObject: Decodable, Equatable, Hashable {
         description = try values.decodeIfPresent(String.self, forKey: .description)
         longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
         latitude = try values.decodeIfPresent(Double.self, forKey: .latitude)
-        //type = try values.decode(GeoObjectType.self, forKey: .type)
+        type = try values.decode(GenericTypeDto.self, forKey: .type)
         imageUrls = try values.decodeIfPresent([URL].self, forKey: .imageUrls)
         thumbnailUrl = try values.decodeIfPresent(URL.self, forKey: .thumbnailUrl)
     }
     
-    init(id: Int, name: String?, description: String?, longitude: Double?, latitude: Double?, imageUrls: [URL]?, thumbnailUrl: URL?) {
+    init(id: Int, name: String?, description: String?, longitude: Double?, latitude: Double?, type: GenericTypeDto?, imageUrls: [URL]?, thumbnailUrl: URL?) {
         self.id = id
         self.name = name
         self.description = description
         self.longitude = longitude
         self.latitude = latitude
-        //self.type = type
+        self.type = type
         self.imageUrls = imageUrls
         self.thumbnailUrl = thumbnailUrl
     }
@@ -57,9 +57,8 @@ struct GeoObject: Decodable, Equatable, Hashable {
     }
 }
 
-enum GeoObjectType: String, Codable {
-    case museum      = "MUSEUM"
-    case theater     = "THEATER"
-    case cinemaHall  = "CINEMA_HALL"
-    case concertHall = "CONCERT_HALL"
+struct GenericTypeDto: Decodable, Hashable, Equatable {
+    let id: Int
+    let name: String
+    let title: String?
 }

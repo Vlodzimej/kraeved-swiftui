@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: - AttractionsDetailsView
 extension AttractionsDetailsView {
     
     //MARK: - ViewModel

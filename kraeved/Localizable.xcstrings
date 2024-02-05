@@ -98,6 +98,23 @@
           }
         }
       }
+    },
+    "under-construction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Under construction"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В разработке"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
