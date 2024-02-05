@@ -34,6 +34,8 @@ struct MapView: View {
                         GeoObjectView(id: geoObject.id)
                             .presentationDetents([.medium, .large])
                             .presentationDragIndicator(.automatic)
+                            .ignoresSafeArea()
+                            .padding(.top, 52)
                     }
                 }
             }

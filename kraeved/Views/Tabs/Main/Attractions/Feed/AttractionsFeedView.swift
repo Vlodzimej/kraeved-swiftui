@@ -20,10 +20,12 @@ struct AttractionsFeedView: View {
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
             ScrollView {
                 ForEach(viewModel.attractions ?? .init(repeating: .init(), count: 6)) { attractionBrief in
-                    NavigationLink(destination: AttractionsDetailsView(id: attractionBrief.id)) {
-                        AttractionsFeedCellView(attractionBrief: attractionBrief)
-                            .background(.clear)
-                    }
+                    NavigationLink(destination:
+                                    GeoObjectView(id: attractionBrief.id)
+                                        .padding(.top, 16)) {
+                            AttractionsFeedCellView(attractionBrief: attractionBrief)
+                                .background(.clear)
+                        }
                 }
             }
         }
@@ -46,8 +48,8 @@ struct AttractionsFeedView: View {
     return AttractionsFeedView()
         .environmentObject({ () -> NetworkManager in
             let envObj = NetworkManager()
-//            envObj.geoObject = mockGeoObject
-//            envObj.geoObjects = mockGeoObjects
+            //            envObj.geoObject = mockGeoObject
+            //            envObj.geoObjects = mockGeoObjects
             envObj.isLoading = false
             return envObj
         }())

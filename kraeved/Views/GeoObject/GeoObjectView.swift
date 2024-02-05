@@ -49,7 +49,6 @@ struct GeoObjectView: View {
                         })
                     }
                 }
-                
                 TabView(selection: $selectedTab) {
                     GeoObjectInfoDescription(description: viewModel.geoObject?.description ?? "")
                         .tag(0)
@@ -61,11 +60,10 @@ struct GeoObjectView: View {
                 .tabViewStyle(.page)
                 .padding(.top, 16)
             }
-            .padding(.top, 52)
+
             .padding(.bottom, 32)
             .padding(.horizontal, 16)
         }
-        .ignoresSafeArea()
         .task {
             guard let id else { return }
             await viewModel.getGeoObject(id: id)

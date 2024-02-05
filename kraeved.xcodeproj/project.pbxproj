@@ -61,9 +61,7 @@
 		66FEAD4A2ABDF90F00ADC551 /* kraevedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD492ABDF90F00ADC551 /* kraevedUITests.swift */; };
 		66FEAD4C2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD4B2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift */; };
 		66FEAD5B2ABDFCD500ADC551 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD5A2ABDFCD500ADC551 /* MainView.swift */; };
-		66FEAD5E2ABDFD1900ADC551 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD5D2ABDFD1900ADC551 /* SearchView.swift */; };
 		66FEAD602ABDFD3E00ADC551 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD5F2ABDFD3E00ADC551 /* MapView.swift */; };
-		66FEAD622ABDFD6F00ADC551 /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD612ABDFD6F00ADC551 /* ServicesView.swift */; };
 		66FEAD642ABDFD9100ADC551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD632ABDFD9100ADC551 /* ProfileView.swift */; };
 		66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD652ABE10E600ADC551 /* NetworkManager.swift */; };
 		66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD682ABE31D000ADC551 /* GeoObject.swift */; };
@@ -153,9 +151,7 @@
 		66FEAD492ABDF90F00ADC551 /* kraevedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kraevedUITests.swift; sourceTree = "<group>"; };
 		66FEAD4B2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kraevedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		66FEAD5A2ABDFCD500ADC551 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		66FEAD5D2ABDFD1900ADC551 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		66FEAD5F2ABDFD3E00ADC551 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		66FEAD612ABDFD6F00ADC551 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		66FEAD632ABDFD9100ADC551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		66FEAD652ABE10E600ADC551 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		66FEAD682ABE31D000ADC551 /* GeoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObject.swift; sourceTree = "<group>"; };
@@ -342,6 +338,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		66A904772B7177AB0064F940 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				6678653B2AC0BCCC00EDA776 /* Main */,
+				66A904782B7177BD0064F940 /* Profile */,
+				6616102D2AC99FA400D32C84 /* Map */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		66A904782B7177BD0064F940 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				66FEAD632ABDFD9100ADC551 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		66A9047A2B7177EB0064F940 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				66D12B302B6668FD009A6403 /* LoggerView.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		66D12B252B6660FF009A6403 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,15 +474,11 @@
 		66FEAD5C2ABDFD0300ADC551 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66A9047A2B7177EB0064F940 /* Logger */,
+				66A904772B7177AB0064F940 /* Tabs */,
 				66841FD62B6EE772005A8233 /* GeoObject */,
 				66D12B3B2B66F60C009A6403 /* Base */,
-				6616102D2AC99FA400D32C84 /* Map */,
 				66E443722AC4384800D1943F /* Common */,
-				6678653B2AC0BCCC00EDA776 /* Main */,
-				66FEAD632ABDFD9100ADC551 /* ProfileView.swift */,
-				66FEAD5D2ABDFD1900ADC551 /* SearchView.swift */,
-				66FEAD612ABDFD6F00ADC551 /* ServicesView.swift */,
-				66D12B302B6668FD009A6403 /* LoggerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -757,7 +775,6 @@
 				66841FDC2B6FCD6A005A8233 /* AsyncImage.swift in Sources */,
 				66E6129E2ACC4FA500EBB283 /* AttractionsFeedViewModel.swift in Sources */,
 				66D12B242B6660D9009A6403 /* Notifications.swift in Sources */,
-				66FEAD5E2ABDFD1900ADC551 /* SearchView.swift in Sources */,
 				6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */,
 				661610352ACAC3E400D32C84 /* AttractionsDetailsView.swift in Sources */,
 				66FEAD312ABDF90E00ADC551 /* ContentView.swift in Sources */,
@@ -784,7 +801,6 @@
 				6678653D2AC0BCF400EDA776 /* HistoricalEventFeedView.swift in Sources */,
 				662096672B584335003D489B /* Configuration.swift in Sources */,
 				665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */,
-				66FEAD622ABDFD6F00ADC551 /* ServicesView.swift in Sources */,
 				668B39DD2B714289009A2E00 /* GeoObjectInfoGallery.swift in Sources */,
 				66D12B2B2B6661D5009A6403 /* View.swift in Sources */,
 				66FEAD642ABDFD9100ADC551 /* ProfileView.swift in Sources */,
