@@ -43,5 +43,6 @@ extension UIColor {
         static let cellTitleFont      = UIColor(hex: ColorConstants.cellTitleFont)
         static let titleFontMain      = UIColor(hex: ColorConstants.titleFontMain)
         static let searchFont         = UIColor(hex: ColorConstants.searchFont)
+        static let mainStroke         = UIColor(hex: ColorConstants.mainStroke)
     }
 }

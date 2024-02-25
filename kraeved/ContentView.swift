@@ -12,20 +12,19 @@ struct ContentView: View {
     @State private var isLoggerPresented = false
     
     var body: some View {
-        
         TabView {
             Group {
                 MainView()
                     .tabItem {
-                        Label("Main", systemImage: "house")
+                        Label("main-tab-start-screen", systemImage: "house")
                     }
                 MapView()
                     .tabItem {
-                        Label("Map", systemImage: "map")
+                        Label("main-tab-map", systemImage: "map")
                     }
                 ProfileView()
                     .tabItem {
-                        Label("Profile", systemImage: "gear")
+                        Label("main-tab-profile", systemImage: "gear")
                     }
             }
         }.onShake {
@@ -39,7 +38,6 @@ struct ContentView: View {
         }.sheet(isPresented: $isLoggerPresented) {
             LoggerView()
         }
-
         .onAppear() {
             //            UISearchBar.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).setImage(UIImage.magnifyingGlass, for: .search, state: .normal)
             //
@@ -51,6 +49,7 @@ struct ContentView: View {
             //
             //            UISearchTextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "Поиск", attributes: [.foregroundColor: UIColor.Kraeved.searchFont])
         }
+        .tint(.Kraeved.titleFontMain)
     }
 }
 

@@ -11,11 +11,11 @@ import Alamofire
 
 protocol NetworkManagerProtocol: ApplicationLoggerProtocol {
     func get<T: Decodable>(url: String, parameters: Parameters?) async -> T?
+    func post(url: String, parameters: Parameters) async throws -> Void
 }
 
 //MARK: - NetworkManager
 final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
-    
     static let shared = NetworkManager()
     
     @Published var isLoading = false
@@ -31,13 +31,13 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                     //requestModifier: { $0.timeoutInterval = self.maxWaitTime }
                 )
                 .responseData { response in
-                    switch(response.result) {
+                    switch response.result {
                         case let .success(data):
                             var result: KraevedResponse<T>? = nil
                             do {
                                 result = try Self.parseData(data: data)
                             }
-                            catch var error as NSError {
+                            catch let error as NSError {
                                 var userInfo = error.userInfo
                                 userInfo["url"] = url
                                 userInfo["code"] = error.code
@@ -53,6 +53,28 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
         }
         catch {
             return nil
+        }
+    }
+    
+    func post(url: String, parameters: Parameters) async throws -> Void {
+        do {
+            return try await withCheckedThrowingContinuation { continuation in
+                AF.request(
+                    Settings.instance.baseUrl + "/" + url,
+                    method: .post,
+                    parameters: parameters,
+                    encoding: JSONEncoding.default
+                )
+                .responseData { response in
+                    switch response.result {
+                        case let .success(data):
+                            continuation.resume()
+                        case .failure(let error):
+                            print(error)
+                            continuation.resume(throwing: error)
+                    }
+                }
+            }
         }
     }
     

@@ -1,5 +1,5 @@
 //
-//  GeoObjectInfoDescription.swift
+//  GeoObjectDetailsDescription.swift
 //  kraeved
 //
 //  Created by Владимир Амелькин on 05.02.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GeoObjectInfoDescription: View {
+struct GeoObjectDetailsDescription: View {
     
     let description: String
     
@@ -20,5 +20,5 @@ struct GeoObjectInfoDescription: View {
 }
 
 #Preview {
-    GeoObjectInfoDescription(description: "Test")
+    GeoObjectDetailsDescription(description: "Test")
 }

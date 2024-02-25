@@ -1,6 +1,259 @@
 {
   "sourceLanguage" : "ru",
   "strings" : {
+    "+" : {
+
+    },
+    "add" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Add"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавить"
+          }
+        }
+      }
+    },
+    "add-new-geo-object" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Add new object"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавить объект"
+          }
+        }
+      }
+    },
+    "back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назад"
+          }
+        }
+      }
+    },
+    "close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Close"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрыть"
+          }
+        }
+      }
+    },
+    "create" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создать"
+          }
+        }
+      }
+    },
+    "current-location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current coordinates"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текущие координаты "
+          }
+        }
+      }
+    },
+    "delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Delete"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
+          }
+        }
+      }
+    },
+    "description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Описание"
+          }
+        }
+      }
+    },
+    "description-placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the description"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите описание"
+          }
+        }
+      }
+    },
+    "edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Edit"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактировать"
+          }
+        }
+      }
+    },
+    "filter" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Filter"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фильтр"
+          }
+        }
+      }
+    },
+    "geo-object-tab-comments" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Comments"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отзывы"
+          }
+        }
+      }
+    },
+    "geo-object-tab-description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Info"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Описание"
+          }
+        }
+      }
+    },
+    "geo-object-tab-gallery" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Photos"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фото"
+          }
+        }
+      }
+    },
+    "go-to-next" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дальше"
+          }
+        }
+      }
+    },
     "historical-events-title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -18,11 +271,77 @@
         }
       }
     },
-    "Main" : {
+    "latitude" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Latitude"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Широта"
+          }
+        }
+      }
+    },
+    "longitude" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longitude"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Долгота"
+          }
+        }
+      }
+    },
+    "main-tab-map" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Map"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Карта"
+          }
+        }
+      }
+    },
+    "main-tab-profile" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Profile"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "main-tab-start-screen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Main"
           }
         },
@@ -34,18 +353,35 @@
         }
       }
     },
-    "Map" : {
+    "name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Map"
+            "value" : "Name"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Карта"
+            "value" : "Имя"
+          }
+        }
+      }
+    },
+    "new-geo-object-marker" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New object"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новый объект"
           }
         }
       }
@@ -67,34 +403,137 @@
         }
       }
     },
-    "Profile" : {
+    "region" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Profile"
+            "state" : "needs_review",
+            "value" : "Region"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Профиль"
+            "value" : "Регион"
           }
         }
       }
     },
-    "Services" : {
+    "search" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Services"
+            "value" : "Search"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Сервисы"
+            "value" : "Поиск"
+          }
+        }
+      }
+    },
+    "send" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Send"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправить"
+          }
+        }
+      }
+    },
+    "show-filter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Show filter"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать фильтр"
+          }
+        }
+      }
+    },
+    "thumbnail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thumbnail"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Миниатюра"
+          }
+        }
+      }
+    },
+    "title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Title"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Название"
+          }
+        }
+      }
+    },
+    "title-placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the title"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите название"
+          }
+        }
+      }
+    },
+    "type" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Type"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип"
           }
         }
       }
@@ -112,6 +551,53 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "В разработке"
+          }
+        }
+      }
+    },
+    "update" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обновить"
+          }
+        }
+      }
+    },
+    "viewing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мiewing"
+          }
+        }
+      }
+    },
+    "Объект создан" : {
+
+    },
+    "Регион" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регион"
+          }
+        }
+      }
+    },
+    "Тип" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип"
           }
         }
       }

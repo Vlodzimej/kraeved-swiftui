@@ -18,4 +18,5 @@ extension KraevedAPI {
         let url = "HistoricalEvents/\(id)"
         return await networkManager.get(url: url, parameters: nil)
     }
+    
 }

@@ -11,12 +11,12 @@ struct GeoObjectBrief: Decodable, Identifiable, Hashable {
     let id: Int?
     let name: String?
     let shortDescription: String?
-    let type: GenericTypeDto?
+    let type: GeoObjectType?
     let thumbnailUrl: URL?
     let longitude: Double?
     let latitude: Double?
 
-    init(id: Int? = nil, name: String? = nil, shortDescription: String? = nil, type: GenericTypeDto? = nil, thumbnailUrl: URL? = nil, longitude: Double? = nil, latitude: Double? = nil) {
+    init(id: Int? = nil, name: String? = nil, shortDescription: String? = nil, type: GeoObjectType? = nil, thumbnailUrl: URL? = nil, longitude: Double? = nil, latitude: Double? = nil) {
         self.id = id
         self.name = name
         self.shortDescription = shortDescription
@@ -26,3 +26,4 @@ struct GeoObjectBrief: Decodable, Identifiable, Hashable {
         self.latitude = latitude
     }
 }
+

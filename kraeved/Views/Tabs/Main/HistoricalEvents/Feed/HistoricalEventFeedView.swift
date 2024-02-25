@@ -29,6 +29,7 @@ struct HistoricalEventFeedView: View {
         .task {
             await reload()
         }
+        .background(Color.Kraeved.mainBackground)
     }
     
     func reload() async {

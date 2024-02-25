@@ -18,13 +18,13 @@ struct AttractionsFeedCellView: View {
         ZStack(alignment: .leading) {
             Color.Kraeved.cellBackground
             HStack(alignment: .top) {
-                Image("kaluga1")
-                    .resizable()
+                AsyncImage(url: attractionBrief.thumbnailUrl)
+                    .scaledToFill()
                     .frame(width: 72, height: 72)
-                    .aspectRatio(contentMode: .fill)
                     .clipShape(
                         .rect(cornerRadius: 14)
                     )
+                    .clipped()
                 VStack(alignment: .leading, spacing: 0) {
                     Text(attractionBrief.name ?? "geoObject name placeholder")
                         .font(.system(size: 13, weight: .medium))

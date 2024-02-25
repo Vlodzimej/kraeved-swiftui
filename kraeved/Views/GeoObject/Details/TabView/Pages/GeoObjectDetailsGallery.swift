@@ -1,5 +1,5 @@
 //
-//  GeoObjectInfoGallery.swift
+//  GeoObjectDetailsGallery.swift
 //  kraeved
 //
 //  Created by Владимир Амелькин on 05.02.2024.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-//MARK: - GeoObjectInfoGallery
-struct GeoObjectInfoGallery: View {
+//MARK: - GeoObjectDetailsGallery
+struct GeoObjectDetailsGallery: View {
     
     //MARK: UIConstants
     struct UIConstants {
@@ -57,5 +57,5 @@ struct GeoObjectInfoGallery: View {
 }
 
 #Preview {
-    GeoObjectInfoGallery(imageUrls: [])
+    GeoObjectDetailsGallery(imageUrls: [])
 }

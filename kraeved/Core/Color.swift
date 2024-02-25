@@ -43,6 +43,7 @@ extension Color {
         static let mainStroke          = Color(hex: ColorConstants.mainStroke)
         static let buttonText          = Color(hex: ColorConstants.buttonText)
         static let divider             = Color(hex: ColorConstants.divider)
+        static let highlightedText     = Color(hex: ColorConstants.highlightedText)
     }
 
 }

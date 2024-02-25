@@ -20,12 +20,15 @@ struct AttractionsFeedView: View {
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
             ScrollView {
                 ForEach(viewModel.attractions ?? .init(repeating: .init(), count: 6)) { attractionBrief in
-                    NavigationLink(destination:
-                                    GeoObjectView(id: attractionBrief.id)
-                                        .padding(.top, 16)) {
-                            AttractionsFeedCellView(attractionBrief: attractionBrief)
-                                .background(.clear)
-                        }
+                    NavigationLink(
+                        destination:
+                            GeoObjectDetailsView(id: attractionBrief.id)
+                            .padding(.top, 16)
+                            .background(Color.Kraeved.secondBackground)
+                    ) {
+                        AttractionsFeedCellView(attractionBrief: attractionBrief)
+                            .background(.clear)
+                    }
                 }
             }
         }

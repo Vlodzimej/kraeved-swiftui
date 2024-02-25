@@ -58,7 +58,7 @@ struct GeoObject: Decodable, Equatable, Hashable {
 }
 
 struct GenericTypeDto: Decodable, Hashable, Equatable {
-    let id: Int
-    let name: String
-    let title: String?
+    var id: Int
+    var name: String
+    var title: String
 }
