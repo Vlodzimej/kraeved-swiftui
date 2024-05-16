@@ -25,6 +25,15 @@
 		66464E0F2B61925D00F0034C /* HistoricalEventBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */; };
 		665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B91412B5C4729009523BD /* BaseViewModel.swift */; };
 		665B915C2B5C66AD009523BD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 665B915B2B5C66AD009523BD /* Localizable.xcstrings */; };
+		6662298C2BF5EF3100080200 /* ImageUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662298B2BF5EF3100080200 /* ImageUploadViewModel.swift */; };
+		6662298E2BF5EF9300080200 /* EditableThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662298D2BF5EF9300080200 /* EditableThumbnailImageView.swift */; };
+		666229902BF5F26000080200 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662298F2BF5F26000080200 /* ThumbnailImageView.swift */; };
+		666229922BF5F29900080200 /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666229912BF5F29900080200 /* UploadImageView.swift */; };
+		666229942BF5F31200080200 /* ImageUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666229932BF5F31200080200 /* ImageUploadView.swift */; };
+		666229972BF606C600080200 /* View+asUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666229962BF606C600080200 /* View+asUIImage.swift */; };
+		6662299A2BF61B1700080200 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 666229992BF61B1700080200 /* CachedAsyncImage */; };
+		6662299C2BF685A000080200 /* URLCache+imageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662299B2BF685A000080200 /* URLCache+imageCache.swift */; };
+		6662299E2BF689A600080200 /* EmptyThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662299D2BF689A600080200 /* EmptyThumbnailImageView.swift */; };
 		6666A9BA2B7BE9F9001DB0E8 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666A9B92B7BE9F9001DB0E8 /* Int.swift */; };
 		6666A9BD2B7BEEAE001DB0E8 /* TabBarAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666A9BC2B7BEEAE001DB0E8 /* TabBarAccessor.swift */; };
 		6666A9BF2B7BF093001DB0E8 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666A9BE2B7BF093001DB0E8 /* MapAnnotationView.swift */; };
@@ -55,7 +64,7 @@
 		66D12B242B6660D9009A6403 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B232B6660D9009A6403 /* Notifications.swift */; };
 		66D12B272B66610A009A6403 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B262B66610A009A6403 /* UIWindow.swift */; };
 		66D12B292B666173009A6403 /* DeviceShakeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B282B666173009A6403 /* DeviceShakeViewModifier.swift */; };
-		66D12B2B2B6661D5009A6403 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B2A2B6661D5009A6403 /* View.swift */; };
+		66D12B2B2B6661D5009A6403 /* View+onShake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B2A2B6661D5009A6403 /* View+onShake.swift */; };
 		66D12B2D2B666392009A6403 /* PulseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 66D12B2C2B666392009A6403 /* PulseUI */; };
 		66D12B2F2B666396009A6403 /* Pulse in Frameworks */ = {isa = PBXBuildFile; productRef = 66D12B2E2B666396009A6403 /* Pulse */; };
 		66D12B312B6668FD009A6403 /* LoggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B302B6668FD009A6403 /* LoggerView.swift */; };
@@ -130,6 +139,14 @@
 		66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventBrief.swift; sourceTree = "<group>"; };
 		665B91412B5C4729009523BD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		665B915B2B5C66AD009523BD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		6662298B2BF5EF3100080200 /* ImageUploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadViewModel.swift; sourceTree = "<group>"; };
+		6662298D2BF5EF9300080200 /* EditableThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableThumbnailImageView.swift; sourceTree = "<group>"; };
+		6662298F2BF5F26000080200 /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
+		666229912BF5F29900080200 /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
+		666229932BF5F31200080200 /* ImageUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadView.swift; sourceTree = "<group>"; };
+		666229962BF606C600080200 /* View+asUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+asUIImage.swift"; sourceTree = "<group>"; };
+		6662299B2BF685A000080200 /* URLCache+imageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLCache+imageCache.swift"; sourceTree = "<group>"; };
+		6662299D2BF689A600080200 /* EmptyThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyThumbnailImageView.swift; sourceTree = "<group>"; };
 		6666A9B92B7BE9F9001DB0E8 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		6666A9BC2B7BEEAE001DB0E8 /* TabBarAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAccessor.swift; sourceTree = "<group>"; };
 		6666A9BE2B7BF093001DB0E8 /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
@@ -161,7 +178,7 @@
 		66D12B232B6660D9009A6403 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		66D12B262B66610A009A6403 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		66D12B282B666173009A6403 /* DeviceShakeViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceShakeViewModifier.swift; sourceTree = "<group>"; };
-		66D12B2A2B6661D5009A6403 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		66D12B2A2B6661D5009A6403 /* View+onShake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+onShake.swift"; sourceTree = "<group>"; };
 		66D12B302B6668FD009A6403 /* LoggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerView.swift; sourceTree = "<group>"; };
 		66D12B322B666B6B009A6403 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		66D12B392B66E68A009A6403 /* KraevedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedAPI.swift; sourceTree = "<group>"; };
@@ -205,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D12B2F2B666396009A6403 /* Pulse in Frameworks */,
+				6662299A2BF61B1700080200 /* CachedAsyncImage in Frameworks */,
 				66D12B382B66E2F6009A6403 /* Alamofire in Frameworks */,
 				66D12B2D2B666392009A6403 /* PulseUI in Frameworks */,
 				E76E0B958048552D89EADFFE /* Pods_kraeved.framework in Frameworks */,
@@ -335,6 +353,15 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		666229952BF5F4EA00080200 /* Thumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				6662298D2BF5EF9300080200 /* EditableThumbnailImageView.swift */,
+				6662298F2BF5F26000080200 /* ThumbnailImageView.swift */,
+			);
+			path = Thumbnail;
+			sourceTree = "<group>";
+		};
 		6666A9BB2B7BEE9B001DB0E8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +460,9 @@
 			children = (
 				66C0492D2B8B5CFB00068BFF /* GeoObjectFormView.swift */,
 				66C049312B8B6F6200068BFF /* GeoObjectFormViewModel.swift */,
+				6662298B2BF5EF3100080200 /* ImageUploadViewModel.swift */,
+				666229932BF5F31200080200 /* ImageUploadView.swift */,
+				666229952BF5F4EA00080200 /* Thumbnail */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -451,8 +481,10 @@
 			isa = PBXGroup;
 			children = (
 				66D12B262B66610A009A6403 /* UIWindow.swift */,
-				66D12B2A2B6661D5009A6403 /* View.swift */,
+				66D12B2A2B6661D5009A6403 /* View+onShake.swift */,
 				6666A9B92B7BE9F9001DB0E8 /* Int.swift */,
+				666229962BF606C600080200 /* View+asUIImage.swift */,
+				6662299B2BF685A000080200 /* URLCache+imageCache.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -468,9 +500,11 @@
 		66E443722AC4384800D1943F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				666229912BF5F29900080200 /* UploadImageView.swift */,
 				66E443752AC4387000D1943F /* MainTitle.swift */,
 				66C0492F2B8B68B900068BFF /* GenericTextInput.swift */,
 				66C049332B8BCAAF00068BFF /* KraevedButton.swift */,
+				6662299D2BF689A600080200 /* EmptyThumbnailImageView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -622,6 +656,7 @@
 				66D12B2C2B666392009A6403 /* PulseUI */,
 				66D12B2E2B666396009A6403 /* Pulse */,
 				66D12B372B66E2F6009A6403 /* Alamofire */,
+				666229992BF61B1700080200 /* CachedAsyncImage */,
 			);
 			productName = kraeved;
 			productReference = 66FEAD2B2ABDF90E00ADC551 /* kraeved.app */;
@@ -701,6 +736,7 @@
 			packageReferences = (
 				66D12B222B663B10009A6403 /* XCRemoteSwiftPackageReference "Pulse" */,
 				66D12B362B66E2F6009A6403 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				666229982BF61B1700080200 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 			);
 			productRefGroup = 66FEAD2C2ABDF90E00ADC551 /* Products */;
 			projectDirPath = "";
@@ -868,20 +904,26 @@
 				66841FDC2B6FCD6A005A8233 /* AsyncImage.swift in Sources */,
 				66E6129E2ACC4FA500EBB283 /* AttractionsFeedViewModel.swift in Sources */,
 				66D12B242B6660D9009A6403 /* Notifications.swift in Sources */,
+				666229942BF5F31200080200 /* ImageUploadView.swift in Sources */,
 				6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */,
 				661610352ACAC3E400D32C84 /* AttractionsDetailsView.swift in Sources */,
 				66FEAD312ABDF90E00ADC551 /* ContentView.swift in Sources */,
 				66841FE02B6FFB41005A8233 /* GeoObjectDetailsViewModel.swift in Sources */,
+				666229922BF5F29900080200 /* UploadImageView.swift in Sources */,
 				6610E3452B6AB5530053E378 /* KraevedAPI+GeoObjects.swift in Sources */,
 				6666A9BA2B7BE9F9001DB0E8 /* Int.swift in Sources */,
 				66D12B312B6668FD009A6403 /* LoggerView.swift in Sources */,
 				668B39E22B717103009A2E00 /* GeoObjectDetailsComments.swift in Sources */,
+				666229972BF606C600080200 /* View+asUIImage.swift in Sources */,
+				6662298C2BF5EF3100080200 /* ImageUploadViewModel.swift in Sources */,
 				66A904842B752E340064F940 /* GeoObjectDetailsTabView.swift in Sources */,
 				6666A9BF2B7BF093001DB0E8 /* MapAnnotationView.swift in Sources */,
 				66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */,
+				6662299E2BF689A600080200 /* EmptyThumbnailImageView.swift in Sources */,
 				66C0492E2B8B5CFB00068BFF /* GeoObjectFormView.swift in Sources */,
 				662096592B583CD9003D489B /* ServerLocation.swift in Sources */,
 				66D12B272B66610A009A6403 /* UIWindow.swift in Sources */,
+				6662299C2BF685A000080200 /* URLCache+imageCache.swift in Sources */,
 				668B39DB2B714169009A2E00 /* GeoObjectDetailsDescription.swift in Sources */,
 				66E4437D2AC46E6700D1943F /* UIColor.swift in Sources */,
 				66FEAD602ABDFD3E00ADC551 /* MapView.swift in Sources */,
@@ -902,14 +944,16 @@
 				6678653D2AC0BCF400EDA776 /* HistoricalEventFeedView.swift in Sources */,
 				66A9048C2B7549630064F940 /* TabItem.swift in Sources */,
 				662096672B584335003D489B /* Configuration.swift in Sources */,
+				6662298E2BF5EF9300080200 /* EditableThumbnailImageView.swift in Sources */,
 				665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */,
 				668B39DD2B714289009A2E00 /* GeoObjectDetailsGallery.swift in Sources */,
-				66D12B2B2B6661D5009A6403 /* View.swift in Sources */,
+				66D12B2B2B6661D5009A6403 /* View+onShake.swift in Sources */,
 				66FEAD642ABDFD9100ADC551 /* ProfileView.swift in Sources */,
 				66FEAD2F2ABDF90E00ADC551 /* KraevedApp.swift in Sources */,
 				66A904922B7558AF0064F940 /* MapControlView.swift in Sources */,
 				66D12B3A2B66E68A009A6403 /* KraevedAPI.swift in Sources */,
 				66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */,
+				666229902BF5F26000080200 /* ThumbnailImageView.swift in Sources */,
 				6610E3422B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift in Sources */,
 				66E443812AC4935400D1943F /* AttractionsFeedCellView.swift in Sources */,
 				66A9048E2B754CAF0064F940 /* GeoObjectDetailsTabViewModel.swift in Sources */,
@@ -1565,6 +1609,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		666229982BF61B1700080200 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Vlodzimej/swiftui-cached-async-image";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		66D12B222B663B10009A6403 /* XCRemoteSwiftPackageReference "Pulse" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Pulse";
@@ -1584,6 +1636,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		666229992BF61B1700080200 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 666229982BF61B1700080200 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
 		66D12B2C2B666392009A6403 /* PulseUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 66D12B222B663B10009A6403 /* XCRemoteSwiftPackageReference "Pulse" */;

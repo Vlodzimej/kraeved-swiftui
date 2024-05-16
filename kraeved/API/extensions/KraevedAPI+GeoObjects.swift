@@ -24,7 +24,7 @@ extension KraevedAPI {
         return await networkManager.get(url: url, parameters: nil)
     }
     
-    func createGeoObject(name: String, typeId: Int, description: String, latitude: Double, longitude: Double, regionId: Int, imageUrls: [String], thumbnailUrl: String) async throws -> Void {
+    func createGeoObject(name: String, typeId: Int, description: String, latitude: Double, longitude: Double, regionId: Int, images: [String], thumbnail: String) async throws -> Void {
         let url = "GeoObjects"
         let parameters: [String: Any] = [
             "name"          : name,
@@ -33,8 +33,8 @@ extension KraevedAPI {
             "latitude"      : latitude,
             "longitude"     : longitude,
             "regionId"      : regionId,
-            "imageUrls"     : imageUrls,
-            "thumbnailUrl"  : thumbnailUrl
+            "images"        : images,
+            "thumbnail"     : thumbnail
         ]
         return try await networkManager.post(url: url, parameters: parameters)
     }

@@ -566,6 +566,23 @@
         }
       }
     },
+    "upload-thumbnail-image" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Upload a thumbnail image"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузите изображение"
+          }
+        }
+      }
+    },
     "viewing" : {
       "extractionState" : "manual",
       "localizations" : {

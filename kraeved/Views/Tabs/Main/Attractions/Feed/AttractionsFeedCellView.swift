@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
+
 
 //MARK: - AttractionsFeedCellView
 struct AttractionsFeedCellView: View {
@@ -13,18 +15,37 @@ struct AttractionsFeedCellView: View {
     //MARK: Properties
     let attractionBrief: GeoObjectBrief
     
+    func printing(_ items: Any...) -> some View {
+        let _ = print(items)
+        return EmptyView()
+    }
+    
+    
     //MARK: Body
     var body: some View {
+        printing(attractionBrief.thumbnail)
         ZStack(alignment: .leading) {
             Color.Kraeved.cellBackground
             HStack(alignment: .top) {
-                AsyncImage(url: attractionBrief.thumbnailUrl)
-                    .scaledToFill()
-                    .frame(width: 72, height: 72)
-                    .clipShape(
-                        .rect(cornerRadius: 14)
-                    )
-                    .clipped()
+                CachedAsyncImage(url: attractionBrief.thumbnailUrl, urlCache: .imageCache) { state in
+                    switch state {
+                        case .empty:
+                            EmptyThumbnailImageView()
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        case .failure:
+                            EmptyThumbnailImageView()
+                        @unknown default:
+                            EmptyView()
+                    }
+                }
+                .frame(width: 72, height: 72)
+                .clipShape(
+                    .rect(cornerRadius: 14)
+                )
+                .clipped()
                 VStack(alignment: .leading, spacing: 0) {
                     Text(attractionBrief.name ?? "geoObject name placeholder")
                         .font(.system(size: 13, weight: .medium))

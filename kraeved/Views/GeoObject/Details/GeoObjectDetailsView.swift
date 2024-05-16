@@ -43,8 +43,8 @@ struct GeoObjectDetailsView: View {
                 name: viewModel.geoObject?.name,
                 typeId: viewModel.geoObject?.type?.id,
                 description: viewModel.geoObject?.description,
-                thumbnailUrl: viewModel.geoObject?.thumbnailUrl,
-                imageUrls: viewModel.geoObject?.imageUrls,
+                thumbnail: viewModel.geoObject?.thumbnail,
+                images: viewModel.geoObject?.images,
                 latitude: String(viewModel.geoObject?.latitude ?? 0),
                 longitude: String(viewModel.geoObject?.longitude ?? 0),
                 isShowForm: $isEditFormPresented

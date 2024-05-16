@@ -12,6 +12,7 @@ import Alamofire
 protocol NetworkManagerProtocol: ApplicationLoggerProtocol {
     func get<T: Decodable>(url: String, parameters: Parameters?) async -> T?
     func post(url: String, parameters: Parameters) async throws -> Void
+    func upload(imageData: Data) async throws -> [String]
 }
 
 //MARK: - NetworkManager
@@ -74,6 +75,37 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                             continuation.resume(throwing: error)
                     }
                 }
+            }
+        }
+    }
+    
+    func upload(imageData: Data) async throws -> [String] {
+        guard let url = URL(string: Settings.instance.baseUrl + "/" + "images") else { return [] }
+        do {
+            return try await withCheckedThrowingContinuation { continuation in
+                AF.upload(
+                    multipartFormData: { multipartFormData in
+                        multipartFormData.append(imageData, withName: "imageFiles", fileName: "image.jpg", mimeType: "image/jpeg")
+                    },
+                    to: url,
+                    method: .post, headers: nil)
+                    .uploadProgress(queue: .main) { progress in
+                        print("UPLOADING PROGRESS", progress)
+                    }
+                    .responseJSON { response in
+                        switch response.result {
+                            case .success(let jsonData):
+                                if let responseData = jsonData as? NSDictionary, let data = responseData["data"] as? NSDictionary, let filenames = data["filenames"] as? [String] {
+                                    continuation.resume(returning: filenames)
+                                } else {
+                                    continuation.resume(returning: [])
+                                }
+                            case .failure(let error):
+                                debugPrint(error)
+                                continuation.resume(throwing: error)
+                        }
+                    }
+                
             }
         }
     }

@@ -15,6 +15,7 @@ struct GeoObjectDetailsDescription: View {
         ScrollView {
             Text(description)
                 .font(.system(size: 13))
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }

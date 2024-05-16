@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 let regions: [GenericType] = [
     .init(id: 40, name: "Kalujskaya obl.", title: "Калужская область")
@@ -28,15 +29,18 @@ enum GeoObjectFormMode {
 struct GeoObjectFormView: View {
     
     @State private var isLoggerPresented = false
+    @State var selectedItems: [PhotosPickerItem] = []
+    
     @ObservedObject private var viewModel = ViewModel()
+    @ObservedObject private var thumbnailViewModel = ImageUploadView.ViewModel()
     
     let mode: GeoObjectFormMode
     
     var name: String?
     var typeId: Int?
     var description: String?
-    var thumbnailUrl: URL?
-    var imageUrls: [URL]?
+    var thumbnail: String?
+    var images: [String]?
     
     let latitude: String
     let longitude: String
@@ -85,25 +89,34 @@ struct GeoObjectFormView: View {
                 }
                 Section {
                     // Thumbnail
-                    GenericTextInput(
-                        value: $viewModel.thumbnailUrl,
-                        title: String(localized: "thumbnail"),
-                        placeholder: "",
-                        keyboardType: .default,
-                        symbolsLimit: 250
-                    )
-                    .pickerStyle(.navigationLink)
-                    .labelsHidden()
-                    HStack {
-                        Spacer()
-                        Button {
-                            
-                        } label: {
-                            Text("viewing")
-                                .font(.system(size: 12))
+                    Text("upload-thumbnail-image")
+                    VStack {
+                        HStack() {
+                            Spacer()
+                            ImageUploadView(viewModel: thumbnailViewModel)
+                            Spacer()
                         }
                     }
+//                    GenericTextInput(
+//                        value: $viewModel.thumbnailUrl,
+//                        title: String(localized: "thumbnail"),
+//                        placeholder: "",
+//                        keyboardType: .default,
+//                        symbolsLimit: 250
+//                    )
+//                    .pickerStyle(.navigationLink)
+//                    .labelsHidden()
+//                    HStack {
+//                        Spacer()
+//                        Button {
+//                            
+//                        } label: {
+//                            Text("viewing")
+//                                .font(.system(size: 12))
+//                        }
+//                    }
                 }
+                
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -123,7 +136,7 @@ struct GeoObjectFormView: View {
             }
             
             KraevedButton(title: mode.title) {
-                viewModel.submit(latitude: latitude, longitude: longitude)
+                viewModel.submit(latitude: latitude, longitude: longitude, thumbnail: thumbnailViewModel.imageState)
             }
             KraevedButton(title: "Logger") {
                isLoggerPresented = true
@@ -157,12 +170,12 @@ struct GeoObjectFormView: View {
             viewModel.description = description
         }
         
-        if let thumbnailUrl {
-            viewModel.thumbnailUrl = thumbnailUrl.absoluteString
+        if let thumbnail {
+            viewModel.thumbnail = thumbnail
         }
         
-        if let imageUrls {
-            viewModel.imageUrls = imageUrls.map { $0.absoluteString }
+        if let images {
+            viewModel.images = images
         }
     }
 }

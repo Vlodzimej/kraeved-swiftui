@@ -17,6 +17,15 @@
         "revision" : "d647e99f06abc94d63579e335ad4ce368195c149",
         "version" : "4.0.5"
       }
+    },
+    {
+      "identity" : "swiftui-cached-async-image",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Vlodzimej/swiftui-cached-async-image",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4f111f2b7aab7ec52a60716cedb673df5203743c"
+      }
     }
   ],
   "version" : 2

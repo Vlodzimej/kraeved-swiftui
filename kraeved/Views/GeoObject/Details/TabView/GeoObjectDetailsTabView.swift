@@ -28,7 +28,7 @@ struct GeoObjectDetailsTabView: View {
             TabView(selection: $pageIndex) {
                 GeoObjectDetailsDescription(description: geoObject?.description ?? "")
                     .tag(0)
-                GeoObjectDetailsGallery(imageUrls: geoObject?.imageUrls ?? [])
+                GeoObjectDetailsGallery(images: geoObject?.images ?? [])
                     .tag(1)
                 GeoObjectDetailsComments()
                     .tag(2)
@@ -40,5 +40,5 @@ struct GeoObjectDetailsTabView: View {
 }
 
 #Preview {
-    GeoObjectDetailsTabView(geoObject: .init(id: 0, name: nil, description: nil, longitude: nil, latitude: nil, type: nil, imageUrls: nil, thumbnailUrl: nil))
+    GeoObjectDetailsTabView(geoObject: .init(id: 0, name: nil, description: nil, longitude: nil, latitude: nil, type: nil, images: nil, thumbnail: nil))
 }

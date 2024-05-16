@@ -10,5 +10,5 @@ import Foundation
 //MARK: - GalleryItem
 struct GalleryItem {
     let id: Int
-    let url: URL
+    let filename: String
 }

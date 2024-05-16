@@ -16,8 +16,8 @@ struct GeoObject: Decodable, Equatable, Hashable {
         case longitude
         case latitude
         case type
-        case imageUrls
-        case thumbnailUrl
+        case images
+        case thumbnail
     }
     
     let id: Int
@@ -26,31 +26,35 @@ struct GeoObject: Decodable, Equatable, Hashable {
     let longitude: Double?
     let latitude: Double?
     let type: GenericTypeDto?
-    let imageUrls: [URL]?
-    let thumbnailUrl: URL?
+    let images: [String]?
+    let thumbnail: String?
     
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decode(Int.self, forKey: .id)
-        name = try values.decodeIfPresent(String.self, forKey: .name)
-        description = try values.decodeIfPresent(String.self, forKey: .description)
-        longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
-        latitude = try values.decodeIfPresent(Double.self, forKey: .latitude)
-        type = try values.decode(GenericTypeDto.self, forKey: .type)
-        imageUrls = try values.decodeIfPresent([URL].self, forKey: .imageUrls)
-        thumbnailUrl = try values.decodeIfPresent(URL.self, forKey: .thumbnailUrl)
+    var thumbnailUrl: URL? {
+        URL(string: Settings.instance.baseUrl + "/images/filename/" + (thumbnail ?? ""))
     }
     
-    init(id: Int, name: String?, description: String?, longitude: Double?, latitude: Double?, type: GenericTypeDto?, imageUrls: [URL]?, thumbnailUrl: URL?) {
-        self.id = id
-        self.name = name
-        self.description = description
-        self.longitude = longitude
-        self.latitude = latitude
-        self.type = type
-        self.imageUrls = imageUrls
-        self.thumbnailUrl = thumbnailUrl
-    }
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        id = try values.decode(Int.self, forKey: .id)
+//        name = try values.decodeIfPresent(String.self, forKey: .name)
+//        description = try values.decodeIfPresent(String.self, forKey: .description)
+//        longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
+//        latitude = try values.decodeIfPresent(Double.self, forKey: .latitude)
+//        type = try values.decode(GenericTypeDto.self, forKey: .type)
+//        images = try values.decodeIfPresent([String].self, forKey: .images)
+//        thumbnail = try values.decodeIfPresent(String.self, forKey: .thumbnail)
+//    }
+//    
+//    init(id: Int, name: String?, description: String?, longitude: Double?, latitude: Double?, type: GenericTypeDto?, images: [String]?, thumbnail: String?) {
+//        self.id = id
+//        self.name = name
+//        self.description = description
+//        self.longitude = longitude
+//        self.latitude = latitude
+//        self.type = type
+//        self.images = images
+//        self.thumbnail = thumbnail
+//    }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id

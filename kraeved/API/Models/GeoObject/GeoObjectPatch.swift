@@ -13,6 +13,6 @@ struct GeoObjectPatch {
     let name: String??
     let description: String??
     let typeId: Int??
-    let thumbnailUrl: String??
-    let imageUrls: [String]??
+    let thumbnail: String??
+    let images: [String]??
 }

@@ -15,11 +15,11 @@ struct GeoObjectDetailsGallery: View {
         static let spacing: CGFloat = 2
     }
     
-    let imageUrls: [URL]
+    let images: [String]
     
     var items: [GalleryItem] {
-        imageUrls.enumerated().map({ (index, url) in
-            GalleryItem(id: index, url: url)
+        images.enumerated().map({ (index, filename) in
+            GalleryItem(id: index, filename: filename)
         })
     }
     
@@ -36,7 +36,7 @@ struct GeoObjectDetailsGallery: View {
                 ForEach(items, id: \.self.id) { item in
                     Color.clear
                         .overlay {
-                            AsyncImage(url: item.url) { phase in
+                            AsyncImage(url: URL(string: item.filename)) { phase in
                                 switch phase {
                                     case .success(let image):
                                         image
@@ -57,5 +57,5 @@ struct GeoObjectDetailsGallery: View {
 }
 
 #Preview {
-    GeoObjectDetailsGallery(imageUrls: [])
+    GeoObjectDetailsGallery(images: [])
 }
