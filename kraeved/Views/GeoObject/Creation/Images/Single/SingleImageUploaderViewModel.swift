@@ -1,5 +1,5 @@
 //
-//  ImageUploadViewModel.swift
+//  SingleImageUploaderViewModel.swift
 //  kraeved
 //
 //  Created by Владимир Амелькин on 16.05.2024.
@@ -8,14 +8,12 @@
 import SwiftUI
 import PhotosUI
 
-extension ImageUploadView {
+extension SingleImageUploaderView {
     
     final class ViewModel: BaseViewModel {
-        enum ImageState {
-            case empty, loading(Progress), success(Image), failure(Error)
-        }
-        
-        @Published private(set) var imageState: ImageState = .empty
+
+        @Published private(set) var imageState: UploadImageState = .empty
+        @Published var image: UIImage?
         
         @Published var imageSelection: PhotosPickerItem? {
             didSet {
@@ -38,6 +36,7 @@ extension ImageUploadView {
                                 self.imageState = .empty
                                 return
                             }
+                            self.image = uiImage
                             self.imageState = .success(Image(uiImage: uiImage))
                         case .success(.none):
                             self.imageState = .empty

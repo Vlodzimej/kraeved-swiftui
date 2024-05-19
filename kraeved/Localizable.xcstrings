@@ -353,6 +353,17 @@
         }
       }
     },
+    "multiple-image-select" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбрать фотографии"
+          }
+        }
+      }
+    },
     "name" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -566,6 +577,17 @@
         }
       }
     },
+    "upload-gallery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фотографии"
+          }
+        }
+      }
+    },
     "upload-thumbnail-image" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -578,7 +600,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Загрузите изображение"
+            "value" : "Основное изображение"
           }
         }
       }

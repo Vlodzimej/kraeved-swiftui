@@ -28,7 +28,7 @@ struct GeoObjectDetailsTabView: View {
             TabView(selection: $pageIndex) {
                 GeoObjectDetailsDescription(description: geoObject?.description ?? "")
                     .tag(0)
-                GeoObjectDetailsGallery(images: geoObject?.images ?? [])
+                GeoObjectDetailsGallery(images: geoObject?.imageUrls ?? [])
                     .tag(1)
                 GeoObjectDetailsComments()
                     .tag(2)

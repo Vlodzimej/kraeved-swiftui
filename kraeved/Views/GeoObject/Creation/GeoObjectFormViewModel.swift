@@ -28,7 +28,7 @@ extension GeoObjectFormView {
         var latitude: String = ""
         var longitude: String = ""
         
-        func submit(latitude: String, longitude: String, thumbnail: ImageUploadView.ViewModel.ImageState) {
+        func submit(latitude: String, longitude: String, thumbnail: UploadImageState, images: [UIImage]) {
             self.latitude = latitude
             self.longitude = longitude
             
@@ -39,8 +39,8 @@ extension GeoObjectFormView {
             }
             
             switch mode {
-                case .creation: 
-                    createGeoObject(thumbnailImage: thumbnailImage)
+                case .creation:
+                    createGeoObject(thumbnailImage: thumbnailImage, photoImages: images)
                 case .edit: break
                     //updateGeoObject()
             }
@@ -50,15 +50,18 @@ extension GeoObjectFormView {
             types = await kraevedAPI.getGeoObjectTypes()
         }
         
-        private func createGeoObject(thumbnailImage: Image?) {
+        private func createGeoObject(thumbnailImage: Image?, photoImages: [UIImage] = []) {
             Task {
-                var thumbnailUrl: String = ""
+                await MainActor.run {
+                    isLoading = true
+                }
                 do {
-                    let image = thumbnailImage?.asUIImage()
-                    if let imageData = image?.jpegData(compressionQuality: 0.8),
-                       let thumbnailFilename = try await networkManager.upload(imageData: imageData).first {
+                    var thumbnailUrl: String = ""
+                    if let image = thumbnailImage?.asUIImage(), let thumbnailFilename = try await networkManager.upload(images: [image]).first {
                         thumbnailUrl = thumbnailFilename
                     }
+                    
+                    let images = photoImages.isEmpty ? [] :  try await networkManager.upload(images: photoImages)
                     
                     try await kraevedAPI.createGeoObject(
                         name: name,
@@ -68,42 +71,46 @@ extension GeoObjectFormView {
                         longitude: Double(longitude) ?? 0,
                         regionId: regionId,
                         images: images,
-                        thumbnail: thumbnail
+                        thumbnail: thumbnailUrl
                     )
-                    isShowAlert = true
+                    
+                    await MainActor.run {
+                        isLoading = false
+                    }
                 }
             }
-        }
-        
-        private func updateGeoObject() {
-            
-        }
-        
-        private func uploadImage(_ imageData: Data, to urlString: String) async {
-            guard let url = URL(string: urlString) else {
-                print("Invalid URL")
-                return
-            }
-
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            //request.setValue("Bearer YOUR_TOKEN", forHTTPHeaderField: "Authorization")  // Если требуется авторизация
-            //request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
-
-            let task = URLSession.shared.uploadTask(with: request, from: imageData) { data, response, error in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                    print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                    return
-                }
-
-                if let mimeType = httpResponse.mimeType, mimeType == "application/json", let data = data {
-                    // Обработать JSON ответ, если необходимо
-                }
-
-                print("Image uploaded successfully.")
-            }
-
-            task.resume()
         }
     }
+    
+    private func updateGeoObject() {
+        
+    }
+    
+    private func uploadImage(_ imageData: Data, to urlString: String) async {
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        //request.setValue("Bearer YOUR_TOKEN", forHTTPHeaderField: "Authorization")  // Если требуется авторизация
+        //request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.uploadTask(with: request, from: imageData) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            if let mimeType = httpResponse.mimeType, mimeType == "application/json", let data = data {
+                // Обработать JSON ответ, если необходимо
+            }
+            
+            print("Image uploaded successfully.")
+        }
+        
+        task.resume()
+    }
 }
+

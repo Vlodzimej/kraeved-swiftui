@@ -32,7 +32,8 @@ struct GeoObjectFormView: View {
     @State var selectedItems: [PhotosPickerItem] = []
     
     @ObservedObject private var viewModel = ViewModel()
-    @ObservedObject private var thumbnailViewModel = ImageUploadView.ViewModel()
+    @ObservedObject private var thumbnailViewModel = SingleImageUploaderView.ViewModel()
+    @ObservedObject private var imagesViewModel = MultipleImageSelectView.ViewModel()
     
     let mode: GeoObjectFormMode
     
@@ -84,6 +85,7 @@ struct GeoObjectFormView: View {
                         placeholder: String(localized: "description-placeholder"),
                         keyboardType: .default,
                         symbolsLimit: 3000,
+                        lineLimit: 20,
                         axis: .vertical
                     )
                 }
@@ -93,28 +95,21 @@ struct GeoObjectFormView: View {
                     VStack {
                         HStack() {
                             Spacer()
-                            ImageUploadView(viewModel: thumbnailViewModel)
+                            SingleImageUploaderView(viewModel: thumbnailViewModel)
                             Spacer()
                         }
                     }
-//                    GenericTextInput(
-//                        value: $viewModel.thumbnailUrl,
-//                        title: String(localized: "thumbnail"),
-//                        placeholder: "",
-//                        keyboardType: .default,
-//                        symbolsLimit: 250
-//                    )
-//                    .pickerStyle(.navigationLink)
-//                    .labelsHidden()
-//                    HStack {
-//                        Spacer()
-//                        Button {
-//                            
-//                        } label: {
-//                            Text("viewing")
-//                                .font(.system(size: 12))
-//                        }
-//                    }
+                }
+                Section {
+                    // Gallery
+                    Text("upload-gallery")
+                    VStack {
+                        HStack() {
+                            Spacer()
+                            MultipleImageSelectView(viewModel: imagesViewModel)
+                            Spacer()
+                        }
+                    }
                 }
                 
             }
@@ -136,7 +131,7 @@ struct GeoObjectFormView: View {
             }
             
             KraevedButton(title: mode.title) {
-                viewModel.submit(latitude: latitude, longitude: longitude, thumbnail: thumbnailViewModel.imageState)
+                viewModel.submit(latitude: latitude, longitude: longitude, thumbnail: thumbnailViewModel.imageState, images: imagesViewModel.images)
             }
             KraevedButton(title: "Logger") {
                isLoggerPresented = true

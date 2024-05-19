@@ -33,6 +33,12 @@ struct GeoObject: Decodable, Equatable, Hashable {
         URL(string: Settings.instance.baseUrl + "/images/filename/" + (thumbnail ?? ""))
     }
     
+    var imageUrls: [URL] {
+        images?.compactMap { image in
+            URL(string: Settings.instance.baseUrl + "/images/filename/" + (image ?? ""))
+        } ?? []
+    }
+    
 //    init(from decoder: Decoder) throws {
 //        let values = try decoder.container(keyedBy: CodingKeys.self)
 //        id = try values.decode(Int.self, forKey: .id)

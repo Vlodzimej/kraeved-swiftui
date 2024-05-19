@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ThumbnailImageView: View {
-    let imageState: ImageUploadView.ViewModel.ImageState
-
+    let imageState: UploadImageState
+    
     var body: some View {
         UploadImageView(imageState: imageState)
             .scaledToFill()
@@ -17,7 +17,10 @@ struct ThumbnailImageView: View {
             .clipShape(.rect(cornerRadius: 14))
             .background {
                 Rectangle()
-                    .fill(LinearGradient(colors: [.yellow, .orange], startPoint: .top, endPoint: .bottom))
+                    .fill(
+                        LinearGradient(colors: [.yellow, .orange],
+                                       startPoint: .top,
+                                       endPoint: .bottom))
                     .clipShape(.rect(cornerRadius: 14))
             }
             .clipped()

@@ -16,6 +16,7 @@ struct GenericTextInput: View {
     let placeholder: String
     let keyboardType: UIKeyboardType
     var symbolsLimit: Int = 30
+    var lineLimit: Int = 1
     var axis: Axis = .horizontal
     
     var body: some View {
@@ -27,6 +28,7 @@ struct GenericTextInput: View {
                     _ in limitText(symbolsLimit)
                 }
                 .keyboardType(keyboardType)
+                .lineLimit(lineLimit)
         }
     }
     

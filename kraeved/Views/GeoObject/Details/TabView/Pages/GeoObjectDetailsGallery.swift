@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 //MARK: - GeoObjectDetailsGallery
 struct GeoObjectDetailsGallery: View {
@@ -15,11 +16,11 @@ struct GeoObjectDetailsGallery: View {
         static let spacing: CGFloat = 2
     }
     
-    let images: [String]
+    let images: [URL]
     
     var items: [GalleryItem] {
-        images.enumerated().map({ (index, filename) in
-            GalleryItem(id: index, filename: filename)
+        images.enumerated().compactMap({ (index, url) in
+            GalleryItem(id: index, url: url)
         })
     }
     
@@ -36,8 +37,8 @@ struct GeoObjectDetailsGallery: View {
                 ForEach(items, id: \.self.id) { item in
                     Color.clear
                         .overlay {
-                            AsyncImage(url: URL(string: item.filename)) { phase in
-                                switch phase {
+                            CachedAsyncImage(url: item.url, urlCache: .imageCache) { state in
+                                switch state {
                                     case .success(let image):
                                         image
                                             .resizable()
