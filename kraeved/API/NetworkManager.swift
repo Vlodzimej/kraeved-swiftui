@@ -12,6 +12,7 @@ import Alamofire
 protocol NetworkManagerProtocol: ApplicationLoggerProtocol {
     func get<T: Decodable>(url: String, parameters: Parameters?) async -> T?
     func post(url: String, parameters: Parameters) async throws -> Void
+    func delete(url: String, id: Int) async throws -> Void 
     func upload(images: [UIImage]) async throws -> [String]
 }
 
@@ -65,6 +66,26 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                     method: .post,
                     parameters: parameters,
                     encoding: JSONEncoding.default
+                )
+                .responseData { response in
+                    switch response.result {
+                        case let .success(data):
+                            continuation.resume()
+                        case .failure(let error):
+                            print(error)
+                            continuation.resume(throwing: error)
+                    }
+                }
+            }
+        }
+    }
+    
+    func delete(url: String, id: Int) async throws -> Void {
+        do {
+            return try await withCheckedThrowingContinuation { continuation in
+                AF.request(
+                    Settings.instance.baseUrl + "/" + url + "/" + String(id),
+                    method: .delete
                 )
                 .responseData { response in
                     switch response.result {

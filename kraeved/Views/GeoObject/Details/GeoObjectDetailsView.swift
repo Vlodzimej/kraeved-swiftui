@@ -26,7 +26,7 @@ struct GeoObjectDetailsView: View {
                     .overlay(Color.Kraeved.divider)
                     .padding(.bottom, 16)
                     .padding(.top, 4)
-                GeoObjectDetailsTabView(geoObject: viewModel.geoObject)
+                GeoObjectDetailsTabView(geoObject: viewModel.geoObject, removeAction: handleRemove)
 
             }
             .padding(.bottom, 32)
@@ -70,8 +70,10 @@ struct GeoObjectDetailsView: View {
             }
         }
     }
-}
-
-#Preview {
-    GeoObjectDetailsView(id: 0)
+    
+    func handleRemove(id: Int) {
+        Task {
+            try await viewModel.removeGeoObject(by: id)
+        }
+    }
 }

@@ -35,6 +35,14 @@ struct GeoObjectFormView: View {
     @ObservedObject private var thumbnailViewModel = SingleImageUploaderView.ViewModel()
     @ObservedObject private var imagesViewModel = MultipleImageSelectView.ViewModel()
     
+    var isFormValidated: Bool {
+        var isThumbnailLoaded: Bool = false
+        if case .success = thumbnailViewModel.imageState {
+            isThumbnailLoaded = true
+        }
+        return !viewModel.name.isEmpty && !viewModel.description.isEmpty && isThumbnailLoaded
+    }
+    
     let mode: GeoObjectFormMode
     
     var name: String?
@@ -133,9 +141,7 @@ struct GeoObjectFormView: View {
             KraevedButton(title: mode.title) {
                 viewModel.submit(latitude: latitude, longitude: longitude, thumbnail: thumbnailViewModel.imageState, images: imagesViewModel.images)
             }
-            KraevedButton(title: "Logger") {
-               isLoggerPresented = true
-            }
+            .disabled(!isFormValidated)
         }
         .task {
             await viewModel.fetchGeoObjectTypes()

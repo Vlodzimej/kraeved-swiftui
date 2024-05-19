@@ -19,5 +19,9 @@ extension GeoObjectDetailsView {
             let test = await kraevedAPI.getGeoObject(id: id)
             geoObject = test
         }
+        
+        func removeGeoObject(by id: Int) async throws {
+            try await kraevedAPI.removeGeoObject(id: id)
+        }
     }
 }

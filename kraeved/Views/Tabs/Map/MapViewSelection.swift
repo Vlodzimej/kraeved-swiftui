@@ -19,7 +19,7 @@ struct FormItemModel {
 struct MapViewSelection: View {
     @Binding var latitude: String
     @Binding var longitude: String
-    
+    @Binding var selectedGeoObjectId: Int?
     @Binding var isShowCreation: Bool
     
     @State private var isLocationSelected: Bool = false
@@ -38,42 +38,47 @@ struct MapViewSelection: View {
                         Image(systemName: "xmark")
                     }
                 }
-                VStack {
-                    GenericTextInput(
-                        value: $latitude,
-                        title: String(localized: "latitude"),
-                        placeholder: String(localized: "latitude"),
-                        keyboardType: .decimalPad
-                    )
-                    Divider()
-                    GenericTextInput(
-                        value: $longitude,
-                        title: String(localized: "longitude"),
-                        placeholder: String(localized: "longitude"),
-                        keyboardType: .decimalPad
-                    )
-                }
-                Spacer()
-                Button {
-                    isShowCreation = true
-                } label: {
-                    Text("create")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(latitude.isEmpty && longitude.isEmpty)
+                newGeoObjectCoordinateView
             }
             .padding(16)
             .frame(maxWidth: .infinity, maxHeight: 200)
             .background(Color.white)
         }
     }
+    
+    private var newGeoObjectCoordinateView: some View {
+        VStack {
+            GenericTextInput(
+                value: $latitude,
+                title: String(localized: "latitude"),
+                placeholder: String(localized: "latitude"),
+                keyboardType: .decimalPad
+            )
+            Divider()
+            GenericTextInput(
+                value: $longitude,
+                title: String(localized: "longitude"),
+                placeholder: String(localized: "longitude"),
+                keyboardType: .decimalPad
+            )
+            
+            Spacer()
+            Button {
+                isShowCreation = true
+            } label: {
+                Text("geo-object-create")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            .disabled(latitude.isEmpty && longitude.isEmpty)
+        }
+    }
 }
 
-#Preview {
-    @State var longitude: String = ""
-    @State var latitude: String = ""
-    @State var isShowCreation: Bool = false
-    
-    return MapViewSelection(latitude: $latitude, longitude: $longitude, isShowCreation: $isShowCreation)
-}
+//#Preview {
+//    @State var longitude: String = ""
+//    @State var latitude: String = ""
+//    @State var isShowCreation: Bool = false
+//
+//    return MapViewSelection(latitude: $latitude, longitude: $longitude, selectedGeoObjectIdisShowCreation: $isShowCreation)
+//}

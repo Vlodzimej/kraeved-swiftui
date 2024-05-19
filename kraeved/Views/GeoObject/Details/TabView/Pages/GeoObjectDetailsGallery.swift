@@ -39,11 +39,15 @@ struct GeoObjectDetailsGallery: View {
                         .overlay {
                             CachedAsyncImage(url: item.url, urlCache: .imageCache) { state in
                                 switch state {
+                                    case .empty:
+                                        ProgressView()
+                                    case .failure:
+                                        Image(systemName: "photo")
                                     case .success(let image):
                                         image
                                             .resizable()
                                             .scaledToFill()
-                                    default:
+                                    @unknown default:
                                         Image(systemName: "photo")
                                 }
                             }

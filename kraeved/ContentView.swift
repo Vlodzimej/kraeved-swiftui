@@ -9,8 +9,6 @@ import SwiftUI
 import Pulse
 
 struct ContentView: View {
-    @State private var isLoggerPresented = false
-    
     var body: some View {
         TabView {
             Group {
@@ -27,16 +25,6 @@ struct ContentView: View {
                         Label("main-tab-profile", systemImage: "gear")
                     }
             }
-        }.onShake {
-            LoggerStore.shared.storeMessage(
-                label: "auth",
-                level: .debug,
-                message: "Will login user",
-                metadata: ["userId": .string("uid-1")]
-            )
-            isLoggerPresented = true
-        }.sheet(isPresented: $isLoggerPresented) {
-            LoggerView()
         }
         .onAppear() {
             //            UISearchBar.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).setImage(UIImage.magnifyingGlass, for: .search, state: .normal)

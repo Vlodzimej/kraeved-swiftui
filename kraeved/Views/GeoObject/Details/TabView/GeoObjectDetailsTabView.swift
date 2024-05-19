@@ -14,6 +14,8 @@ struct GeoObjectDetailsTabView: View {
     @State var pageIndex: Int = 0
     
     var geoObject: GeoObject?
+    
+    var removeAction: (Int) -> Void
 
     var body: some View {
         VStack {
@@ -32,13 +34,15 @@ struct GeoObjectDetailsTabView: View {
                     .tag(1)
                 GeoObjectDetailsComments()
                     .tag(2)
+                GeoObjectDetailsEdit(geoObject: geoObject, removeAction: removeAction)
+                    .tag(3)
             }
             .tabViewStyle(.page)
             .padding(.top, 16)
         }
     }
 }
-
-#Preview {
-    GeoObjectDetailsTabView(geoObject: .init(id: 0, name: nil, description: nil, longitude: nil, latitude: nil, type: nil, images: nil, thumbnail: nil))
-}
+//
+//#Preview {
+//    GeoObjectDetailsTabView(geoObject: .init(id: 0, name: nil, description: nil, longitude: nil, latitude: nil, type: nil, images: nil, thumbnail: nil))
+//}

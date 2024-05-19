@@ -9,9 +9,14 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
+enum MapMode {
+    case search, create, remove
+}
+
+
 //MARK: - MapView
 struct MapView: View {
-    
+
     @ObservedObject private var viewModel = ViewModel()
     
     @State private var region = MKCoordinateRegion(center: Constants.initialLocation, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
@@ -22,7 +27,6 @@ struct MapView: View {
     @State private var searchText: String = ""
     @State private var isShowFilter: Bool = false
     @State private var isShowSelection: Bool = false
-    @State private var isShowToolbar: Bool = true
     @State private var isShowCreation: Bool = false
     @State private var selectedCoordinate: CLLocationCoordinate2D?
     
@@ -56,7 +60,7 @@ struct MapView: View {
                                         }
                                 }
                             }
-                            if let selectedCoordinate = selectedCoordinate {
+                            if let selectedCoordinate {
                                 Marker("new-geo-object-marker", coordinate: selectedCoordinate)
                             }
                         }
@@ -101,9 +105,8 @@ struct MapView: View {
                         }
                     }
                     if isShowSelection {
-                        MapViewSelection( latitude: $latitude, longitude: $longitude, isShowCreation: $isShowCreation, onDismiss: {
-                            isShowToolbar = true
-                            removeSelectedGeoObject()   
+                        MapViewSelection(latitude: $latitude, longitude: $longitude, selectedGeoObjectId: $selectedGeoObjectId, isShowCreation: $isShowCreation, onDismiss: {
+                            removeSelectedGeoObject()
                             withAnimation {
                                 isShowSelection.toggle()
                             }
@@ -125,20 +128,19 @@ struct MapView: View {
                             Label("show-filter", systemImage: "line.3.horizontal.decrease.circle")
                         }
                         
-                        
                         Button {
                             withAnimation {
-                                isShowSelection.toggle()
+                                isShowSelection = true
                             }
                         } label: {
-                            Label("add-new-geo-object", systemImage: "plus.circle")
+                            Label("geo-object-create", systemImage: "plus.circle")
                         }
                     }) {
                         Image(systemName: "ellipsis.circle")
                     }
                 }
             }
-            .toolbar(isShowToolbar ? .visible : .hidden)
+            .toolbar(!isShowSelection ? .visible : .hidden)
         }
     }
     

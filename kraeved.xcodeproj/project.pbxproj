@@ -58,6 +58,8 @@
 		66A95EBF2BF9B92C006119AA /* MultipleImageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A95EBE2BF9B92C006119AA /* MultipleImageSelectView.swift */; };
 		66A95EC12BF9BB40006119AA /* MultipleImageSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A95EC02BF9BB40006119AA /* MultipleImageSelectViewModel.swift */; };
 		66A95EC32BF9C520006119AA /* UploadImageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A95EC22BF9C520006119AA /* UploadImageState.swift */; };
+		66A95EC52BFA2495006119AA /* GeoObjectDetailsEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A95EC42BFA2495006119AA /* GeoObjectDetailsEdit.swift */; };
+		66A95EC82BFA2721006119AA /* GeoObjectRemoveActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A95EC72BFA2721006119AA /* GeoObjectRemoveActionView.swift */; };
 		66C0492E2B8B5CFB00068BFF /* GeoObjectFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0492D2B8B5CFB00068BFF /* GeoObjectFormView.swift */; };
 		66C049302B8B68B900068BFF /* GenericTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0492F2B8B68B900068BFF /* GenericTextInput.swift */; };
 		66C049322B8B6F6200068BFF /* GeoObjectFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C049312B8B6F6200068BFF /* GeoObjectFormViewModel.swift */; };
@@ -173,6 +175,8 @@
 		66A95EBE2BF9B92C006119AA /* MultipleImageSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImageSelectView.swift; sourceTree = "<group>"; };
 		66A95EC02BF9BB40006119AA /* MultipleImageSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImageSelectViewModel.swift; sourceTree = "<group>"; };
 		66A95EC22BF9C520006119AA /* UploadImageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageState.swift; sourceTree = "<group>"; };
+		66A95EC42BFA2495006119AA /* GeoObjectDetailsEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectDetailsEdit.swift; sourceTree = "<group>"; };
+		66A95EC72BFA2721006119AA /* GeoObjectRemoveActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectRemoveActionView.swift; sourceTree = "<group>"; };
 		66B5371E2AC05EFA00F93C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		66C0492D2B8B5CFB00068BFF /* GeoObjectFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectFormView.swift; sourceTree = "<group>"; };
 		66C0492F2B8B68B900068BFF /* GenericTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextInput.swift; sourceTree = "<group>"; };
@@ -500,11 +504,21 @@
 		66A904862B752F560064F940 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				66A95EC62BFA2704006119AA /* EditActionViews */,
 				668B39DA2B714169009A2E00 /* GeoObjectDetailsDescription.swift */,
 				668B39DC2B714289009A2E00 /* GeoObjectDetailsGallery.swift */,
 				668B39E12B717103009A2E00 /* GeoObjectDetailsComments.swift */,
+				66A95EC42BFA2495006119AA /* GeoObjectDetailsEdit.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		66A95EC62BFA2704006119AA /* EditActionViews */ = {
+			isa = PBXGroup;
+			children = (
+				66A95EC72BFA2721006119AA /* GeoObjectRemoveActionView.swift */,
+			);
+			path = EditActionViews;
 			sourceTree = "<group>";
 		};
 		66D12B252B6660FF009A6403 /* extensions */ = {
@@ -947,6 +961,7 @@
 				668B39E22B717103009A2E00 /* GeoObjectDetailsComments.swift in Sources */,
 				666229972BF606C600080200 /* View+asUIImage.swift in Sources */,
 				6662298C2BF5EF3100080200 /* SingleImageUploaderViewModel.swift in Sources */,
+				66A95EC82BFA2721006119AA /* GeoObjectRemoveActionView.swift in Sources */,
 				66A904842B752E340064F940 /* GeoObjectDetailsTabView.swift in Sources */,
 				6666A9BF2B7BF093001DB0E8 /* MapAnnotationView.swift in Sources */,
 				66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */,
@@ -982,6 +997,7 @@
 				66FEAD642ABDFD9100ADC551 /* ProfileView.swift in Sources */,
 				66FEAD2F2ABDF90E00ADC551 /* KraevedApp.swift in Sources */,
 				66A904922B7558AF0064F940 /* MapControlView.swift in Sources */,
+				66A95EC52BFA2495006119AA /* GeoObjectDetailsEdit.swift in Sources */,
 				66D12B3A2B66E68A009A6403 /* KraevedAPI.swift in Sources */,
 				66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */,
 				666229902BF5F26000080200 /* ThumbnailImageView.swift in Sources */,

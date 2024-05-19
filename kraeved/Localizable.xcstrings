@@ -54,6 +54,27 @@
         }
       }
     },
+    "cancel" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        }
+      }
+    },
+    "change-selection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изменить выбор"
+          }
+        }
+      }
+    },
     "close" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -67,23 +88,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Закрыть"
-          }
-        }
-      }
-    },
-    "create" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Создать"
           }
         }
       }
@@ -189,6 +193,34 @@
         }
       }
     },
+    "geo-object-create" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Create"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создать объект"
+          }
+        }
+      }
+    },
+    "geo-object-remove" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить объект"
+          }
+        }
+      }
+    },
     "geo-object-tab-comments" : {
       "localizations" : {
         "en" : {
@@ -217,6 +249,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Описание"
+          }
+        }
+      }
+    },
+    "geo-object-tab-edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Управление"
           }
         }
       }
@@ -353,7 +396,7 @@
         }
       }
     },
-    "multiple-image-select" : {
+    "multiple-image-select-empty" : {
       "extractionState" : "manual",
       "localizations" : {
         "ru" : {
@@ -427,6 +470,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Регион"
+          }
+        }
+      }
+    },
+    "remove" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
           }
         }
       }
@@ -615,6 +669,9 @@
           }
         }
       }
+    },
+    "Вы действительно хотите удалить объект «%@»" : {
+
     },
     "Объект создан" : {
 

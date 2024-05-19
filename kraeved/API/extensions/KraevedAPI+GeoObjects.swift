@@ -38,4 +38,9 @@ extension KraevedAPI {
         ]
         return try await networkManager.post(url: url, parameters: parameters)
     }
+    
+    func removeGeoObject(id: Int) async throws -> Void {
+        let url = "GeoObjects"
+        return try await networkManager.delete(url: url, id: id)
+    }
 }
