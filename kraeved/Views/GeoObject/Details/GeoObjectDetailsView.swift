@@ -15,7 +15,10 @@ struct GeoObjectDetailsView: View {
     
     @State private var isEditFormPresented = false
     
+    
     let id: Int?
+    
+    let removeAction: (Int) -> Void
 
     var body: some View {
         ZStack {
@@ -26,7 +29,7 @@ struct GeoObjectDetailsView: View {
                     .overlay(Color.Kraeved.divider)
                     .padding(.bottom, 16)
                     .padding(.top, 4)
-                GeoObjectDetailsTabView(geoObject: viewModel.geoObject, removeAction: handleRemove)
+                GeoObjectDetailsTabView(geoObject: viewModel.geoObject, removeAction: removeAction)
 
             }
             .padding(.bottom, 32)
@@ -39,41 +42,10 @@ struct GeoObjectDetailsView: View {
         }
         .fullScreenCover(isPresented: $isEditFormPresented) {
             GeoObjectFormView(
-                mode: .edit,
-                name: viewModel.geoObject?.name,
-                typeId: viewModel.geoObject?.type?.id,
-                description: viewModel.geoObject?.description,
-                thumbnail: viewModel.geoObject?.thumbnail,
-                images: viewModel.geoObject?.images,
-                latitude: String(viewModel.geoObject?.latitude ?? 0),
-                longitude: String(viewModel.geoObject?.longitude ?? 0),
-                isShowForm: $isEditFormPresented
+                initialGeoObject: viewModel.geoObject,
+                isShowForm: $isEditFormPresented,
+                mode: .edit
             )
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu(content: {
-                    Button {
-                        isEditFormPresented = true
-                    } label: {
-                        Label("edit", systemImage: "square.and.pencil")
-                    }
-                    
-                    Button {
-                        print("test")
-                    } label: {
-                        Label("delete", systemImage: "trash")
-                    }
-                }) {
-                    Image(systemName: "ellipsis.circle")
-                }
-            }
-        }
-    }
-    
-    func handleRemove(id: Int) {
-        Task {
-            try await viewModel.removeGeoObject(by: id)
         }
     }
 }

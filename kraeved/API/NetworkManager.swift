@@ -11,8 +11,7 @@ import Alamofire
 
 protocol NetworkManagerProtocol: ApplicationLoggerProtocol {
     func get<T: Decodable>(url: String, parameters: Parameters?) async -> T?
-    func post(url: String, parameters: Parameters) async throws -> Void
-    func delete(url: String, id: Int) async throws -> Void 
+    func request(url: String, method: HTTPMethod, parameters: Parameters?) async throws -> Void
     func upload(images: [UIImage]) async throws -> [String]
 }
 
@@ -58,38 +57,18 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
         }
     }
     
-    func post(url: String, parameters: Parameters) async throws -> Void {
+    func request(url: String, method: HTTPMethod, parameters: Parameters? = nil) async throws -> Void {
         do {
             return try await withCheckedThrowingContinuation { continuation in
                 AF.request(
                     Settings.instance.baseUrl + "/" + url,
-                    method: .post,
+                    method: method,
                     parameters: parameters,
                     encoding: JSONEncoding.default
                 )
                 .responseData { response in
                     switch response.result {
-                        case let .success(data):
-                            continuation.resume()
-                        case .failure(let error):
-                            print(error)
-                            continuation.resume(throwing: error)
-                    }
-                }
-            }
-        }
-    }
-    
-    func delete(url: String, id: Int) async throws -> Void {
-        do {
-            return try await withCheckedThrowingContinuation { continuation in
-                AF.request(
-                    Settings.instance.baseUrl + "/" + url + "/" + String(id),
-                    method: .delete
-                )
-                .responseData { response in
-                    switch response.result {
-                        case let .success(data):
+                        case .success(let data):
                             continuation.resume()
                         case .failure(let error):
                             print(error)
@@ -115,7 +94,7 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                     to: url,
                     method: .post, headers: nil)
                     .uploadProgress(queue: .main) { progress in
-                        print("UPLOADING PROGRESS", progress)
+                        debugPrint("UPLOADING PROGRESS", progress)
                     }
                     .responseJSON { response in
                         switch response.result {
@@ -172,7 +151,6 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
         return error
     }
 }
-
 
 extension NetworkManager: URLSessionDelegate {
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {

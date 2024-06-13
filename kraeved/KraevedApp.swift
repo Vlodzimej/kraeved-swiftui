@@ -10,7 +10,6 @@ import Pulse
 
 @main
 struct KraevedApp: App {
-    @State private var isLoggerPresented = false
     
     init() {
         URLSessionProxyDelegate.enableAutomaticRegistration()
@@ -19,17 +18,6 @@ struct KraevedApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onShake {
-                    LoggerStore.shared.storeMessage(
-                        label: "auth",
-                        level: .debug,
-                        message: "Will login user",
-                        metadata: ["userId": .string("uid-1")]
-                    )
-                    isLoggerPresented = true
-                }.sheet(isPresented: $isLoggerPresented) {
-                    LoggerView()
-                }
         }
     }
 }

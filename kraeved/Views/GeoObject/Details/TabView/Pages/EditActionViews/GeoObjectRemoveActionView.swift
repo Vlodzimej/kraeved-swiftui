@@ -21,8 +21,8 @@ struct GeoObjectRemoveActionView: View {
             presenting: dialogDetail
         ) { geoObject in
             Button("remove", role: .destructive) {
-                //guard let id = geoObject.id else { return }
-                action(geoObject.id)
+                guard let id = geoObject.id else { return }
+                action(id)
             }
             Button("cancel", role: .cancel, action: {})
         }

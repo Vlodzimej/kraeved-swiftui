@@ -92,6 +92,23 @@
         }
       }
     },
+    "common.edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Edit"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактировать"
+          }
+        }
+      }
+    },
     "current-location" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -156,23 +173,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Введите описание"
-          }
-        }
-      }
-    },
-    "edit" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Edit"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактировать"
           }
         }
       }
@@ -276,6 +276,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Фото"
+          }
+        }
+      }
+    },
+    "geoObject.edit" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактировать"
           }
         }
       }

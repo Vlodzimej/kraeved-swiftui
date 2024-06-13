@@ -22,7 +22,7 @@ struct AttractionsFeedView: View {
                 ForEach(viewModel.attractions ?? .init(repeating: .init(), count: 6)) { attractionBrief in
                     NavigationLink(
                         destination:
-                            GeoObjectDetailsView(id: attractionBrief.id)
+                            GeoObjectDetailsView(id: attractionBrief.id, removeAction: { _ in })
                             .padding(.top, 16)
                             .background(Color.Kraeved.secondBackground)
                     ) {

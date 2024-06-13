@@ -24,23 +24,42 @@ extension KraevedAPI {
         return await networkManager.get(url: url, parameters: nil)
     }
     
-    func createGeoObject(name: String, typeId: Int, description: String, latitude: Double, longitude: Double, regionId: Int, images: [String], thumbnail: String) async throws -> Void {
+    func createGeoObject(geoObject: GeoObject, typeId: Int, images: [String], thumbnail: String) async throws -> Void {
         let url = "GeoObjects"
         let parameters: [String: Any] = [
-            "name"          : name,
+            "name"          : geoObject.name,
             "typeId"        : typeId,
-            "description"   : description,
-            "latitude"      : latitude,
-            "longitude"     : longitude,
-            "regionId"      : regionId,
+            "description"   : geoObject.description,
+            "latitude"      : geoObject.latitude,
+            "longitude"     : geoObject.longitude,
+            "regionId"      : 40,
             "images"        : images,
             "thumbnail"     : thumbnail
         ]
-        return try await networkManager.post(url: url, parameters: parameters)
+        return try await networkManager.request(url: url, method: .post, parameters: parameters)
+    }
+    
+    func updateGeoObject(geoObject: GeoObject, typeId: Int, images: [String], thumbnail: String) async throws -> Void {
+        let url = "GeoObjects"
+        var parameters: [String: Any] = [
+            "name"          : geoObject.name,
+            "typeId"        : typeId,
+            "description"   : geoObject.description,
+            "latitude"      : geoObject.latitude,
+            "longitude"     : geoObject.longitude,
+            "regionId"      : 40,
+            "images"        : images,
+            "thumbnail"     : thumbnail
+        ]
+        if let id = geoObject.id {
+            parameters["id"] = id
+        }
+        
+        return try await networkManager.request(url: url, method: .put, parameters: parameters)
     }
     
     func removeGeoObject(id: Int) async throws -> Void {
-        let url = "GeoObjects"
-        return try await networkManager.delete(url: url, id: id)
+        let url = "GeoObjects/\(id)"
+        return try await networkManager.request(url: url, method: .delete, parameters: nil)
     }
 }

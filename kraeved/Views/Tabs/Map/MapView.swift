@@ -72,7 +72,14 @@ struct MapView: View {
                             selectedGeoObjectId = nil
                         }) { id in
                             MapSheetWrapperView {
-                                GeoObjectDetailsView(id: id)
+                                GeoObjectDetailsView(id: id, removeAction: { id in
+                                    Task {
+                                        try await viewModel.removeGeoObject(by: id)
+                                        await MainActor.run {
+                                            selectedGeoObjectId = nil
+                                        }
+                                    }
+                                })
                             }
                             .background(Color.Kraeved.secondBackground)
                         }
@@ -86,10 +93,9 @@ struct MapView: View {
                             }
                         }) {
                             GeoObjectFormView(
-                                mode: .creation,
-                                latitude: latitude,
-                                longitude: longitude,
-                                isShowForm: $isShowCreation
+                                initialGeoObject: GeoObject(longitude: longitude, latitude: latitude),
+                                isShowForm: $isShowCreation,
+                                mode: .creation
                             )
                         }
                         .onTapGesture { tapPosition in

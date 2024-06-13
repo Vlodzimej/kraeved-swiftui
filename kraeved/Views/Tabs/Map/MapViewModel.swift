@@ -17,6 +17,11 @@ extension MapView {
         func getGeoObjects() async {
             geoObjects = await kraevedAPI.getGeoObjects()
         }
+        
+        func removeGeoObject(by id: Int) async throws {
+            try await kraevedAPI.removeGeoObject(id: id)
+            geoObjects = geoObjects?.lazy.filter { $0.id != id }
+        }
     }
 }
 

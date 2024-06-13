@@ -9,11 +9,27 @@ import SwiftUI
 
 struct GeoObjectDetailsEdit: View {
     @State var geoObject: GeoObject?
+    
+    @State var isShowEditForm: Bool = false
     let removeAction: (Int) -> Void
     
     var body: some View {
-        VStack {
+        VStack(spacing: 24) {
             GeoObjectRemoveActionView(dialogDetail: geoObject, action: removeAction)
+            Button {
+                isShowEditForm = true
+            } label: {
+                Text("geoObject.edit")
+            }
+        }
+        .fullScreenCover(isPresented: $isShowEditForm, onDismiss: {
+
+        }) {
+            GeoObjectFormView(
+                initialGeoObject: geoObject,
+                isShowForm: $isShowEditForm,
+                mode: .edit
+            )
         }
     }
 }

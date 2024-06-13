@@ -100,3 +100,4 @@ iOSInjectionProject/
 !.gitsubmodules
 
 Pods
+.DS_Store

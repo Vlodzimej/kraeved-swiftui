@@ -28,6 +28,8 @@ enum GeoObjectFormMode {
 //MARK: - GeoObjectFormView
 struct GeoObjectFormView: View {
     
+    let initialGeoObject: GeoObject?
+    
     @State private var isLoggerPresented = false
     @State var selectedItems: [PhotosPickerItem] = []
     
@@ -35,50 +37,43 @@ struct GeoObjectFormView: View {
     @ObservedObject private var thumbnailViewModel = SingleImageUploaderView.ViewModel()
     @ObservedObject private var imagesViewModel = MultipleImageSelectView.ViewModel()
     
+    @Binding var isShowForm: Bool
+    
     var isFormValidated: Bool {
+        let geoObject = viewModel.editedGeoObject
         var isThumbnailLoaded: Bool = false
         if case .success = thumbnailViewModel.imageState {
             isThumbnailLoaded = true
         }
-        return !viewModel.name.isEmpty && !viewModel.description.isEmpty && isThumbnailLoaded
+        return !geoObject.name.isEmpty && !geoObject.description.isEmpty && isThumbnailLoaded
     }
     
     let mode: GeoObjectFormMode
-    
-    var name: String?
-    var typeId: Int?
-    var description: String?
-    var thumbnail: String?
-    var images: [String]?
-    
-    let latitude: String
-    let longitude: String
-    @Binding var isShowForm: Bool
-    
+
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    // Type
-                    Picker("type", selection: $viewModel.typeId) {
-                        ForEach(viewModel.types ?? []) {
-                            Text($0.title).tag($0.id)
-                        }
-                    }
-                    .pickerStyle(.navigationLink)
-                    
-                    // Region
-                    Picker("region", selection: $viewModel.regionId) {
-                        ForEach(regions) {
-                            Text($0.title).tag($0.id)
-                        }
-                    }
-                    .pickerStyle(.navigationLink)
-                }
+//                Section {
+//                    // Type
+//                    Picker("type", selection: $viewModel.typeId) {
+//                        ForEach(viewModel.types ?? []) {
+//                            Text($0.title).tag($0.id)
+//                        }
+//                    }
+//                    .pickerStyle(.navigationLink)
+//                    
+//                    // Region
+//                    Picker("region", selection: $viewModel.editedGeoObject.regionId) {
+//                        ForEach(regions) {
+//                            Text($0.title).tag($0.id)
+//                        }
+//                    }
+//                    .pickerStyle(.navigationLink)
+//                }
                 Section {
                     // Title
                     GenericTextInput(
-                        value: $viewModel.name,
+                        value: $viewModel.editedGeoObject.name,
                         title: String(localized: "title"),
                         placeholder: String(localized: "title-placeholder"),
                         keyboardType: .default
@@ -88,7 +83,7 @@ struct GeoObjectFormView: View {
                     
                     // Description
                     GenericTextInput(
-                        value: $viewModel.description,
+                        value: $viewModel.editedGeoObject.description,
                         title: String(localized: "description"),
                         placeholder: String(localized: "description-placeholder"),
                         keyboardType: .default,
@@ -119,7 +114,6 @@ struct GeoObjectFormView: View {
                         }
                     }
                 }
-                
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -139,7 +133,7 @@ struct GeoObjectFormView: View {
             }
             
             KraevedButton(title: mode.title) {
-                viewModel.submit(latitude: latitude, longitude: longitude, thumbnail: thumbnailViewModel.imageState, images: imagesViewModel.images)
+                viewModel.submit(thumbnail: thumbnailViewModel.imageState, images: imagesViewModel.images)
             }
             .disabled(!isFormValidated)
         }
@@ -158,31 +152,9 @@ struct GeoObjectFormView: View {
     
     private func configure() {
         viewModel.mode = mode
-        
-        if let name {
-            viewModel.name = name
-        }
-        
-        if let typeId {
-            viewModel.typeId = typeId
-        }
-        
-        if let description {
-            viewModel.description = description
-        }
-        
-        if let thumbnail {
-            viewModel.thumbnail = thumbnail
-        }
-        
-        if let images {
-            viewModel.images = images
+        viewModel.initialGeoObject = initialGeoObject
+        if let initialGeoObject {
+            viewModel.editedGeoObject = initialGeoObject
         }
     }
-}
-
-#Preview {
-    @State var isShowCreation: Bool = false
-    
-    return GeoObjectFormView(mode: .creation, latitude: "", longitude: "", isShowForm: $isShowCreation)
 }
