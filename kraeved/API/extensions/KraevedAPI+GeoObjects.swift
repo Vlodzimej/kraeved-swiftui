@@ -24,7 +24,7 @@ extension KraevedAPI {
         return await networkManager.get(url: url, parameters: nil)
     }
     
-    func createGeoObject(geoObject: GeoObject, typeId: Int, images: [String], thumbnail: String) async throws -> Void {
+    func createGeoObject(geoObject: GeoObject, typeId: Int, images: [String]?, thumbnail: String?) async throws -> Void {
         let url = "GeoObjects"
         let parameters: [String: Any] = [
             "name"          : geoObject.name,
@@ -33,13 +33,13 @@ extension KraevedAPI {
             "latitude"      : geoObject.latitude,
             "longitude"     : geoObject.longitude,
             "regionId"      : 40,
-            "images"        : images,
-            "thumbnail"     : thumbnail
+            "images"        : images ?? geoObject.images,
+            "thumbnail"     : thumbnail ?? geoObject.thumbnail
         ]
         return try await networkManager.request(url: url, method: .post, parameters: parameters)
     }
     
-    func updateGeoObject(geoObject: GeoObject, typeId: Int, images: [String], thumbnail: String) async throws -> Void {
+    func updateGeoObject(geoObject: GeoObject, typeId: Int, images: [String]?, thumbnail: String?) async throws -> Void {
         let url = "GeoObjects"
         var parameters: [String: Any] = [
             "name"          : geoObject.name,
@@ -48,8 +48,8 @@ extension KraevedAPI {
             "latitude"      : geoObject.latitude,
             "longitude"     : geoObject.longitude,
             "regionId"      : 40,
-            "images"        : images,
-            "thumbnail"     : thumbnail
+            "images"        : images ?? geoObject.images,
+            "thumbnail"     : thumbnail ?? geoObject.thumbnail
         ]
         if let id = geoObject.id {
             parameters["id"] = id

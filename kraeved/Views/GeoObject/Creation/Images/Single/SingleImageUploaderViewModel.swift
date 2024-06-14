@@ -12,7 +12,9 @@ extension SingleImageUploaderView {
     
     final class ViewModel: BaseViewModel {
 
-        @Published private(set) var imageState: UploadImageState = .empty
+        private var hasChanges: Bool = false
+        
+        @Published var imageState: UploadImageState = .empty
         @Published var image: UIImage?
         
         @Published var imageSelection: PhotosPickerItem? {
@@ -20,10 +22,16 @@ extension SingleImageUploaderView {
                 if let imageSelection {
                     let progress = loadTransferable(from: imageSelection)
                     imageState = .loading(progress)
+                    hasChanges = true
                 } else {
                     imageState = .empty
                 }
             }
+        }
+        
+        var uploadedImage: Image? {
+            guard hasChanges, case .success(let image) = imageState else { return nil }
+            return image
         }
         
         private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {

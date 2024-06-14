@@ -256,10 +256,16 @@
     "geo-object-tab-edit" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Управление"
+            "value" : "Ред."
           }
         }
       }
@@ -664,7 +670,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Основное изображение"
+            "value" : "Миниатюра"
           }
         }
       }

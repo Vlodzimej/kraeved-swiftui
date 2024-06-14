@@ -37,6 +37,7 @@ struct GeoObject: Codable, Equatable, Hashable {
     var longitude: Double
     var latitude: Double
     var type: GenericTypeDto
+    var regionId: Int = 40
     var images: [String]
     var thumbnail: String
     
@@ -73,7 +74,15 @@ struct GeoObject: Codable, Equatable, Hashable {
 //        thumbnail = try values.decodeIfPresent(String.self, forKey: .thumbnail)
 //    }
 //    
-    init(id: Int? = nil, name: String = "", description: String = "", longitude: Double = 0, latitude: Double = 0, type: GenericTypeDto = .init(id: 0, name: "", title: ""), images: [String] = [], thumbnail: String = "") {
+    init(id: Int? = nil, 
+         name: String = "",
+         description: String = "",
+         longitude: Double = 0,
+         latitude: Double = 0,
+         type: GenericTypeDto = .init(id: 0, name: "", title: ""),
+         images: [String] = [],
+         thumbnail: String = ""
+    ) {
         self.id = id
         self.name = name
         self.description = description
