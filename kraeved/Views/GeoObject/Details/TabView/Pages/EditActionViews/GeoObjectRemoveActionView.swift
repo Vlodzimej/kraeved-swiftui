@@ -13,18 +13,19 @@ struct GeoObjectRemoveActionView: View {
     let action: (Int) -> Void
     
     var body: some View {
-        Button("geo-object-remove") {
+        Button("geoObject.remove") {
             isConfirming = true
         }
-        .confirmationDialog("Вы действительно хотите удалить объект «\(dialogDetail?.name ?? "")»",
-            isPresented: $isConfirming,
-            presenting: dialogDetail
+        .confirmationDialog(LocalizedStringKey("geoObject.deleteConfirm \(dialogDetail?.name ?? "")"),
+                            isPresented: $isConfirming,
+                            titleVisibility: .visible,
+                            presenting: dialogDetail
         ) { geoObject in
-            Button("remove", role: .destructive) {
+            Button("common.remove", role: .destructive) {
                 guard let id = geoObject.id else { return }
                 action(id)
             }
-            Button("cancel", role: .cancel, action: {})
+            Button("common.cancel", role: .cancel, action: {})
         }
     }
 }

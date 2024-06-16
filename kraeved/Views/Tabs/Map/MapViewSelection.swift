@@ -50,15 +50,15 @@ struct MapViewSelection: View {
         VStack {
             GenericTextInput(
                 value: $latitude,
-                title: String(localized: "latitude"),
-                placeholder: String(localized: "latitude"),
+                title: String(localized: "common.latitude"),
+                placeholder: String(localized: "common.latitude"),
                 keyboardType: .decimalPad
             )
             Divider()
             GenericTextInput(
                 value: $longitude,
-                title: String(localized: "longitude"),
-                placeholder: String(localized: "longitude"),
+                title: String(localized: "common.longitude"),
+                placeholder: String(localized: "common.longitude"),
                 keyboardType: .decimalPad
             )
             
@@ -66,7 +66,7 @@ struct MapViewSelection: View {
             Button {
                 isShowCreation = true
             } label: {
-                Text("geo-object-create")
+                Text("geoObject.create")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)

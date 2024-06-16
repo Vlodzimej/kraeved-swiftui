@@ -10,7 +10,7 @@ import SwiftUI
 //MARK: - GeoObjectDetailsComments
 struct GeoObjectDetailsComments: View {
     var body: some View {
-        Text("under-construction")
+        Text("common.underConstruction")
     }
 }
 

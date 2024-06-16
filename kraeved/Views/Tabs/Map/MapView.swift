@@ -61,7 +61,7 @@ struct MapView: View {
                                 }
                             }
                             if let selectedCoordinate {
-                                Marker("new-geo-object-marker", coordinate: selectedCoordinate)
+                                Marker("geoObject.newMarker", coordinate: selectedCoordinate)
                             }
                         }
                         .mapStyle(.standard(pointsOfInterest: .excludingAll))
@@ -84,7 +84,7 @@ struct MapView: View {
                             .background(Color.Kraeved.secondBackground)
                         }
                         .sheet(isPresented: $isShowFilter) {
-                            Text("filter")
+                            Text("common.filter")
                         }
                         .fullScreenCover(isPresented: $isShowCreation, onDismiss: {
                             removeSelectedGeoObject()
@@ -123,7 +123,7 @@ struct MapView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    TextField("search", text: $searchText)
+                    TextField("common.search", text: $searchText)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu(content: {
@@ -131,7 +131,7 @@ struct MapView: View {
                         Button {
                             isShowFilter = true
                         } label: {
-                            Label("show-filter", systemImage: "line.3.horizontal.decrease.circle")
+                            Label("common.showFilter", systemImage: "line.3.horizontal.decrease.circle")
                         }
                         
                         Button {
@@ -139,7 +139,7 @@ struct MapView: View {
                                 isShowSelection = true
                             }
                         } label: {
-                            Label("geo-object-create", systemImage: "plus.circle")
+                            Label("geoObject.create", systemImage: "plus.circle")
                         }
                     }) {
                         Image(systemName: "ellipsis.circle")
@@ -168,11 +168,3 @@ struct MapView: View {
 #Preview {
     MapView()
 }
-
-
-//Map(coordinateRegion: $region, annotationItems:
-//(viewModel.geoObjects ?? []).map({ geoObject in
-//Annotation(coordinate: .init(latitude: geoObject.latitude,
-//                             longitude: geoObject.longitude)) {
-//    Text("TEST")
-//}

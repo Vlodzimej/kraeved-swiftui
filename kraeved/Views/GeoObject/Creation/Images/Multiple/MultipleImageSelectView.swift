@@ -35,9 +35,9 @@ struct MultipleImageSelectView: View {
                          photoLibrary: .shared()) {
                 Label(title: {
                     if viewModel.imageSelections.isEmpty {
-                        Text("multiple-image-select-empty")
+                        Text("form.multipleImageEmptySelection")
                     } else {
-                        Text("change-selection")
+                        Text("form.changeSelection")
                     }
                 }, icon: {
                     Image(systemName: "photo.badge.plus")

@@ -26,5 +26,5 @@ struct MainTitle: View {
 }
 
 #Preview {
-    MainTitle(title: "События", image: "titleUnderline")
+    MainTitle(title: "common.events", image: "titleUnderline")
 }

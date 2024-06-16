@@ -16,7 +16,7 @@ struct AttractionsFeedView: View {
     //MARK: Body
     var body: some View {
         VStack(alignment: .leading) {
-            MainTitle(title: "popular-places", image: "titleUnderline2")
+            MainTitle(title: "main.popularPlaces", image: "titleUnderline2")
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
             ScrollView {
                 ForEach(viewModel.attractions ?? .init(repeating: .init(), count: 6)) { attractionBrief in

@@ -16,15 +16,15 @@ struct ContentView: View {
             Group {
                 MainView()
                     .tabItem {
-                        Label("main-tab-start-screen", systemImage: "house")
+                        Label("main.tabStartScreen", systemImage: "house")
                     }
                 MapView()
                     .tabItem {
-                        Label("main-tab-map", systemImage: "map")
+                        Label("main.tabMap", systemImage: "map")
                     }
                 ProfileView()
                     .tabItem {
-                        Label("main-tab-profile", systemImage: "gear")
+                        Label("main.tabProfile", systemImage: "gear")
                     }
             }
         }

@@ -19,9 +19,9 @@ enum GeoObjectFormMode {
     var title: String {
         switch self {
             case .creation:
-                return String(localized: "add")
+                return String(localized: "common.add")
             case .edit:
-                return String(localized: "update")
+                return String(localized: "common.update")
         }
     }
 }
@@ -72,7 +72,7 @@ struct GeoObjectFormView: View {
             Form {
                 Section {
                     // Type
-                    Picker("type", selection: $viewModel.typeId) {
+                    Picker("form.type", selection: $viewModel.typeId) {
                         ForEach(viewModel.types ?? []) {
                             Text($0.title).tag($0.id)
                         }
@@ -80,7 +80,7 @@ struct GeoObjectFormView: View {
                     .pickerStyle(.navigationLink)
                     
                     // Region
-                    Picker("region", selection: $viewModel.editedGeoObject.regionId) {
+                    Picker("form.region", selection: $viewModel.editedGeoObject.regionId) {
                         ForEach(regions) {
                             Text($0.title).tag($0.id)
                         }
@@ -91,8 +91,8 @@ struct GeoObjectFormView: View {
                     // Title
                     GenericTextInput(
                         value: $viewModel.editedGeoObject.name,
-                        title: String(localized: "title"),
-                        placeholder: String(localized: "title-placeholder"),
+                        title: String(localized: "form.title"),
+                        placeholder: String(localized: "form.titlePlaceholder"),
                         keyboardType: .default
                     )
                     .pickerStyle(.navigationLink)
@@ -101,8 +101,8 @@ struct GeoObjectFormView: View {
                     // Description
                     GenericTextInput(
                         value: $viewModel.editedGeoObject.description,
-                        title: String(localized: "description"),
-                        placeholder: String(localized: "description-placeholder"),
+                        title: String(localized: "form.description"),
+                        placeholder: String(localized: "form.descriptionPlaceholder"),
                         keyboardType: .default,
                         symbolsLimit: 3000,
                         lineLimit: 20,
@@ -111,7 +111,7 @@ struct GeoObjectFormView: View {
                 }
                 Section {
                     // Thumbnail
-                    Text("upload-thumbnail-image")
+                    Text("form.thumbnail")
                     VStack {
                         HStack() {
                             Spacer()
@@ -122,7 +122,7 @@ struct GeoObjectFormView: View {
                 }
                 Section {
                     // Gallery
-                    Text("upload-gallery")
+                    Text("form.images")
                     VStack {
                         HStack() {
                             Spacer()
@@ -137,11 +137,11 @@ struct GeoObjectFormView: View {
                     Button {
                         dismiss()
                     } label: {
-                        Label("back", systemImage: "chevron.left")
+                        Label("common.back", systemImage: "chevron.left")
                     }
                 }
                 ToolbarItem(placement: .principal) {
-                    Text("add-new-geo-object").font(.headline)
+                    Text("form.create").font(.headline)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -163,8 +163,8 @@ struct GeoObjectFormView: View {
         .onAppear {
             configure()
         }
-        .alert("Объект создан", isPresented: $viewModel.isShowAlert) {
-            Button("close", role: .cancel) {
+        .alert("geoObject.created", isPresented: $viewModel.isShowAlert) {
+            Button("common.dismiss", role: .cancel) {
                 dismiss()
             }
         }

@@ -16,10 +16,10 @@ enum KraevedTabType: String {
     var title: String {
         let resource: LocalizedStringResource = switch self {
             //MARK: GeoObjectDetails
-            case .description:  "geo-object-tab-description"
-            case .gallery:      "geo-object-tab-gallery"
-            case .comments:     "geo-object-tab-comments"
-            case .edit:         "geo-object-tab-edit"
+            case .description:  "geoObject.tabDescription"
+            case .gallery:      "geoObject.tabGallery"
+            case .comments:     "geoObject.tabComments"
+            case .edit:         "geoObject.tabEdit"
         }
         
         return String(localized: resource)
