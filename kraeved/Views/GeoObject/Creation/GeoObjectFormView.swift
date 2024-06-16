@@ -40,13 +40,29 @@ struct GeoObjectFormView: View {
     
     @Binding var isShowForm: Bool
     
-    var isFormValidated: Bool {
-        let geoObject = viewModel.editedGeoObject
-        var isThumbnailLoaded: Bool = false
+    var hasChanges: Bool {
+        viewModel.hasChanges || thumbnailViewModel.hasChanges || imagesViewModel.hasChanges
+    }
+    
+    var isRequiredInputsFilled: Bool {
+        !viewModel.editedGeoObject.name.isEmpty && !viewModel.editedGeoObject.description.isEmpty
+    }
+    
+    var isThumbnailLoaded: Bool {
         if case .success = thumbnailViewModel.imageState {
-            isThumbnailLoaded = true
+            return true
+        } else {
+            return false
         }
-        return !geoObject.name.isEmpty && !geoObject.description.isEmpty && isThumbnailLoaded
+    }
+    
+    var isFormValidated: Bool {
+        switch mode {
+            case .creation:
+                return isRequiredInputsFilled && isThumbnailLoaded
+            case .edit:
+                return isRequiredInputsFilled && hasChanges
+        }
     }
     
     let mode: GeoObjectFormMode
@@ -160,21 +176,15 @@ struct GeoObjectFormView: View {
             viewModel.typeId = initialGeoObject.type.id
             
             if let url = initialGeoObject.thumbnailUrl?.absoluteString {
-                fetchThumbnailImage(url: url)
+                thumbnailViewModel.fetchImage(by: url)
+            }
+        
+            if !initialGeoObject.imageUrls.isEmpty {
+                let urls = initialGeoObject.imageUrls.compactMap{ $0.absoluteString }
+                imagesViewModel.fetchImages(by: urls)
             }
         }
     }
     
-    private func fetchThumbnailImage(url: String) {
-        AF.request(url, method: .get).response { response in
-            switch response.result {
-                case .success(let responseData):
-                    if let responseData, let image = UIImage(data: responseData, scale: 1) {
-                        thumbnailViewModel.imageState = .success(Image(uiImage: image))
-                    }
-                case .failure:
-                    thumbnailViewModel.imageState = .empty
-            }
-        }
-    }
+
 }

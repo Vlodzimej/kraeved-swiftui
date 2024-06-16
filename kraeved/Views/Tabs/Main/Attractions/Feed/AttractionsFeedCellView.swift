@@ -32,20 +32,13 @@ struct AttractionsFeedCellView: View {
                         case .empty:
                             EmptyThumbnailImageView()
                         case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
+                            ThumbnailImageView(imageState: .success(image))
                         case .failure:
                             EmptyThumbnailImageView()
                         @unknown default:
                             EmptyView()
                     }
                 }
-                .frame(width: 72, height: 72)
-                .clipShape(
-                    .rect(cornerRadius: 14)
-                )
-                .clipped()
                 VStack(alignment: .leading, spacing: 0) {
                     Text(attractionBrief.name ?? "geoObject name placeholder")
                         .font(.system(size: 13, weight: .medium))

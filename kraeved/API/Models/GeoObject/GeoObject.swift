@@ -42,13 +42,13 @@ struct GeoObject: Codable, Equatable, Hashable {
     var thumbnail: String
     
     var thumbnailUrl: URL? {
-        URL(string: Settings.instance.baseUrl + "/images/filename/" + (thumbnail ?? ""))
+        URL(string: Settings.instance.baseUrl + "/images/filename/" + thumbnail)
     }
     
     var imageUrls: [URL] {
         images.compactMap { image in
-            URL(string: Settings.instance.baseUrl + "/images/filename/" + (image ?? ""))
-        } ?? []
+            URL(string: Settings.instance.baseUrl + "/images/filename/" + image)
+        } 
     }
     
     func encode(to encoder: Encoder) throws {
@@ -98,7 +98,15 @@ struct GeoObject: Codable, Equatable, Hashable {
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id &&
+        lhs.name == rhs.name &&
+        lhs.description == rhs.description &&
+        lhs.latitude == rhs.latitude &&
+        lhs.longitude == rhs.longitude &&
+        lhs.images == rhs.images &&
+        lhs.regionId == rhs.regionId &&
+        lhs.type == rhs.type &&
+        lhs.thumbnail == rhs.thumbnail
     }
 }
 

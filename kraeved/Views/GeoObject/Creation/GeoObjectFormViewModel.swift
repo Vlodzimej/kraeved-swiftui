@@ -21,6 +21,9 @@ extension GeoObjectFormView {
         
         var initialGeoObject: GeoObject?
         var mode: GeoObjectFormMode = .creation
+        var hasChanges: Bool {
+            initialGeoObject != editedGeoObject
+        }
         
         @Published var types: [GenericType]?
         @Published var editedGeoObject = GeoObject()
@@ -45,8 +48,10 @@ extension GeoObjectFormView {
         
         private func sendGeoObject(thumbnailImage: Image?, photoImages: [UIImage] = []) async throws {
             do {
-                let thumbnailUrl = try await upload(thumbnailImage: thumbnailImage)
-                let images = try await upload(photoImages: photoImages)
+                let thumbnail = try await upload(thumbnailImage: thumbnailImage)
+                let uploadedImages = try await upload(photoImages: photoImages)
+                
+                let images = editedGeoObject.images + (uploadedImages ?? [])
                 
                 let request = switch mode {
                     case .creation:
@@ -55,7 +60,7 @@ extension GeoObjectFormView {
                         kraevedAPI.updateGeoObject
                 }
                 
-                try await request(editedGeoObject, typeId, images, thumbnailUrl)
+                try await request(editedGeoObject, typeId, images, thumbnail)
             }
         }
         

@@ -7,12 +7,13 @@
 
 import SwiftUI
 import PhotosUI
+import Alamofire
 
 extension SingleImageUploaderView {
     
     final class ViewModel: BaseViewModel {
 
-        private var hasChanges: Bool = false
+        private(set) var hasChanges: Bool = false
         
         @Published var imageState: UploadImageState = .empty
         @Published var image: UIImage?
@@ -51,6 +52,19 @@ extension SingleImageUploaderView {
                         case let .failure(error):
                             self.imageState = .failure(error)
                     }
+                }
+            }
+        }
+        
+        func fetchImage(by url: String) {
+            AF.request(url, method: .get).response { [weak self] response in
+                switch response.result {
+                    case .success(let responseData):
+                        if let responseData, let image = UIImage(data: responseData, scale: 1) {
+                            self?.imageState = .success(Image(uiImage: image))
+                        }
+                    case .failure:
+                        self?.imageState = .empty
                 }
             }
         }

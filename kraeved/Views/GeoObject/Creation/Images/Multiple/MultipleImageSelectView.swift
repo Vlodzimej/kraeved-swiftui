@@ -53,6 +53,7 @@ struct MultipleImageSelectView: View {
                                          case .success(let imageData):
                                              DispatchQueue.main.async {
                                                  if let imageData {
+                                                     self.viewModel.hasChanges = true
                                                      self.viewModel.images.append(UIImage(data: imageData)!)
                                                  } else {
                                                      print("No supported content type found.")
