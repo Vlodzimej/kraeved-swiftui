@@ -88,13 +88,13 @@ struct MapView: View {
                         }
                         .fullScreenCover(isPresented: $isShowCreation, onDismiss: {
                             removeSelectedGeoObject()
+                            isShowSelection = false
                             Task {
                                 await viewModel.getGeoObjects()
                             }
                         }) {
                             GeoObjectFormView(
                                 initialGeoObject: GeoObject(longitude: longitude, latitude: latitude),
-                                isShowForm: $isShowCreation,
                                 mode: .creation
                             )
                         }

@@ -15,16 +15,23 @@ struct GeoObjectDetailsTabView: View {
     
     var geoObject: GeoObject?
     
+    var images: [String] {
+        geoObject?.images ?? []
+    }
+    
     var removeAction: (Int) -> Void
 
     var body: some View {
         VStack {
             HStack {
                 ForEach(viewModel.items, id: \.self) { item in
-                    GeoObjectDetailsTabButtonView(model: item, currentPageIndex: $pageIndex, action: {
-                        //guard $pageIndex != index else { return }
-                        pageIndex = item.index
-                    })
+                    if item.type == .gallery && images.isEmpty {
+                        EmptyView()
+                    } else {
+                        GeoObjectDetailsTabButtonView(model: item, currentPageIndex: $pageIndex, action: {
+                            pageIndex = item.index
+                        })
+                    }
                 }
             }
             TabView(selection: $pageIndex) {
@@ -42,7 +49,3 @@ struct GeoObjectDetailsTabView: View {
         }
     }
 }
-//
-//#Preview {
-//    GeoObjectDetailsTabView(geoObject: .init(id: 0, name: nil, description: nil, longitude: nil, latitude: nil, type: nil, images: nil, thumbnail: nil))
-//}

@@ -31,14 +31,14 @@ struct GeoObjectFormView: View {
     
     let initialGeoObject: GeoObject?
     
+    @Environment(\.dismiss) var dismiss
+    
     @State private var isLoggerPresented = false
     @State var selectedItems: [PhotosPickerItem] = []
     
     @ObservedObject private var viewModel = ViewModel()
     @ObservedObject private var thumbnailViewModel = SingleImageUploaderView.ViewModel()
     @ObservedObject private var imagesViewModel = MultipleImageSelectView.ViewModel()
-    
-    @Binding var isShowForm: Bool
     
     var hasChanges: Bool {
         viewModel.hasChanges || thumbnailViewModel.hasChanges || imagesViewModel.hasChanges
@@ -135,7 +135,7 @@ struct GeoObjectFormView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        isShowForm.toggle()
+                        dismiss()
                     } label: {
                         Label("back", systemImage: "chevron.left")
                     }
@@ -150,7 +150,10 @@ struct GeoObjectFormView: View {
             }
             
             KraevedButton(title: mode.title) {
-                viewModel.submit(thumbnailImage: thumbnailViewModel.uploadedImage, images: imagesViewModel.images)
+                Task {
+                    await try viewModel.submit(thumbnailImage: thumbnailViewModel.uploadedImage, images: imagesViewModel.images)
+                    dismiss()
+                }
             }
             .disabled(!isFormValidated)
         }
@@ -162,7 +165,7 @@ struct GeoObjectFormView: View {
         }
         .alert("Объект создан", isPresented: $viewModel.isShowAlert) {
             Button("close", role: .cancel) {
-                isShowForm = false
+                dismiss()
             }
         }
     }

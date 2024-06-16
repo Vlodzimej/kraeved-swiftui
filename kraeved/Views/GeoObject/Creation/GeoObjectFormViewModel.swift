@@ -29,16 +29,14 @@ extension GeoObjectFormView {
         @Published var editedGeoObject = GeoObject()
         @Published var typeId: Int = 0
         
-        func submit(thumbnailImage: Image?, images: [UIImage]) {            
-            Task {
-                isLoading = true
-                do {
-                    try await sendGeoObject(thumbnailImage: thumbnailImage, photoImages: images)
-                    isLoading = false
-                }
-                catch {
-                    isLoading = false
-                }
+        func submit(thumbnailImage: Image?, images: [UIImage]) async throws {
+            isLoading = true
+            do {
+                try await sendGeoObject(thumbnailImage: thumbnailImage, photoImages: images)
+                isLoading = false
+            }
+            catch {
+                isLoading = false
             }
         }
         

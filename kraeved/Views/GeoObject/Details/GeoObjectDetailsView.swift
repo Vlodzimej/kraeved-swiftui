@@ -43,7 +43,6 @@ struct GeoObjectDetailsView: View {
         .fullScreenCover(isPresented: $isEditFormPresented) {
             GeoObjectFormView(
                 initialGeoObject: viewModel.geoObject,
-                isShowForm: $isEditFormPresented,
                 mode: .edit
             )
         }
