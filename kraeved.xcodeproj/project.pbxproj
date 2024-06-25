@@ -37,6 +37,7 @@
 		6666A9BD2B7BEEAE001DB0E8 /* TabBarAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666A9BC2B7BEEAE001DB0E8 /* TabBarAccessor.swift */; };
 		6666A9BF2B7BF093001DB0E8 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666A9BE2B7BF093001DB0E8 /* MapAnnotationView.swift */; };
 		6666A9C42B7BFE1C001DB0E8 /* GeoObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666A9C32B7BFE1C001DB0E8 /* GeoObjectType.swift */; };
+		6670EFF92C2B6C510067CB34 /* IsVisibleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6670EFF82C2B6C510067CB34 /* IsVisibleModifier.swift */; };
 		6678653D2AC0BCF400EDA776 /* HistoricalEventFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678653C2AC0BCF400EDA776 /* HistoricalEventFeedView.swift */; };
 		6678653F2AC0BE9E00EDA776 /* HistoricalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678653E2AC0BE9E00EDA776 /* HistoricalEvent.swift */; };
 		667865412AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667865402AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift */; };
@@ -154,6 +155,7 @@
 		6666A9BC2B7BEEAE001DB0E8 /* TabBarAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAccessor.swift; sourceTree = "<group>"; };
 		6666A9BE2B7BF093001DB0E8 /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
 		6666A9C32B7BFE1C001DB0E8 /* GeoObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectType.swift; sourceTree = "<group>"; };
+		6670EFF82C2B6C510067CB34 /* IsVisibleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsVisibleModifier.swift; sourceTree = "<group>"; };
 		6678653C2AC0BCF400EDA776 /* HistoricalEventFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventFeedView.swift; sourceTree = "<group>"; };
 		6678653E2AC0BE9E00EDA776 /* HistoricalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEvent.swift; sourceTree = "<group>"; };
 		667865402AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventFeedCellView.swift; sourceTree = "<group>"; };
@@ -415,6 +417,21 @@
 			path = GeoObject;
 			sourceTree = "<group>";
 		};
+		6670EFF62C2B6C3C0067CB34 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		6670EFF72C2B6C420067CB34 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				6670EFF82C2B6C510067CB34 /* IsVisibleModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		6678653B2AC0BCCC00EDA776 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +679,8 @@
 		66FEAD6A2AC022E100ADC551 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				6670EFF72C2B6C420067CB34 /* Modifiers */,
+				6670EFF62C2B6C3C0067CB34 /* New Group */,
 				6666A9BB2B7BEE9B001DB0E8 /* Helpers */,
 				668B39DE2B7170A5009A2E00 /* Models */,
 				66D12B252B6660FF009A6403 /* extensions */,
@@ -993,6 +1012,7 @@
 				662096672B584335003D489B /* Configuration.swift in Sources */,
 				665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */,
 				668B39DD2B714289009A2E00 /* GeoObjectDetailsGallery.swift in Sources */,
+				6670EFF92C2B6C510067CB34 /* IsVisibleModifier.swift in Sources */,
 				66D12B2B2B6661D5009A6403 /* View+onShake.swift in Sources */,
 				66FEAD642ABDFD9100ADC551 /* ProfileView.swift in Sources */,
 				66FEAD2F2ABDF90E00ADC551 /* KraevedApp.swift in Sources */,
@@ -1496,6 +1516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kraeved/Preview Content\"";
@@ -1518,6 +1539,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vlodzimej.kraeved;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -32,7 +32,7 @@ public enum ServerLocation {
             case .localDevelopment:
                 return "localhost:5213/api"
             case .development:
-                return "192.168.1.4"
+                return "176.123.164.219/api"
             case .testing:
                 return ""
             case .production:
@@ -45,7 +45,7 @@ public enum ServerLocation {
             case .localDevelopment:
                 return "http://\(host)"
             case .development, .testing, .production:
-                return "https://\(host)"
+                return "http://\(host)"
         }
     }
 }

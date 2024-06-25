@@ -42,7 +42,7 @@ struct MapView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 ZStack {
                     MapReader { reader in
@@ -51,7 +51,7 @@ struct MapView: View {
                                 Annotation(
                                     geoObject.name ?? "",
                                     coordinate: .init(
-                                        latitude: geoObject.latitude ?? 0, 
+                                        latitude: geoObject.latitude ?? 0,
                                         longitude: geoObject.longitude ?? 0
                                     )) {
                                     MapAnnotationView(type: geoObject.type ?? .unknown)
@@ -146,7 +146,10 @@ struct MapView: View {
                     }
                 }
             }
+            .preferredColorScheme(.light)
             .toolbar(!isShowSelection ? .visible : .hidden)
+            .toolbarBackground(Color.Kraeved.mainBackground, for: .tabBar)
+            .toolbarBackground(Color.Kraeved.mainBackground, for: .navigationBar)
         }
     }
     

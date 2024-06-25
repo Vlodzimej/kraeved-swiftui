@@ -16,8 +16,9 @@ extension GeoObjectDetailsView {
         
         //MARK: Public Methods
         func getGeoObject(id: Int) async {
-            let test = await kraevedAPI.getGeoObject(id: id)
-            geoObject = test
+            isLoading = true
+            geoObject = await kraevedAPI.getGeoObject(id: id)
+            isLoading = false
         }
     }
 }

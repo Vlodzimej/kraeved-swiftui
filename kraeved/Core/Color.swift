@@ -44,6 +44,7 @@ extension Color {
         static let buttonText          = Color(hex: ColorConstants.buttonText)
         static let divider             = Color(hex: ColorConstants.divider)
         static let highlightedText     = Color(hex: ColorConstants.highlightedText)
+        static let darkGrey            = Color(hex: ColorConstants.darkGrey)
     }
 
 }

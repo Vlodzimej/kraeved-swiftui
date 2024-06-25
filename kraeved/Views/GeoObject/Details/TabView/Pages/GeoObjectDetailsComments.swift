@@ -11,6 +11,8 @@ import SwiftUI
 struct GeoObjectDetailsComments: View {
     var body: some View {
         Text("common.underConstruction")
+            .font(.system(size: 17))
+            .foregroundStyle(Color.Kraeved.darkGrey)
     }
 }
 

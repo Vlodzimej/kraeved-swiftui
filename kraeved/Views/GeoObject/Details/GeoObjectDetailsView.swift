@@ -25,6 +25,7 @@ struct GeoObjectDetailsView: View {
             VStack(spacing: 0) {
                 Text(viewModel.geoObject?.name ?? "")
                     .font(.system(size: 14))
+                    .foregroundStyle(Color.Kraeved.darkGrey)
                 Divider()
                     .overlay(Color.Kraeved.divider)
                     .padding(.bottom, 16)
@@ -34,6 +35,11 @@ struct GeoObjectDetailsView: View {
             }
             .padding(.bottom, 32)
             .padding(.horizontal, 16)
+            .isVisible(isVisible: !viewModel.isLoading)
+            ProgressView()
+                .controlSize(.large)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .isVisible(isVisible: viewModel.isLoading)
         }
         .background(.clear)
         .task {

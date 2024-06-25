@@ -27,14 +27,6 @@ struct MainView: View {
             }
         }
         //.searchable(text: $searchText, placement: .navigationBarDrawer)
-        .onAppear {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
-            appearance.backgroundColor = UIColor(Color.Kraeved.mainBackground)
-            appearance.shadowColor = .clear
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        }
     }
     
     private func reload() async {
