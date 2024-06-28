@@ -10,7 +10,7 @@ import SwiftUI
 //MARK: - MainView
 struct MainView: View {
     //@State private var geoObjects: [GeoObjectBrief] = []
-    //@State private var searchText = ""
+    @State private var searchText: String = ""
     
     let eventFeedView = HistoricalEventFeedView()
     let attractionsFeedView = AttractionsFeedView()
@@ -25,7 +25,14 @@ struct MainView: View {
             .refreshable {
                 await reload()
             }
+            .toolbar(.visible)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    TextField("common.search", text: $searchText)
+                }
+            }
         }
+
         //.searchable(text: $searchText, placement: .navigationBarDrawer)
     }
     

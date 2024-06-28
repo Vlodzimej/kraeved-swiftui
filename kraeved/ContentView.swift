@@ -10,6 +10,7 @@ import Pulse
 
 struct ContentView: View {
     @State private var isLoggerPresented = false
+    @State private var isLoginPagePresented = true
     
     var body: some View {
         TabView {
@@ -36,8 +37,14 @@ struct ContentView: View {
                 metadata: ["userId": .string("uid-1")]
             )
             isLoggerPresented = true
-        }.sheet(isPresented: $isLoggerPresented) {
+        }
+        .sheet(isPresented: $isLoggerPresented) {
             LoggerView()
+        }
+        .fullScreenCover(isPresented: $isLoginPagePresented) {
+            LoginPageView(onDismiss: {
+                isLoginPagePresented = false
+            })
         }
         .onAppear() {
             let appearance = UITabBarAppearance()
@@ -45,7 +52,7 @@ struct ContentView: View {
             appearance.backgroundColor = .Kraeved.mainBackground
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
-//            
+//
 //            let navAppearance = UINavigationBarAppearance()
 //            navAppearance.backgroundColor = .red
 //            UINavigationBar.appearance().standardAppearance = navAppearance

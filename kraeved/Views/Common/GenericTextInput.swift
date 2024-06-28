@@ -18,10 +18,11 @@ struct GenericTextInput: View {
     var symbolsLimit: Int = 30
     var lineLimit: Int = 1
     var axis: Axis = .horizontal
+    var tracking: CGFloat = 1.0
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.system(size: 12))
             TextField(placeholder, text: $value, axis: axis)
                 .onReceive(Just(value)) {
@@ -29,6 +30,7 @@ struct GenericTextInput: View {
                 }
                 .keyboardType(keyboardType)
                 .lineLimit(lineLimit)
+                .tracking(tracking)
         }
     }
     

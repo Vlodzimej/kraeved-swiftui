@@ -49,6 +49,9 @@
 		668B39DD2B714289009A2E00 /* GeoObjectDetailsGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B39DC2B714289009A2E00 /* GeoObjectDetailsGallery.swift */; };
 		668B39E02B7170B7009A2E00 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B39DF2B7170B7009A2E00 /* GalleryItem.swift */; };
 		668B39E22B717103009A2E00 /* GeoObjectDetailsComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B39E12B717103009A2E00 /* GeoObjectDetailsComments.swift */; };
+		669DA31C2C2F103700B69CA8 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669DA31B2C2F103700B69CA8 /* LoginPageView.swift */; };
+		669DA31E2C2F115C00B69CA8 /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669DA31D2C2F115C00B69CA8 /* LoginPageViewModel.swift */; };
+		669DA3202C2F1E6000B69CA8 /* FormHiddenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669DA31F2C2F1E6000B69CA8 /* FormHiddenBackground.swift */; };
 		66A9047C2B74DE5B0064F940 /* MapViewSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9047B2B74DE5B0064F940 /* MapViewSelection.swift */; };
 		66A904822B74E4280064F940 /* MapSheetWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A904812B74E4280064F940 /* MapSheetWrapperView.swift */; };
 		66A904842B752E340064F940 /* GeoObjectDetailsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A904832B752E340064F940 /* GeoObjectDetailsTabView.swift */; };
@@ -167,6 +170,9 @@
 		668B39DC2B714289009A2E00 /* GeoObjectDetailsGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectDetailsGallery.swift; sourceTree = "<group>"; };
 		668B39DF2B7170B7009A2E00 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		668B39E12B717103009A2E00 /* GeoObjectDetailsComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectDetailsComments.swift; sourceTree = "<group>"; };
+		669DA31B2C2F103700B69CA8 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		669DA31D2C2F115C00B69CA8 /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
+		669DA31F2C2F1E6000B69CA8 /* FormHiddenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHiddenBackground.swift; sourceTree = "<group>"; };
 		66A9047B2B74DE5B0064F940 /* MapViewSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSelection.swift; sourceTree = "<group>"; };
 		66A904812B74E4280064F940 /* MapSheetWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSheetWrapperView.swift; sourceTree = "<group>"; };
 		66A904832B752E340064F940 /* GeoObjectDetailsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectDetailsTabView.swift; sourceTree = "<group>"; };
@@ -428,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				6670EFF82C2B6C510067CB34 /* IsVisibleModifier.swift */,
+				669DA31F2C2F1E6000B69CA8 /* FormHiddenBackground.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -469,6 +476,15 @@
 				66A9048B2B7549630064F940 /* TabItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		669DA31A2C2F101A00B69CA8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				669DA31B2C2F103700B69CA8 /* LoginPageView.swift */,
+				669DA31D2C2F115C00B69CA8 /* LoginPageViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		66A904772B7177AB0064F940 /* Tabs */ = {
@@ -655,6 +671,7 @@
 		66FEAD5C2ABDFD0300ADC551 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				669DA31A2C2F101A00B69CA8 /* Login */,
 				66A9047A2B7177EB0064F940 /* Logger */,
 				66A904772B7177AB0064F940 /* Tabs */,
 				66841FD62B6EE772005A8233 /* GeoObject */,
@@ -959,6 +976,7 @@
 				66C049302B8B68B900068BFF /* GenericTextInput.swift in Sources */,
 				6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */,
 				66C049362B8BE53E00068BFF /* GeoObjectPatch.swift in Sources */,
+				669DA31C2C2F103700B69CA8 /* LoginPageView.swift in Sources */,
 				66A904902B75506E0064F940 /* Tabs.swift in Sources */,
 				6610E3472B6AB5740053E378 /* KraevedAPI+HistoricalEvents.swift in Sources */,
 				6620965B2B583E2C003D489B /* Settings.swift in Sources */,
@@ -1000,8 +1018,10 @@
 				66C049322B8B6F6200068BFF /* GeoObjectFormViewModel.swift in Sources */,
 				66464E092B618E1A00F0034C /* ImageObject.swift in Sources */,
 				6666A9C42B7BFE1C001DB0E8 /* GeoObjectType.swift in Sources */,
+				669DA31E2C2F115C00B69CA8 /* LoginPageViewModel.swift in Sources */,
 				66FEAD5B2ABDFCD500ADC551 /* MainView.swift in Sources */,
 				66E443762AC4387000D1943F /* MainTitle.swift in Sources */,
+				669DA3202C2F1E6000B69CA8 /* FormHiddenBackground.swift in Sources */,
 				66C049342B8BCAAF00068BFF /* KraevedButton.swift in Sources */,
 				66464E0D2B61923600F0034C /* HistoricalEventFeedViewModel.swift in Sources */,
 				66D12B332B666B6B009A6403 /* Logger.swift in Sources */,

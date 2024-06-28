@@ -112,6 +112,23 @@
         }
       }
     },
+    "common.code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "SMS code"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Код из СМС"
+          }
+        }
+      }
+    },
     "common.dismiss" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -142,6 +159,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Редактировать"
+          }
+        }
+      }
+    },
+    "common.entry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entry"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войти"
           }
         }
       }
@@ -209,6 +243,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Дальше"
+          }
+        }
+      }
+    },
+    "common.phone" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Phone"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Телефон"
           }
         }
       }

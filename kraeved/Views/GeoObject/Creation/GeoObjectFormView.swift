@@ -151,7 +151,7 @@ struct GeoObjectFormView: View {
             
             KraevedButton(title: mode.title) {
                 Task {
-                    await try viewModel.submit(thumbnailImage: thumbnailViewModel.uploadedImage, images: imagesViewModel.images)
+                    try await viewModel.submit(thumbnailImage: thumbnailViewModel.uploadedImage, images: imagesViewModel.images)
                     dismiss()
                 }
             }
