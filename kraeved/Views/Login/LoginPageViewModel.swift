@@ -25,6 +25,8 @@ extension LoginPageView {
         
         //MARK: Public Methods
         func sendPhone() async {
+            let phone = PhoneFormatter.prepare(phoneNumber: phone)
+            code = ""
             stage = .code
         }
         

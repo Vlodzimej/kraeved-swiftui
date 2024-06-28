@@ -17,7 +17,7 @@ struct KraevedButton: View {
             action()
 
         } label: {
-            Text(String(localized: .init(stringLiteral: title)))
+            Text(LocalizedStringKey(title))
                 .frame(maxWidth: .infinity, maxHeight: 28)
             
         }
