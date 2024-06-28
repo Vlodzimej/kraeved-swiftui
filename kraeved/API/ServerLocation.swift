@@ -30,7 +30,7 @@ public enum ServerLocation {
     var host: String {
         switch self {
             case .localDevelopment:
-                return "localhost:5213/api"
+                return "localhost:5000/api"
             case .development:
                 return "176.123.164.219/api"
             case .testing:

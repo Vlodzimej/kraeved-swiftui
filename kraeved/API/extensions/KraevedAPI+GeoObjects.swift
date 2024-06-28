@@ -36,7 +36,7 @@ extension KraevedAPI {
             "images"        : images ?? geoObject.images,
             "thumbnail"     : thumbnail ?? geoObject.thumbnail
         ]
-        return try await networkManager.request(url: url, method: .post, parameters: parameters)
+        return try await networkManager.requestStatus(url: url, method: .post, parameters: parameters)
     }
     
     func updateGeoObject(geoObject: GeoObject, typeId: Int, images: [String]?, thumbnail: String?) async throws -> Void {
@@ -55,11 +55,11 @@ extension KraevedAPI {
             parameters["id"] = id
         }
         
-        return try await networkManager.request(url: url, method: .put, parameters: parameters)
+        return try await networkManager.requestStatus(url: url, method: .put, parameters: parameters)
     }
     
     func removeGeoObject(id: Int) async throws -> Void {
         let url = "GeoObjects/\(id)"
-        return try await networkManager.request(url: url, method: .delete, parameters: nil)
+        return try await networkManager.requestStatus(url: url, method: .delete, parameters: nil)
     }
 }

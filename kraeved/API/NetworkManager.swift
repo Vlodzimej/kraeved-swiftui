@@ -11,7 +11,8 @@ import Alamofire
 
 protocol NetworkManagerProtocol: ApplicationLoggerProtocol {
     func get<T: Decodable>(url: String, parameters: Parameters?) async -> T?
-    func request(url: String, method: HTTPMethod, parameters: Parameters?) async throws -> Void
+    func requestStatus(url: String, method: HTTPMethod, parameters: Parameters?) async throws -> Void
+    func request<T: Decodable>(url: String, method: HTTPMethod, parameters: Parameters?) async -> Result<T, Error>
     func upload(images: [UIImage]) async throws -> [String]
 }
 
@@ -57,7 +58,7 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
         }
     }
     
-    func request(url: String, method: HTTPMethod, parameters: Parameters? = nil) async throws -> Void {
+    func requestStatus(url: String, method: HTTPMethod, parameters: Parameters? = nil) async throws -> Void {
         do {
             return try await withCheckedThrowingContinuation { continuation in
                 AF.request(
@@ -79,6 +80,40 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
         }
     }
     
+    func request<T: Decodable>(url: String, method: HTTPMethod, parameters: Parameters? = nil) async -> Result<T, Error> {
+        await withCheckedContinuation { continuation in
+            AF.request(
+                Settings.instance.baseUrl + "/" + url,
+                method: method,
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
+            .responseData { response in
+                switch response.result {
+                    case .success(let data):
+                        do {
+                            if response.response?.statusCode == 400 {
+                                let decodedResponse = try JSONDecoder().decode(KraevedResponse<ErrorMessage>.self, from: data)
+                                let error = NSError(domain: "", code: 400, userInfo: [NSLocalizedDescriptionKey: decodedResponse.data.message])
+                                continuation.resume(returning: .failure(error))
+                                return
+                            }
+                            
+                            let decodedResponse = try JSONDecoder().decode(KraevedResponse<T>.self, from: data)
+                            continuation.resume(returning: .success(decodedResponse.data))
+                        } catch {
+                            continuation.resume(returning: .failure(error))
+                        }
+                    case .failure(let afError):
+                        continuation.resume(returning: .failure(afError))
+                }
+            }
+        }
+    }
+    
+    
+    
+    
     func upload(images: [UIImage]) async throws -> [String] {
         guard let url = URL(string: Settings.instance.baseUrl + "/" + "images") else { return [] }
         do {
@@ -93,22 +128,22 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                     },
                     to: url,
                     method: .post, headers: nil)
-                    .uploadProgress(queue: .main) { progress in
-                        debugPrint("UPLOADING PROGRESS", progress)
+                .uploadProgress(queue: .main) { progress in
+                    debugPrint("UPLOADING PROGRESS", progress)
+                }
+                .responseJSON { response in
+                    switch response.result {
+                        case .success(let jsonData):
+                            if let responseData = jsonData as? NSDictionary, let data = responseData["data"] as? NSDictionary, let filenames = data["filenames"] as? [String] {
+                                continuation.resume(returning: filenames)
+                            } else {
+                                continuation.resume(returning: [])
+                            }
+                        case .failure(let error):
+                            debugPrint(error)
+                            continuation.resume(throwing: error)
                     }
-                    .responseJSON { response in
-                        switch response.result {
-                            case .success(let jsonData):
-                                if let responseData = jsonData as? NSDictionary, let data = responseData["data"] as? NSDictionary, let filenames = data["filenames"] as? [String] {
-                                    continuation.resume(returning: filenames)
-                                } else {
-                                    continuation.resume(returning: [])
-                                }
-                            case .failure(let error):
-                                debugPrint(error)
-                                continuation.resume(throwing: error)
-                        }
-                    }
+                }
                 
             }
         }

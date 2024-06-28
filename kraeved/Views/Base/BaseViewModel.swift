@@ -12,6 +12,7 @@ import Foundation
     
     @Published var isShowAlert: Bool = false
     @Published var isLoading: Bool = false
+    @Published var errorMessage: String?
     
     var networkManager: NetworkManager
     var kraevedAPI: KraevedAPI
