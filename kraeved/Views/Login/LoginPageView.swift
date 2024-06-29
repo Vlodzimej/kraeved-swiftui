@@ -10,30 +10,32 @@ import SwiftUI
 // MARK: - LoginPageView
 struct LoginPageView: View {
     
-    // MARK: FocusedField
+    // MARK: - FocusedField
     enum FocusedField {
         case phone, code
     }
     
-    // MARK: Properties
+    // MARK: - Properties
     @ObservedObject private var viewModel = ViewModel()
     @FocusState private var focusedField: FocusedField?
+    @Environment(\.dismiss) var dismiss
+    @State var showingAlert: Bool = false
     
     private let phoneLimit: Int = 18
-    private let codeLimit: Int = 4
+    private let codeSize: Int = 4
     
     var buttonDisabled: Bool {
         switch viewModel.stage {
             case .phone:
                 return viewModel.phone.count != phoneLimit
             case .code:
-                return viewModel.code.count != codeLimit
+                return viewModel.code.count != codeSize
         }
     }
     
     var onDismiss: (() -> Void)?
     
-    // MARK: Body
+    // MARK: - Body
     var body: some View {
         ZStack {
             Color.Kraeved.cellBackground
@@ -42,12 +44,17 @@ struct LoginPageView: View {
                 errorMessage
                 actionButtons
             }
-            .frame(height: 290, alignment: .center)
+            .frame(height: 290, alignment: .top)
             .disabled(viewModel.isLoading)
             ProgressView()
                 .controlSize(.large)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .isVisible(isVisible: viewModel.isLoading)
+        }
+        .alert("profile.successfulLogin", isPresented: $showingAlert) {
+            Button("common.return", role: .cancel) {
+                dismiss()
+            }
         }
         .ignoresSafeArea()
     }
@@ -71,6 +78,7 @@ struct LoginPageView: View {
     private var errorMessage: some View {
         Text(viewModel.errorMessage ?? "")
             .foregroundStyle(.red)
+            .padding(.horizontal, 16)
     }
     
     private var phoneInputField: some View {
@@ -93,18 +101,11 @@ struct LoginPageView: View {
     
     private var actionButtons: some View {
         VStack {
-            KraevedButton(title: viewModel.stage == .phone ? "common.send" : "common.entry") {
+            KraevedButton(title: viewModel.stage == .phone ? "common.send" : "common.back") {
                 handleActionButtonTap()
             }
             .disabled(buttonDisabled)
-            
-            Button {
-                handleBackButtonTap()
-            } label: {
-                Text("common.back")
-            }
             .buttonStyle(.automatic)
-            .isVisible(isVisible: viewModel.stage == .code)
         }
     }
     
@@ -114,7 +115,14 @@ struct LoginPageView: View {
     }
     
     private func handleCodeChange() {
-        viewModel.code = String(viewModel.code.prefix(codeLimit))
+        viewModel.code = String(viewModel.code.prefix(codeSize))
+        if viewModel.code.count == codeSize {
+            Task {
+                if await viewModel.sendCode() {
+                    showingAlert = true
+                }
+            }
+        }
     }
     
     private func handleActionButtonTap() {
@@ -123,14 +131,11 @@ struct LoginPageView: View {
                 case .phone:
                     await viewModel.sendPhone()
                 case .code:
-                    await viewModel.sendCode()
+                    // Назад к вводу номера
+                    viewModel.stage = .phone
+                    focusedField = .phone
             }
         }
-    }
-    
-    private func handleBackButtonTap() {
-        viewModel.stage = .phone
-        focusedField = .phone
     }
 }
 

@@ -29,6 +29,12 @@ extension LoginPageView {
         
         private var password: String = ""
         
+        private let securityManager: SecurityManagerProtocol
+        
+        init(securityManager: SecurityManagerProtocol = SecurityManager.shared) {
+            self.securityManager = securityManager
+        }
+        
         // MARK: - Public Methods
         func sendPhone() async {
             isLoading = true
@@ -43,25 +49,41 @@ extension LoginPageView {
             }
         }
         
-        func sendCode() async {
+        func sendCode() async -> Bool {
+            var password: String?
+            var token: String?
+            
             isLoading = true
             defer { isLoading = false }
             
             let result = await kraevedAPI.sendCode(phone: preparedPhone, code: code)
             switch result {
                 case .success(let loginDto):
-                    password = loginDto.password ?? ""
+                    password = loginDto.password
                 case .failure(let error):
                     errorMessage = error.localizedDescription
+                    code = ""
             }
+            
+            guard let password, securityManager.savePassword(service: Settings.instance.currentEnvironment.rawValue,
+                                                             account: preparedPhone,
+                                                             password: password) else { return false }
             
             let loginResult = await kraevedAPI.login(phone: preparedPhone, password: password)
             switch loginResult {
                 case .success(let loginDto):
-                    print("CHECK", loginDto.token ?? "")
+                    token = loginDto.token
                 case .failure(let error):
                     errorMessage = error.localizedDescription
             }
+            
+            guard let token, securityManager.saveToken(service: Settings.instance.currentEnvironment.rawValue,
+                                            account: preparedPhone,
+                                            token: token) else { return false }
+            
+            UserDefaults.standard.setValue(true, forKey: "isAuth")
+            UserDefaults.standard.setValue(preparedPhone, forKey: "userPhone")
+            return true
         }
     }
 }

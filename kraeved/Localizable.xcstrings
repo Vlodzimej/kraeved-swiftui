@@ -281,6 +281,23 @@
         }
       }
     },
+    "common.return" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Return"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вернуться"
+          }
+        }
+      }
+    },
     "common.search" : {
       "localizations" : {
         "en" : {
@@ -893,6 +910,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Текущие координаты"
+          }
+        }
+      }
+    },
+    "profile.logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Logout"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выйти из профиля"
+          }
+        }
+      }
+    },
+    "profile.successfulLogin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Successful login"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Успешный вход"
           }
         }
       }

@@ -23,7 +23,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("main.tabMap", systemImage: "map")
                     }
-                ProfileView()
+                ProfilePageView()
                     .tabItem {
                         Label("main.tabProfile", systemImage: "gear")
                     }
@@ -40,11 +40,6 @@ struct ContentView: View {
         }
         .sheet(isPresented: $isLoggerPresented) {
             LoggerView()
-        }
-        .fullScreenCover(isPresented: $isLoginPagePresented) {
-            LoginPageView(onDismiss: {
-                isLoginPagePresented = false
-            })
         }
         .onAppear() {
             let appearance = UITabBarAppearance()

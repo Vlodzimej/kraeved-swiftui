@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66058CA02C303E34007251A7 /* SecurityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058C9F2C303E34007251A7 /* SecurityManager.swift */; };
+		66058CA22C304A1F007251A7 /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058CA12C304A1F007251A7 /* ProfilePageViewModel.swift */; };
 		6610E3402B6AB10D0053E378 /* HistoricalEventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */; };
 		6610E3422B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E3412B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift */; };
 		6610E3452B6AB5530053E378 /* KraevedAPI+GeoObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E3442B6AB5530053E378 /* KraevedAPI+GeoObjects.swift */; };
@@ -99,7 +101,7 @@
 		66FEAD4C2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD4B2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift */; };
 		66FEAD5B2ABDFCD500ADC551 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD5A2ABDFCD500ADC551 /* MainView.swift */; };
 		66FEAD602ABDFD3E00ADC551 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD5F2ABDFD3E00ADC551 /* MapView.swift */; };
-		66FEAD642ABDFD9100ADC551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD632ABDFD9100ADC551 /* ProfileView.swift */; };
+		66FEAD642ABDFD9100ADC551 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD632ABDFD9100ADC551 /* ProfilePageView.swift */; };
 		66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD652ABE10E600ADC551 /* NetworkManager.swift */; };
 		66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD682ABE31D000ADC551 /* GeoObject.swift */; };
 		66FEAD6C2AC022F000ADC551 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD6B2AC022F000ADC551 /* Constants.swift */; };
@@ -133,6 +135,8 @@
 		2ED2B1421BC060648CDA5F81 /* Pods-kraeved-kraevedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved-kraevedUITests.release.xcconfig"; path = "Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		54084E112EEB41F7BFF49857 /* Pods-kraeved.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.testing.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.testing.xcconfig"; sourceTree = "<group>"; };
 		60C0AD42AB9142E0CEB4A079 /* Pods-kraeved.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.development.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.development.xcconfig"; sourceTree = "<group>"; };
+		66058C9F2C303E34007251A7 /* SecurityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityManager.swift; sourceTree = "<group>"; };
+		66058CA12C304A1F007251A7 /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 		6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventDetailsView.swift; sourceTree = "<group>"; };
 		6610E3412B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventDetailsViewModel.swift; sourceTree = "<group>"; };
 		6610E3442B6AB5530053E378 /* KraevedAPI+GeoObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KraevedAPI+GeoObjects.swift"; sourceTree = "<group>"; };
@@ -225,7 +229,7 @@
 		66FEAD4B2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kraevedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		66FEAD5A2ABDFCD500ADC551 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		66FEAD5F2ABDFD3E00ADC551 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		66FEAD632ABDFD9100ADC551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		66FEAD632ABDFD9100ADC551 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		66FEAD652ABE10E600ADC551 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		66FEAD682ABE31D000ADC551 /* GeoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObject.swift; sourceTree = "<group>"; };
 		66FEAD6B2AC022F000ADC551 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -434,11 +438,12 @@
 			path = GeoObject;
 			sourceTree = "<group>";
 		};
-		6670EFF62C2B6C3C0067CB34 /* New Group */ = {
+		6670EFF62C2B6C3C0067CB34 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				66058C9F2C303E34007251A7 /* SecurityManager.swift */,
 			);
-			path = "New Group";
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		6670EFF72C2B6C420067CB34 /* Modifiers */ = {
@@ -511,7 +516,8 @@
 		66A904782B7177BD0064F940 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				66FEAD632ABDFD9100ADC551 /* ProfileView.swift */,
+				66FEAD632ABDFD9100ADC551 /* ProfilePageView.swift */,
+				66058CA12C304A1F007251A7 /* ProfilePageViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -709,7 +715,7 @@
 			isa = PBXGroup;
 			children = (
 				6670EFF72C2B6C420067CB34 /* Modifiers */,
-				6670EFF62C2B6C3C0067CB34 /* New Group */,
+				6670EFF62C2B6C3C0067CB34 /* Managers */,
 				6666A9BB2B7BEE9B001DB0E8 /* Helpers */,
 				668B39DE2B7170A5009A2E00 /* Models */,
 				66D12B252B6660FF009A6403 /* extensions */,
@@ -982,6 +988,7 @@
 				66D12B292B666173009A6403 /* DeviceShakeViewModifier.swift in Sources */,
 				667865412AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift in Sources */,
 				66841FDE2B6FF47C005A8233 /* GeoObjectDetailsTabButtonView.swift in Sources */,
+				66058CA22C304A1F007251A7 /* ProfilePageViewModel.swift in Sources */,
 				6616102C2AC99B6D00D32C84 /* GeoObjectBrief.swift in Sources */,
 				66A95EBF2BF9B92C006119AA /* MultipleImageSelectView.swift in Sources */,
 				6666A9BD2B7BEEAE001DB0E8 /* TabBarAccessor.swift in Sources */,
@@ -998,6 +1005,7 @@
 				66841FDC2B6FCD6A005A8233 /* AsyncImage.swift in Sources */,
 				66E6129E2ACC4FA500EBB283 /* AttractionsFeedViewModel.swift in Sources */,
 				66D12B242B6660D9009A6403 /* Notifications.swift in Sources */,
+				66058CA02C303E34007251A7 /* SecurityManager.swift in Sources */,
 				669DA3242C2F5D8800B69CA8 /* KraevedAPI+Auth.swift in Sources */,
 				666229942BF5F31200080200 /* SingleImageUploaderView.swift in Sources */,
 				6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */,
@@ -1048,7 +1056,7 @@
 				668B39DD2B714289009A2E00 /* GeoObjectDetailsGallery.swift in Sources */,
 				6670EFF92C2B6C510067CB34 /* IsVisibleModifier.swift in Sources */,
 				66D12B2B2B6661D5009A6403 /* View+onShake.swift in Sources */,
-				66FEAD642ABDFD9100ADC551 /* ProfileView.swift in Sources */,
+				66FEAD642ABDFD9100ADC551 /* ProfilePageView.swift in Sources */,
 				66FEAD2F2ABDF90E00ADC551 /* KraevedApp.swift in Sources */,
 				66A904922B7558AF0064F940 /* MapControlView.swift in Sources */,
 				66A95EC52BFA2495006119AA /* GeoObjectDetailsEdit.swift in Sources */,
