@@ -23,6 +23,22 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
     @Published var isLoading = false
     @Published var isFailed = false
     
+    private var bearer: String?
+    private var commonHeaders: HTTPHeaders = []
+    
+    private let securityManager: SecurityManagerProtocol
+    
+    init(securityManager: SecurityManagerProtocol = SecurityManager.shared) {
+        self.securityManager = securityManager
+    }
+    
+    func updateAuthorizationToken() {
+        if let phone = UserDefaults.standard.string(forKey: "userPhone"),
+           let token = securityManager.getToken(service: Settings.instance.currentEnvironment.rawValue, account: phone) {
+            commonHeaders.add(name: "Authorization", value: "Bearer \(token)")
+        }
+    }
+    
     func get<T: Decodable>(url: String, parameters: Parameters?) async -> T? {
         do {
             return try await withCheckedThrowingContinuation { continuation in
@@ -86,7 +102,8 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                 Settings.instance.baseUrl + "/" + url,
                 method: method,
                 parameters: parameters,
-                encoding: JSONEncoding.default
+                encoding: JSONEncoding.default,
+                headers: commonHeaders
             )
             .responseData { response in
                 switch response.result {

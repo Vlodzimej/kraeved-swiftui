@@ -931,6 +931,40 @@
         }
       }
     },
+    "profile.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Name"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Имя"
+          }
+        }
+      }
+    },
+    "profile.startDate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Date of registration"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата регистрации"
+          }
+        }
+      }
+    },
     "profile.successfulLogin" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -944,6 +978,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Успешный вход"
+          }
+        }
+      }
+    },
+    "profile.surname" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surname"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фамилия"
           }
         }
       }

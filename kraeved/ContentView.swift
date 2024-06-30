@@ -47,6 +47,7 @@ struct ContentView: View {
             appearance.backgroundColor = .Kraeved.mainBackground
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
+            NetworkManager.shared.updateAuthorizationToken()
 //
 //            let navAppearance = UINavigationBarAppearance()
 //            navAppearance.backgroundColor = .red

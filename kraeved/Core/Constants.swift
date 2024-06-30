@@ -12,6 +12,10 @@ struct Constants {
     static let initialLocation = CLLocationCoordinate2D(latitude: 54.513891, longitude: 36.261191)
     static let defaultRegion: Int = 40
     static let baseUrl: String = "https://127.0.0.4:5001/api"
+    
+    struct Date {
+        static let format = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
+    }
 }
 
 struct ColorConstants {
@@ -28,3 +32,5 @@ struct ColorConstants {
     static let highlightedText      = "#DD614B"
     static let darkGrey             = "#202126"
 }
+
+

@@ -29,7 +29,7 @@ struct LoginPageView: View {
             case .phone:
                 return viewModel.phone.count != phoneLimit
             case .code:
-                return viewModel.code.count != codeSize
+                return viewModel.code.count == codeSize
         }
     }
     
@@ -82,7 +82,7 @@ struct LoginPageView: View {
     }
     
     private var phoneInputField: some View {
-        GenericTextInput(value: $viewModel.phone, title: "common.phone", placeholder: PhoneFormatter.phonePrefix, keyboardType: .phonePad, tracking: 1.0)
+        GenericTextInput(value: $viewModel.phone, title: "common.phone", placeholder: PhoneFormatter.phonePrefix, keyboardType: .phonePad)
             .onChange(of: viewModel.phone) {
                 handlePhoneChange()
             }
@@ -91,7 +91,7 @@ struct LoginPageView: View {
     }
     
     private var codeInputField: some View {
-        GenericTextInput(value: $viewModel.code, title: "common.code", placeholder: "", keyboardType: .phonePad, tracking: 2.0)
+        GenericTextInput(value: $viewModel.code, title: "common.code", placeholder: "", keyboardType: .phonePad)
             .onChange(of: viewModel.code) {
                 handleCodeChange()
             }
@@ -122,6 +122,9 @@ struct LoginPageView: View {
                     showingAlert = true
                 }
             }
+        }
+        if viewModel.code.count > 0 && !(viewModel.errorMessage?.isEmpty ?? true) {
+            viewModel.errorMessage = ""
         }
     }
     

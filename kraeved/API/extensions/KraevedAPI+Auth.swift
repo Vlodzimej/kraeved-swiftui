@@ -7,7 +7,14 @@
 
 import Foundation
 
-extension KraevedAPI {
+//MARK: - AuthAPIManagerProtocol
+protocol AuthAPIManagerProtocol {
+    func sendPhone(phone: String) async -> Result<Bool, Error>
+    func sendCode(phone: String, code: String) async -> Result<LoginInDto, Error>
+    func login(phone: String, password: String) async -> Result<LoginInDto, Error>
+}
+
+extension KraevedAPIManager: AuthAPIManagerProtocol{
     
     func sendPhone(phone: String) async -> Result<Bool, Error> {
         let url = "auth?phone=\(phone)"

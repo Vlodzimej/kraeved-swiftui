@@ -7,7 +7,12 @@
 
 import Foundation
 
-extension KraevedAPI {
+protocol HistoricalEventAPIManager {
+    func getHistoricalEvents(regionId: Int, name: String) async -> [HistoricalEventBrief]?
+    func getHistoricalEvent(id: Int) async -> HistoricalEvent?
+}
+
+extension KraevedAPIManager: HistoricalEventAPIManager {
     
     func getHistoricalEvents(regionId: Int = Constants.defaultRegion, name: String = "") async -> [HistoricalEventBrief]? {
         let url = "HistoricalEvents?name=\(name)&regionId=\(regionId)>"

@@ -8,8 +8,8 @@
 import Foundation
 
 //MARK: - KraevedAPI
-class KraevedAPI: ObservableObject, ApplicationLoggerProtocol {
-    static let shared = KraevedAPI()
+class KraevedAPIManager: ObservableObject, ApplicationLoggerProtocol {
+    static let shared = KraevedAPIManager()
     
     let networkManager: NetworkManagerProtocol
     

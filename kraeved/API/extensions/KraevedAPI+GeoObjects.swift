@@ -7,7 +7,16 @@
 
 import Foundation
 
-extension KraevedAPI {
+protocol GeoObjectsAPIManager {
+    func getGeoObjects(regionId: Int, name: String) async -> [GeoObjectBrief]?
+    func getGeoObject(id: Int) async -> GeoObject?
+    func getGeoObjectTypes() async -> [GenericType]?
+    func createGeoObject(geoObject: GeoObject, typeId: Int, images: [String]?, thumbnail: String?) async throws -> Void
+    func updateGeoObject(geoObject: GeoObject, typeId: Int, images: [String]?, thumbnail: String?) async throws -> Void
+    func removeGeoObject(id: Int) async throws -> Void
+}
+
+extension KraevedAPIManager: GeoObjectsAPIManager {
     
     func getGeoObjects(regionId: Int = Constants.defaultRegion, name: String = "") async -> [GeoObjectBrief]? {
         let url = "GeoObjects?regionId=\(regionId)"

@@ -29,6 +29,13 @@ extension GeoObjectFormView {
         @Published var editedGeoObject = GeoObject()
         @Published var typeId: Int = 0
         
+        private let apiManager: GeoObjectsAPIManager
+        
+        init(apiManager: GeoObjectsAPIManager = KraevedAPIManager.shared) {
+            self.apiManager = apiManager
+        }
+        
+        
         func submit(thumbnailImage: Image?, images: [UIImage]) async throws {
             isLoading = true
             do {
@@ -41,7 +48,7 @@ extension GeoObjectFormView {
         }
         
         func fetchGeoObjectTypes() async {
-            types = await kraevedAPI.getGeoObjectTypes()
+            types = await apiManager.getGeoObjectTypes()
         }
         
         private func sendGeoObject(thumbnailImage: Image?, photoImages: [UIImage] = []) async throws {
@@ -53,9 +60,9 @@ extension GeoObjectFormView {
                 
                 let request = switch mode {
                     case .creation:
-                        kraevedAPI.createGeoObject
+                        apiManager.createGeoObject
                     case .edit:
-                        kraevedAPI.updateGeoObject
+                        apiManager.updateGeoObject
                 }
                 
                 try await request(editedGeoObject, typeId, images, thumbnail)

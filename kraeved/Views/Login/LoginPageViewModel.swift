@@ -30,9 +30,11 @@ extension LoginPageView {
         private var password: String = ""
         
         private let securityManager: SecurityManagerProtocol
+        private let apiManager: AuthAPIManagerProtocol
         
-        init(securityManager: SecurityManagerProtocol = SecurityManager.shared) {
+        init(securityManager: SecurityManagerProtocol = SecurityManager.shared, apiManager: AuthAPIManagerProtocol = KraevedAPIManager.shared) {
             self.securityManager = securityManager
+            self.apiManager = apiManager
         }
         
         // MARK: - Public Methods
@@ -40,7 +42,7 @@ extension LoginPageView {
             isLoading = true
             defer { isLoading = false }
             
-            let result = await kraevedAPI.sendPhone(phone: preparedPhone)
+            let result = await apiManager.sendPhone(phone: preparedPhone)
             switch result {
                 case .success(let status):
                     stage = .code
@@ -56,7 +58,7 @@ extension LoginPageView {
             isLoading = true
             defer { isLoading = false }
             
-            let result = await kraevedAPI.sendCode(phone: preparedPhone, code: code)
+            let result = await apiManager.sendCode(phone: preparedPhone, code: code)
             switch result {
                 case .success(let loginDto):
                     password = loginDto.password
@@ -69,7 +71,7 @@ extension LoginPageView {
                                                              account: preparedPhone,
                                                              password: password) else { return false }
             
-            let loginResult = await kraevedAPI.login(phone: preparedPhone, password: password)
+            let loginResult = await apiManager.login(phone: preparedPhone, password: password)
             switch loginResult {
                 case .success(let loginDto):
                     token = loginDto.token
@@ -83,6 +85,8 @@ extension LoginPageView {
             
             UserDefaults.standard.setValue(true, forKey: "isAuth")
             UserDefaults.standard.setValue(preparedPhone, forKey: "userPhone")
+            
+            networkManager.updateAuthorizationToken()
             return true
         }
     }
