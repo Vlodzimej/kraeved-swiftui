@@ -104,7 +104,7 @@ struct GeoObjectFormView: View {
                         title: String(localized: "form.description"),
                         placeholder: String(localized: "form.descriptionPlaceholder"),
                         keyboardType: .default,
-                        symbolsLimit: 3000,
+                        limitText: 3000,
                         lineLimit: 20,
                         axis: .vertical
                     )

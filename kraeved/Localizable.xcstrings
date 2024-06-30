@@ -914,6 +914,40 @@
         }
       }
     },
+    "profile.enterName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Enter your name"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Укажите ваше имя"
+          }
+        }
+      }
+    },
+    "profile.enterSurname" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Enter your surname"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Укажите вашу фамилию"
+          }
+        }
+      }
+    },
     "profile.logout" : {
       "extractionState" : "manual",
       "localizations" : {

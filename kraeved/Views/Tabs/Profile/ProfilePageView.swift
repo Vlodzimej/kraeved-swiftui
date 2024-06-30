@@ -15,8 +15,8 @@ struct ProfilePageView: View {
     
     @ObservedObject private var viewModel = ViewModel()
     
-    private let userNameLength: Int = 16
-    private let userSurnameLength: Int = 16
+    private let nameMaxSymbolsLimit: Int = 16
+    private let surnameMaxSymbolsLimit: Int = 16
     
     var body: some View {
         NavigationStack {
@@ -64,17 +64,19 @@ struct ProfilePageView: View {
     }
     
     private var nameInputField: some View {
-        GenericTextInput(value: $viewModel.editedUser.surname, title: "profile.surname", placeholder: "", keyboardType: .alphabet)
-            .onChange(of: viewModel.editedUser.name) {
-                handleNameChange()
-            }
+        GenericTextInput(value: $viewModel.editedUser.surname, 
+                         title: "profile.surname",
+                         placeholder: "profile.enterName",
+                         keyboardType: .alphabet,
+                         limitText: nameMaxSymbolsLimit)
     }
     
     private var surnameInputField: some View {
-        GenericTextInput(value: $viewModel.editedUser.name, title: "profile.name", placeholder: "", keyboardType: .alphabet)
-            .onChange(of: viewModel.editedUser.surname) {
-                handleSurnameChange()
-            }
+        GenericTextInput(value: $viewModel.editedUser.name, 
+                         title: "profile.name",
+                         placeholder: "profile.enterSurname",
+                         keyboardType: .alphabet,
+                         limitText: surnameMaxSymbolsLimit)
     }
     
     private var startDateTextField: some View {
@@ -93,7 +95,7 @@ struct ProfilePageView: View {
                 .font(.system(size: 12))
                 .padding(.bottom, 4)
                 .foregroundColor(Color.Kraeved.mainStroke)
-            Text(viewModel.editedUser.phone)
+            Text(PhoneFormatter.format(phoneNumber: viewModel.editedUser.phone))
         }
     }
     
@@ -109,14 +111,6 @@ struct ProfilePageView: View {
             }
         }
         .isVisible(isVisible: isAuth)
-    }
-    
-    private func handleNameChange() {
-        viewModel.editedUser.name = String(viewModel.editedUser.name.prefix(userNameLength))
-    }
-    
-    private func handleSurnameChange() {
-        viewModel.editedUser.surname = String(viewModel.editedUser.surname.prefix(userSurnameLength))
     }
 }
 

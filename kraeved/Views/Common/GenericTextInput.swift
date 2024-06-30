@@ -15,30 +15,36 @@ struct GenericTextInput: View {
     let title: String
     let placeholder: String
     let keyboardType: UIKeyboardType
-    var symbolsLimit: Int = 30
+    var limitText: Int = 30
     var lineLimit: Int = 1
     var axis: Axis = .horizontal
-    //var tracking: CGFloat = 1.0
     
     var body: some View {
         VStack(alignment: .leading) {
             Text(LocalizedStringKey(title))
                 .font(.system(size: 12))
                 .foregroundStyle(Color.Kraeved.mainStroke)
-            TextField(placeholder, text: $value, axis: axis)
-                .onReceive(Just(value)) {
-                    _ in limitText(symbolsLimit)
+            TextField(LocalizedStringKey(placeholder), text: $value, axis: axis)
+                .onReceive(Just(value)) { _ in
+                    limitText(limitText)
                 }
                 .keyboardType(keyboardType)
                 .lineLimit(lineLimit)
-               // .tracking(tracking)
         }
     }
     
-    //Function to keep text length in limits
+    // Function to keep text length within limits
     func limitText(_ upper: Int) {
         if value.count > upper {
             value = String(value.prefix(upper))
         }
+    }
+}
+
+struct GenericTextInput_Previews: PreviewProvider {
+    static var previews: some View {
+        GenericTextInput(value: .constant("Sample Text"), title: "Title", placeholder: "Placeholder", keyboardType: .default)
+            .padding()
+            .previewLayout(.sizeThatFits)
     }
 }
