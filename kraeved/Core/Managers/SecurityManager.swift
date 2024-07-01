@@ -67,6 +67,7 @@ final class SecurityManager: SecurityManagerProtocol {
         return nil
     }
     
+    @discardableResult
     func deletePassword(service: String, account: String) -> Bool {
         // Create query for deleting password
         let query: [String: Any] = [
@@ -101,7 +102,6 @@ final class SecurityManager: SecurityManagerProtocol {
         return status == errSecSuccess
     }
     
-    // Function to retrieve JWT token from Keychain
     func getToken(service: String, account: String) -> String? {
         // Create query for searching token
         let query: [String: Any] = [
@@ -124,7 +124,7 @@ final class SecurityManager: SecurityManagerProtocol {
         return nil
     }
     
-    // Function to delete JWT token from Keychain
+    @discardableResult
     func deleteToken(service: String, account: String) -> Bool {
         // Create query for deleting token
         let query: [String: Any] = [

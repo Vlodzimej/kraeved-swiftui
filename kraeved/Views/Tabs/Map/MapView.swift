@@ -134,12 +134,14 @@ struct MapView: View {
                             Label("common.showFilter", systemImage: "line.3.horizontal.decrease.circle")
                         }
                         
-                        Button {
-                            withAnimation {
-                                isShowSelection = true
+                        if viewModel.currentUserRole == .admin {
+                            Button {
+                                withAnimation {
+                                    isShowSelection = true
+                                }
+                            } label: {
+                                Label("geoObject.create", systemImage: "plus.circle")
                             }
-                        } label: {
-                            Label("geoObject.create", systemImage: "plus.circle")
                         }
                     }) {
                         Image(systemName: "ellipsis.circle")
@@ -150,6 +152,11 @@ struct MapView: View {
             .toolbar(!isShowSelection ? .visible : .hidden)
             .toolbarBackground(Color.Kraeved.mainBackground, for: .tabBar)
             .toolbarBackground(Color.Kraeved.mainBackground, for: .navigationBar)
+            .onAppear {
+                Task {
+                    await viewModel.getCurrentUserRole()
+                }
+            }
         }
     }
     

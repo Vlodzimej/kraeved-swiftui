@@ -19,7 +19,10 @@ extension AttractionsDetailsView {
         //MARK: Public Methods
         func getAttraction(id: Int) async {
             guard attraction == nil else { return }
-            attraction = await kraevedAPI.getGeoObject(id: id)
+            let result = await kraevedAPI.getGeoObject(id: id)
+            if case let .success(geoObject) = result {
+                attraction = geoObject
+            }
         }
     }
 }

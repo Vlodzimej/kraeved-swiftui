@@ -11,6 +11,7 @@ extension ProfilePageView {
     
     final class ViewModel: BaseViewModel {
         
+        @Published var isAuth: Bool = false
         @Published var editedUser = User()
         private var initialUser = User()
         
@@ -18,11 +19,12 @@ extension ProfilePageView {
             initialUser != editedUser
         }
         
-        private let securityManager: SecurityManagerProtocol
+        private let userManager: UserManagerProtocol
         private let apiManager: UserAPIManagerProtocol
         
-        init(securityManager: SecurityManagerProtocol = SecurityManager.shared, apiManager: UserAPIManagerProtocol = KraevedAPIManager.shared) {
-            self.securityManager = securityManager
+        init(userManager: UserManagerProtocol = UserManager.shared, apiManager: UserAPIManagerProtocol = KraevedAPIManager.shared) {
+            self.isAuth = UserDefaults.standard.bool(forKey: "isAuth")
+            self.userManager = userManager
             self.apiManager = apiManager
         }
         
@@ -30,13 +32,8 @@ extension ProfilePageView {
             isLoading = true
             defer { isLoading = false }
             
-            guard let phone = UserDefaults.standard.string(forKey: "userPhone") else { return }
-            
-            securityManager.deletePassword(service: Settings.instance.currentEnvironment.rawValue, account: phone)
-            securityManager.deleteToken(service: Settings.instance.currentEnvironment.rawValue, account: phone)
-            
-            UserDefaults.standard.removeObject(forKey: "isAuth")
-            UserDefaults.standard.removeObject(forKey: "userPhone")
+            userManager.logout()
+            isAuth = false
         }
         
         func getCurrentUser() {
@@ -47,9 +44,12 @@ extension ProfilePageView {
                 let result  = await apiManager.getCurrentUser()
                 switch result {
                     case .success(let user):
+                        isAuth = true
                         initialUser = user
                         editedUser = user
                     case .failure(let error):
+                        userManager.logout()
+                        isAuth = false
                         debugPrint(error)
                 }
             }

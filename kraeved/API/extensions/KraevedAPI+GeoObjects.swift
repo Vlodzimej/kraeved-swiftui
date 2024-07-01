@@ -7,30 +7,31 @@
 
 import Foundation
 
-protocol GeoObjectsAPIManager {
-    func getGeoObjects(regionId: Int, name: String) async -> [GeoObjectBrief]?
-    func getGeoObject(id: Int) async -> GeoObject?
-    func getGeoObjectTypes() async -> [GenericType]?
+//MARK: - GeoObjectsAPIManagerProtocol
+protocol GeoObjectsAPIManagerProtocol {
+    func getGeoObjects(regionId: Int, name: String) async -> Result<[GeoObjectBrief], Error>
+    func getGeoObject(id: Int) async -> Result<GeoObject, Error>
+    func getGeoObjectTypes() async -> Result<[GenericType], Error>
     func createGeoObject(geoObject: GeoObject, typeId: Int, images: [String]?, thumbnail: String?) async throws -> Void
     func updateGeoObject(geoObject: GeoObject, typeId: Int, images: [String]?, thumbnail: String?) async throws -> Void
     func removeGeoObject(id: Int) async throws -> Void
 }
 
-extension KraevedAPIManager: GeoObjectsAPIManager {
+extension KraevedAPIManager: GeoObjectsAPIManagerProtocol {
     
-    func getGeoObjects(regionId: Int = Constants.defaultRegion, name: String = "") async -> [GeoObjectBrief]? {
+    func getGeoObjects(regionId: Int = Constants.defaultRegion, name: String = "") async -> Result<[GeoObjectBrief], Error> {
         let url = "GeoObjects?regionId=\(regionId)"
-        return await networkManager.get(url: url, parameters: nil)
+        return await networkManager.request(url: url, method: .get, parameters: nil)
     }
     
-    func getGeoObject(id: Int) async -> GeoObject? {
+    func getGeoObject(id: Int) async -> Result<GeoObject, Error> {
         let url = "GeoObjects/\(id)"
-        return await networkManager.get(url: url, parameters: nil)
+        return await networkManager.request(url: url, method: .get, parameters: nil)
     }
     
-    func getGeoObjectTypes() async -> [GenericType]? {
+    func getGeoObjectTypes() async -> Result<[GenericType], Error> {
         let url = "GeoObjectTypes"
-        return await networkManager.get(url: url, parameters: nil)
+        return await networkManager.request(url: url, method: .get, parameters: nil)
     }
     
     func createGeoObject(geoObject: GeoObject, typeId: Int, images: [String]?, thumbnail: String?) async throws -> Void {

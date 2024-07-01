@@ -7,13 +7,20 @@
 
 import Foundation
 
+enum UserRole: String, Codable {
+    case unknown = "UNKNOWN"
+    case admin = "ADMIN"
+    case user = "USER"
+}
+
 struct User: Codable, Comparable {
     static func < (lhs: User, rhs: User) -> Bool {
         lhs.id == rhs.id &&
         lhs.phone == rhs.phone &&
         lhs.name == rhs.name &&
         lhs.surname == rhs.surname &&
-        lhs.startDate == lhs.startDate
+        lhs.startDate == rhs.startDate &&
+        lhs.role == rhs.role
     }
     
     
@@ -22,13 +29,15 @@ struct User: Codable, Comparable {
     var name: String
     var surname: String
     let startDate: Date
+    let role: UserRole
     
-    init(id: Int = 0, phone: String = "", name: String = "", surname: String = "", startDate: Date = Date.now) {
+    init(id: Int = 0, phone: String = "", name: String = "", surname: String = "", startDate: Date = Date.now, role: UserRole = .unknown) {
         self.id = id
         self.phone = phone
         self.name = name
         self.surname = surname
         self.startDate = startDate
+        self.role = role
     }
     
     init(from decoder: Decoder) throws {
@@ -50,5 +59,6 @@ struct User: Codable, Comparable {
         self.phone = try container.decode(String.self, forKey: .phone)
         self.name = try container.decode(String.self, forKey: .name)
         self.surname = try container.decode(String.self, forKey: .surname)
+        self.role = try container.decode(UserRole.self, forKey: .role)
     }
 }

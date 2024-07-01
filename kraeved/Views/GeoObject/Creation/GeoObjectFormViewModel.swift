@@ -29,9 +29,9 @@ extension GeoObjectFormView {
         @Published var editedGeoObject = GeoObject()
         @Published var typeId: Int = 0
         
-        private let apiManager: GeoObjectsAPIManager
+        private let apiManager: GeoObjectsAPIManagerProtocol
         
-        init(apiManager: GeoObjectsAPIManager = KraevedAPIManager.shared) {
+        init(apiManager: GeoObjectsAPIManagerProtocol = KraevedAPIManager.shared) {
             self.apiManager = apiManager
         }
         
@@ -48,7 +48,10 @@ extension GeoObjectFormView {
         }
         
         func fetchGeoObjectTypes() async {
-            types = await apiManager.getGeoObjectTypes()
+            let result = await apiManager.getGeoObjectTypes()
+            if case let .success(types) = result {
+                self.types = types
+            }
         }
         
         private func sendGeoObject(thumbnailImage: Image?, photoImages: [UIImage] = []) async throws {

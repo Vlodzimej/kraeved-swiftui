@@ -17,7 +17,10 @@ extension HistoricalEventFeedView {
 
         //MARK: Public Methods
         func getHistoricalEvents() async {
-            historicalEvents = await kraevedAPI.getHistoricalEvents()
+            let result = await kraevedAPI.getHistoricalEvents()
+            if case let .success(historicalEvents) = result {
+                self.historicalEvents = historicalEvents
+            }
         }
     }
 }

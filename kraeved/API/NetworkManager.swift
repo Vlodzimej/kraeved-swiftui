@@ -109,9 +109,9 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                 switch response.result {
                     case .success(let data):
                         do {
-                            if response.response?.statusCode == 400 {
+                            if response.response?.statusCode != 200 {
                                 let decodedResponse = try JSONDecoder().decode(KraevedResponse<ErrorMessage>.self, from: data)
-                                let error = NSError(domain: "", code: 400, userInfo: [NSLocalizedDescriptionKey: decodedResponse.data.message])
+                                let error = NSError(domain: "", code: response.response?.statusCode ?? 520, userInfo: [NSLocalizedDescriptionKey: decodedResponse.data.message])
                                 continuation.resume(returning: .failure(error))
                                 return
                             }
@@ -144,7 +144,7 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                         }
                     },
                     to: url,
-                    method: .post, headers: nil)
+                    method: .post, headers: commonHeaders)
                 .uploadProgress(queue: .main) { progress in
                     debugPrint("UPLOADING PROGRESS", progress)
                 }

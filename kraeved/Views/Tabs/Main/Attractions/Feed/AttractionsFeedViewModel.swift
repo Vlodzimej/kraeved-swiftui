@@ -18,7 +18,9 @@ extension AttractionsFeedView {
         //MARK: Public Methods
         func getAttractions() async {
             let result = await kraevedAPI.getGeoObjects()
-            attractions = result
+            if case let .success(geoObject) = result {
+                attractions = geoObject
+            }
         }
     }
 }

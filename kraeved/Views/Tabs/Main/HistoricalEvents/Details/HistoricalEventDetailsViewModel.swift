@@ -17,7 +17,10 @@ extension HistoricalEventDetailsView {
         func getHistoricalEvent(id: Int) async {
             guard historicalEvent == nil else { return }
             Task {
-                historicalEvent = await kraevedAPI.getHistoricalEvent(id: id)
+                let resut = await kraevedAPI.getHistoricalEvent(id: id)
+                if case let .success(historicalEvent) = resut {
+                    self.historicalEvent = historicalEvent
+                }
             }
         }
         

@@ -10,13 +10,10 @@ import SwiftUI
 // MARK: - ProfilePageView
 struct ProfilePageView: View {
     
-    @State var isAuth: Bool = false
+
     @State var showingAlert: Bool = false
     
     @ObservedObject private var viewModel = ViewModel()
-    
-    private let nameMaxSymbolsLimit: Int = 16
-    private let surnameMaxSymbolsLimit: Int = 16
     
     var body: some View {
         NavigationStack {
@@ -42,15 +39,14 @@ struct ProfilePageView: View {
                         buttonStack
                         
                     }
-                    .isVisible(isVisible: isAuth)
+                    .isVisible(isVisible: viewModel.isAuth)
                     Spacer()
                     NavigationLink(destination: LoginPageView(), label: {
                         Text("common.entry")
                     })
-                    .isVisible(isVisible: !isAuth)
+                    .isVisible(isVisible: !viewModel.isAuth)
                 }
                 .onAppear {
-                    isAuth = UserDefaults.standard.bool(forKey: "isAuth")
                     showingAlert = true
                     viewModel.getCurrentUser()
                 }
@@ -67,16 +63,14 @@ struct ProfilePageView: View {
         GenericTextInput(value: $viewModel.editedUser.surname, 
                          title: "profile.surname",
                          placeholder: "profile.enterName",
-                         keyboardType: .alphabet,
-                         limitText: nameMaxSymbolsLimit)
+                         keyboardType: .alphabet)
     }
     
     private var surnameInputField: some View {
         GenericTextInput(value: $viewModel.editedUser.name, 
                          title: "profile.name",
                          placeholder: "profile.enterSurname",
-                         keyboardType: .alphabet,
-                         limitText: surnameMaxSymbolsLimit)
+                         keyboardType: .alphabet)
     }
     
     private var startDateTextField: some View {
@@ -107,10 +101,9 @@ struct ProfilePageView: View {
             .isVisible(isVisible: viewModel.hasChanges)
             KraevedButton(title: "profile.logout") {
                 viewModel.logout()
-                isAuth = false
             }
         }
-        .isVisible(isVisible: isAuth)
+        .isVisible(isVisible: viewModel.isAuth)
     }
 }
 
