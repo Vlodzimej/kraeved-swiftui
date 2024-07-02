@@ -14,10 +14,10 @@ import Foundation
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     
-    var networkManager: NetworkManager
+    var networkManager: NetworkManagerProtocol
     var kraevedAPI: KraevedAPIManager
     
-    init(networkManager: NetworkManager = NetworkManager.shared, kraevedAPI: KraevedAPIManager = KraevedAPIManager.shared) {
+    init(networkManager: NetworkManagerProtocol = NetworkManager.shared, kraevedAPI: KraevedAPIManager = KraevedAPIManager.shared) {
         self.networkManager = networkManager
         self.kraevedAPI = kraevedAPI
     }

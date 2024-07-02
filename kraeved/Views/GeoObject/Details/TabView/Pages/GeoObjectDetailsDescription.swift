@@ -16,7 +16,7 @@ struct GeoObjectDetailsDescription: View {
             Text(description)
                 .padding(.horizontal, 16)
                 .font(.system(size: 13))
-                .foregroundStyle(Color.Kraeved.darkGrey)
+                .foregroundStyle(Color.Kraeved.Gray.dark)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
     }

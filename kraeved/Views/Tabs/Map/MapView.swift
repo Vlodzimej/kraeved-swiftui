@@ -21,6 +21,8 @@ struct MapView: View {
     
     @State private var region = MKCoordinateRegion(center: Constants.initialLocation, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
+    @State var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: Constants.initialLocation.latitude, longitude: Constants.initialLocation.longitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+    
     @State var mkMapView: MKMapView = .init()
     
     @State private var selectedGeoObjectId: Int? = nil

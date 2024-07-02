@@ -42,11 +42,11 @@ struct ContentView: View {
             LoggerView()
         }
         .onAppear() {
-            let appearance = UITabBarAppearance()
-            appearance.backgroundEffect = nil
-            appearance.backgroundColor = .Kraeved.mainBackground
-            UITabBar.appearance().standardAppearance = appearance
-            UITabBar.appearance().scrollEdgeAppearance = appearance
+//            let appearance = UITabBarAppearance()
+//            appearance.backgroundEffect = nil
+//            appearance.backgroundColor = UIColor(Color.Pallete.azure)
+//            UITabBar.appearance().standardAppearance = appearance
+//            UITabBar.appearance().scrollEdgeAppearance = appearance
             NetworkManager.shared.updateAuthorizationToken()
 //
 //            let navAppearance = UINavigationBarAppearance()
@@ -68,7 +68,7 @@ struct ContentView: View {
             //
             //            UISearchTextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "Поиск", attributes: [.foregroundColor: UIColor.Kraeved.searchFont])
 //        }
-        .tint(.Kraeved.titleFontMain)
+        .tint(.Pallete.viridian)
     }
 }
 

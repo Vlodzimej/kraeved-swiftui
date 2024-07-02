@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 //MARK: - AttractionsFeedView
 struct AttractionsFeedView: View {
     
@@ -16,18 +18,15 @@ struct AttractionsFeedView: View {
     //MARK: Body
     var body: some View {
         VStack(alignment: .leading) {
-            MainTitle(title: "main.popularPlaces", image: "titleUnderline2")
-                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
+            MainTitle(title: "main.attractionsTitle")
             ScrollView {
-                ForEach(viewModel.attractions ?? .init(repeating: .init(), count: 6)) { attractionBrief in
+                ForEachDividerView(data: viewModel.attractions ?? .init(repeating: .init(), count: 6), id: \.id, color: Color.Kraeved.Gray.light) { attractionBrief in
                     NavigationLink(
                         destination:
                             GeoObjectDetailsView(id: attractionBrief.id, removeAction: { _ in })
                             .padding(.top, 16)
-                            .background(Color.Kraeved.secondBackground)
                     ) {
                         AttractionsFeedCellView(attractionBrief: attractionBrief)
-                            .background(.clear)
                     }
                 }
             }

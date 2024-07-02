@@ -21,20 +21,11 @@ struct GeoObjectDetailsTabButtonView: View {
             Spacer()
             Button(action: action) {
                 Text(model.type.title)
-                    .font(.system(size: 13))
-                    .tint(currentPageIndex == model.index ? Color.Kraeved.highlightedText : Color.Kraeved.buttonText)
+                    .font(.system(size: 16))
+                    .tint(currentPageIndex == model.index ? Color.Kraeved.Gray.dark : Color.Kraeved.Gray.silver)
             }
             .padding(.vertical, 4)
             .frame(width: 78, height: 24)
-            .overlay(
-                Capsule()
-                    .stroke()
-                    .foregroundColor(.Kraeved.mainStroke)
-                )
-            .background(currentPageIndex == model.index ? Color.Kraeved.cellBackground : Color.Kraeved.secondBackground)
-            .clipShape(
-                Capsule(style: .circular)
-            )
             Spacer()
         }
     }

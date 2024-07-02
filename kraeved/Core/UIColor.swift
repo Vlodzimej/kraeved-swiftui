@@ -35,14 +35,14 @@ extension UIColor {
     }
 }
 
-extension UIColor {
-    struct Kraeved {
-        static let mainBackground     = UIColor(hex: ColorConstants.mainBackground)
-        static let cellBackground     = UIColor(hex: ColorConstants.cellBackground)
-        static let cellTextBackground = UIColor(hex: ColorConstants.cellTextBackground)
-        static let cellTitleFont      = UIColor(hex: ColorConstants.cellTitleFont)
-        static let titleFontMain      = UIColor(hex: ColorConstants.titleFontMain)
-        static let searchFont         = UIColor(hex: ColorConstants.searchFont)
-        static let mainStroke         = UIColor(hex: ColorConstants.mainStroke)
-    }
-}
+//extension UIColor {
+//    struct Kraeved {
+//        static let mainBackground     = UIColor(hex: ColorConstants.mainBackground)
+//        static let cellBackground     = UIColor(hex: ColorConstants.cellBackground)
+//        static let cellTextBackground = UIColor(hex: ColorConstants.cellTextBackground)
+//        static let cellTitleFont      = UIColor(hex: ColorConstants.cellTitleFont)
+//        static let titleFontMain      = UIColor(hex: ColorConstants.titleFontMain)
+//        static let searchFont         = UIColor(hex: ColorConstants.searchFont)
+//        static let mainStroke         = UIColor(hex: ColorConstants.mainStroke)
+//    }
+//}

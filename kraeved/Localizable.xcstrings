@@ -798,6 +798,23 @@
         }
       }
     },
+    "main.attractionsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attractions"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Достопримечательности"
+          }
+        }
+      }
+    },
     "main.historicalEventsTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -811,23 +828,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Исторические события"
-          }
-        }
-      }
-    },
-    "main.popularPlaces" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Popular places"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Популярные места"
           }
         }
       }
@@ -910,6 +910,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Текущие координаты"
+          }
+        }
+      }
+    },
+    "profile.authorizationInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log in to get full access to all functions of the application."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Авторизуйтесь для получения полного доступа ко всем функциям приложения."
           }
         }
       }

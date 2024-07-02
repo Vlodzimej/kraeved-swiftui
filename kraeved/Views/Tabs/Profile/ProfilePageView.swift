@@ -18,21 +18,20 @@ struct ProfilePageView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.Kraeved.cellBackground
+                Color.white
                 VStack {
                     VStack {
                         Form {
                             Section {
-                                nameInputField
-                                surnameInputField
-                            }
-                            Section {
                                 phoneTextField
                                 startDateTextField
                             }
+                            Section {
+                                nameInputField
+                                surnameInputField
+                            }
                         }
-                        .foregroundColor(Color.Kraeved.darkGrey)
-                        .background(Color.Kraeved.cellBackground)
+                        .foregroundColor(Color.Kraeved.Gray.dark)
                         .scrollContentBackground(.hidden)
                         .scrollDisabled(true)
                         Spacer()
@@ -40,10 +39,7 @@ struct ProfilePageView: View {
                         
                     }
                     .isVisible(isVisible: viewModel.isAuth)
-                    Spacer()
-                    NavigationLink(destination: LoginPageView(), label: {
-                        Text("common.entry")
-                    })
+                    emptyProfile
                     .isVisible(isVisible: !viewModel.isAuth)
                 }
                 .onAppear {
@@ -60,17 +56,21 @@ struct ProfilePageView: View {
     }
     
     private var nameInputField: some View {
-        GenericTextInput(value: $viewModel.editedUser.surname, 
+        KraevedTextInput(value: $viewModel.editedUser.surname, 
                          title: "profile.surname",
                          placeholder: "profile.enterName",
-                         keyboardType: .alphabet)
+                         keyboardType: .alphabet,
+                         titleColor: Color.Pallete.cambridgeBlue,
+                         backgroundColor: Color.Pallete.azure)
     }
     
     private var surnameInputField: some View {
-        GenericTextInput(value: $viewModel.editedUser.name, 
+        KraevedTextInput(value: $viewModel.editedUser.name, 
                          title: "profile.name",
                          placeholder: "profile.enterSurname",
-                         keyboardType: .alphabet)
+                         keyboardType: .alphabet,
+                         titleColor: Color.Pallete.cambridgeBlue,
+                         backgroundColor: Color.Pallete.azure)
     }
     
     private var startDateTextField: some View {
@@ -78,7 +78,7 @@ struct ProfilePageView: View {
             Text("profile.startDate")
                 .font(.system(size: 12))
                 .padding(.bottom, 4)
-                .foregroundColor(Color.Kraeved.mainStroke)
+                .foregroundColor(Color.Pallete.cambridgeBlue)
             Text(CustomDateFormatter.formatToString(date: viewModel.editedUser.startDate, dateFormat: "dd.MM.yyyy") ?? "")
         }
     }
@@ -88,7 +88,7 @@ struct ProfilePageView: View {
             Text("common.phone")
                 .font(.system(size: 12))
                 .padding(.bottom, 4)
-                .foregroundColor(Color.Kraeved.mainStroke)
+                .foregroundColor(Color.Pallete.cambridgeBlue)
             Text(PhoneFormatter.format(phoneNumber: viewModel.editedUser.phone))
         }
     }
@@ -104,6 +104,18 @@ struct ProfilePageView: View {
             }
         }
         .isVisible(isVisible: viewModel.isAuth)
+    }
+    
+    private var emptyProfile: some View {
+        VStack(spacing: 20) {
+            Text("profile.authorizationInfo")
+            NavigationLink(destination: LoginPageView(), label: {
+                Text("common.entry")
+            })
+            .buttonStyle(.borderedProminent)
+            .tint(Color.Pallete.viridian)
+        }
+        .padding(16)
     }
 }
 

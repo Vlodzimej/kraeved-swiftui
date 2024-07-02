@@ -12,20 +12,17 @@ struct GeoObjectDetailsView: View {
     
     //MARK: Properties
     @ObservedObject private var viewModel = ViewModel()
-    
     @State private var isEditFormPresented = false
     
-    
     let id: Int?
-    
     let removeAction: (Int) -> Void
 
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
                 Text(viewModel.geoObject?.name ?? "")
-                    .font(.system(size: 14))
-                    .foregroundStyle(Color.Kraeved.darkGrey)
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(Color.Kraeved.Gray.dark)
                 Divider()
                     .overlay(Color.Kraeved.divider)
                     .padding(.bottom, 16)

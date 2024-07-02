@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		66058CA02C303E34007251A7 /* SecurityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058C9F2C303E34007251A7 /* SecurityManager.swift */; };
-		66058CA22C304A1F007251A7 /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058CA12C304A1F007251A7 /* ProfilePageViewModel.swift */; };
 		66058CA42C30BAF1007251A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058CA32C30BAF1007251A7 /* User.swift */; };
 		66058CA62C30BBA0007251A7 /* KraevedAPI+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058CA52C30BBA0007251A7 /* KraevedAPI+User.swift */; };
 		6610E3402B6AB10D0053E378 /* HistoricalEventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */; };
@@ -20,7 +19,6 @@
 		661610352ACAC3E400D32C84 /* AttractionsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661610342ACAC3E400D32C84 /* AttractionsDetailsView.swift */; };
 		662096592B583CD9003D489B /* ServerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662096582B583CD9003D489B /* ServerLocation.swift */; };
 		6620965B2B583E2C003D489B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620965A2B583E2C003D489B /* Settings.swift */; };
-		6620965D2B584217003D489B /* KraevedLocalDevelopment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6620965C2B584217003D489B /* KraevedLocalDevelopment.xcconfig */; };
 		662096672B584335003D489B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662096662B584335003D489B /* Configuration.swift */; };
 		6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */; };
 		66280CA72C31D7CE005DB91B /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66280CA62C31D7CE005DB91B /* CustomDateFormatter.swift */; };
@@ -75,8 +73,11 @@
 		66A95EC32BF9C520006119AA /* UploadImageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A95EC22BF9C520006119AA /* UploadImageState.swift */; };
 		66A95EC52BFA2495006119AA /* GeoObjectDetailsEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A95EC42BFA2495006119AA /* GeoObjectDetailsEdit.swift */; };
 		66A95EC82BFA2721006119AA /* GeoObjectRemoveActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A95EC72BFA2721006119AA /* GeoObjectRemoveActionView.swift */; };
+		66AA584A2C33D558000F54D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66AA58492C33D558000F54D0 /* LaunchScreen.storyboard */; };
+		66AA584E2C33E6B3000F54D0 /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AA584D2C33E6B3000F54D0 /* ProfilePageViewModel.swift */; };
+		66AA58502C33FEDB000F54D0 /* ForEachDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AA584F2C33FEDB000F54D0 /* ForEachDividerView.swift */; };
 		66C0492E2B8B5CFB00068BFF /* GeoObjectFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0492D2B8B5CFB00068BFF /* GeoObjectFormView.swift */; };
-		66C049302B8B68B900068BFF /* GenericTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0492F2B8B68B900068BFF /* GenericTextInput.swift */; };
+		66C049302B8B68B900068BFF /* KraevedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0492F2B8B68B900068BFF /* KraevedTextInput.swift */; };
 		66C049322B8B6F6200068BFF /* GeoObjectFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C049312B8B6F6200068BFF /* GeoObjectFormViewModel.swift */; };
 		66C049342B8BCAAF00068BFF /* KraevedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C049332B8BCAAF00068BFF /* KraevedButton.swift */; };
 		66C049362B8BE53E00068BFF /* GeoObjectPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C049352B8BE53E00068BFF /* GeoObjectPatch.swift */; };
@@ -141,7 +142,6 @@
 		54084E112EEB41F7BFF49857 /* Pods-kraeved.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.testing.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.testing.xcconfig"; sourceTree = "<group>"; };
 		60C0AD42AB9142E0CEB4A079 /* Pods-kraeved.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.development.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.development.xcconfig"; sourceTree = "<group>"; };
 		66058C9F2C303E34007251A7 /* SecurityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityManager.swift; sourceTree = "<group>"; };
-		66058CA12C304A1F007251A7 /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 		66058CA32C30BAF1007251A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		66058CA52C30BBA0007251A7 /* KraevedAPI+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KraevedAPI+User.swift"; sourceTree = "<group>"; };
 		6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventDetailsView.swift; sourceTree = "<group>"; };
@@ -153,7 +153,6 @@
 		661610342ACAC3E400D32C84 /* AttractionsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsView.swift; sourceTree = "<group>"; };
 		662096582B583CD9003D489B /* ServerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLocation.swift; sourceTree = "<group>"; };
 		6620965A2B583E2C003D489B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		6620965C2B584217003D489B /* KraevedLocalDevelopment.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = KraevedLocalDevelopment.xcconfig; sourceTree = "<group>"; };
 		662096662B584335003D489B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsViewModel.swift; sourceTree = "<group>"; };
 		66280CA62C31D7CE005DB91B /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
@@ -207,9 +206,12 @@
 		66A95EC22BF9C520006119AA /* UploadImageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageState.swift; sourceTree = "<group>"; };
 		66A95EC42BFA2495006119AA /* GeoObjectDetailsEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectDetailsEdit.swift; sourceTree = "<group>"; };
 		66A95EC72BFA2721006119AA /* GeoObjectRemoveActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectRemoveActionView.swift; sourceTree = "<group>"; };
+		66AA58492C33D558000F54D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		66AA584D2C33E6B3000F54D0 /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
+		66AA584F2C33FEDB000F54D0 /* ForEachDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachDividerView.swift; sourceTree = "<group>"; };
 		66B5371E2AC05EFA00F93C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		66C0492D2B8B5CFB00068BFF /* GeoObjectFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectFormView.swift; sourceTree = "<group>"; };
-		66C0492F2B8B68B900068BFF /* GenericTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextInput.swift; sourceTree = "<group>"; };
+		66C0492F2B8B68B900068BFF /* KraevedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedTextInput.swift; sourceTree = "<group>"; };
 		66C049312B8B6F6200068BFF /* GeoObjectFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectFormViewModel.swift; sourceTree = "<group>"; };
 		66C049332B8BCAAF00068BFF /* KraevedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedButton.swift; sourceTree = "<group>"; };
 		66C049352B8BE53E00068BFF /* GeoObjectPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectPatch.swift; sourceTree = "<group>"; };
@@ -530,7 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				66FEAD632ABDFD9100ADC551 /* ProfilePageView.swift */,
-				66058CA12C304A1F007251A7 /* ProfilePageViewModel.swift */,
+				66AA584D2C33E6B3000F54D0 /* ProfilePageViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -609,9 +611,10 @@
 			children = (
 				666229912BF5F29900080200 /* UploadImageView.swift */,
 				66E443752AC4387000D1943F /* MainTitle.swift */,
-				66C0492F2B8B68B900068BFF /* GenericTextInput.swift */,
+				66C0492F2B8B68B900068BFF /* KraevedTextInput.swift */,
 				66C049332B8BCAAF00068BFF /* KraevedButton.swift */,
 				6662299D2BF689A600080200 /* EmptyThumbnailImageView.swift */,
+				66AA584F2C33FEDB000F54D0 /* ForEachDividerView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -667,8 +670,8 @@
 				66FEAD302ABDF90E00ADC551 /* ContentView.swift */,
 				66FEAD322ABDF90F00ADC551 /* Assets.xcassets */,
 				66FEAD342ABDF90F00ADC551 /* Preview Content */,
-				6620965C2B584217003D489B /* KraevedLocalDevelopment.xcconfig */,
 				665B915B2B5C66AD009523BD /* Localizable.xcstrings */,
+				66AA58492C33D558000F54D0 /* LaunchScreen.storyboard */,
 			);
 			path = kraeved;
 			sourceTree = "<group>";
@@ -870,7 +873,7 @@
 				66FEAD362ABDF90F00ADC551 /* Preview Assets.xcassets in Resources */,
 				66FEAD332ABDF90F00ADC551 /* Assets.xcassets in Resources */,
 				665B915C2B5C66AD009523BD /* Localizable.xcstrings in Resources */,
-				6620965D2B584217003D489B /* KraevedLocalDevelopment.xcconfig in Resources */,
+				66AA584A2C33D558000F54D0 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,11 +1006,11 @@
 				66D12B292B666173009A6403 /* DeviceShakeViewModifier.swift in Sources */,
 				667865412AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift in Sources */,
 				66841FDE2B6FF47C005A8233 /* GeoObjectDetailsTabButtonView.swift in Sources */,
-				66058CA22C304A1F007251A7 /* ProfilePageViewModel.swift in Sources */,
 				6616102C2AC99B6D00D32C84 /* GeoObjectBrief.swift in Sources */,
+				66AA58502C33FEDB000F54D0 /* ForEachDividerView.swift in Sources */,
 				66A95EBF2BF9B92C006119AA /* MultipleImageSelectView.swift in Sources */,
 				6666A9BD2B7BEEAE001DB0E8 /* TabBarAccessor.swift in Sources */,
-				66C049302B8B68B900068BFF /* GenericTextInput.swift in Sources */,
+				66C049302B8B68B900068BFF /* KraevedTextInput.swift in Sources */,
 				6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */,
 				66C049362B8BE53E00068BFF /* GeoObjectPatch.swift in Sources */,
 				669DA31C2C2F103700B69CA8 /* LoginPageView.swift in Sources */,
@@ -1070,6 +1073,7 @@
 				66FEAD6C2AC022F000ADC551 /* Constants.swift in Sources */,
 				6678653D2AC0BCF400EDA776 /* HistoricalEventFeedView.swift in Sources */,
 				66A9048C2B7549630064F940 /* TabItem.swift in Sources */,
+				66AA584E2C33E6B3000F54D0 /* ProfilePageViewModel.swift in Sources */,
 				662096672B584335003D489B /* Configuration.swift in Sources */,
 				665B91422B5C4729009523BD /* BaseViewModel.swift in Sources */,
 				668B39DD2B714289009A2E00 /* GeoObjectDetailsGallery.swift in Sources */,
@@ -1198,6 +1202,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kraeved/Preview Content\"";
@@ -1210,6 +1215,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1341,6 +1348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kraeved/Preview Content\"";
@@ -1353,6 +1361,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1543,6 +1553,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kraeved/Preview Content\"";
@@ -1555,6 +1566,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1580,6 +1593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1593,6 +1607,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;

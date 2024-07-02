@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct GenericTextInput: View {
+struct KraevedTextInput: View {
     
     @Binding var value: String
     
@@ -18,18 +18,23 @@ struct GenericTextInput: View {
     var limitText: Int = 30
     var lineLimit: Int = 1
     var axis: Axis = .horizontal
+    var titleColor: Color = .Kraeved.Gray.darkest
+    var backgroundColor: Color = .Kraeved.Gray.lighten
     
     var body: some View {
         VStack(alignment: .leading) {
             Text(LocalizedStringKey(title))
                 .font(.system(size: 12))
-                .foregroundStyle(Color.Kraeved.mainStroke)
+                .foregroundStyle(titleColor)
             TextField(LocalizedStringKey(placeholder), text: $value, axis: axis)
                 .onReceive(Just(value)) { _ in
                     limitText(limitText)
                 }
+                .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                 .keyboardType(keyboardType)
                 .lineLimit(lineLimit)
+                .background(backgroundColor)
+                .cornerRadius(14)
         }
     }
     
@@ -43,7 +48,7 @@ struct GenericTextInput: View {
 
 struct GenericTextInput_Previews: PreviewProvider {
     static var previews: some View {
-        GenericTextInput(value: .constant("Sample Text"), title: "Title", placeholder: "Placeholder", keyboardType: .default)
+        KraevedTextInput(value: .constant("Sample Text"), title: "Title", placeholder: "Placeholder", keyboardType: .default)
             .padding()
             .previewLayout(.sizeThatFits)
     }

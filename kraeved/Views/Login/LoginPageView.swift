@@ -38,7 +38,7 @@ struct LoginPageView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            Color.Kraeved.cellBackground
+            Color.white
             VStack {
                 formContent
                 errorMessage
@@ -61,18 +61,15 @@ struct LoginPageView: View {
     
     // MARK: - Private Views
     private var formContent: some View {
-        Form {
-            Section {
-                if viewModel.stage == .phone {
-                    phoneInputField
-                }
-                if viewModel.stage == .code {
-                    codeInputField
-                }
+        VStack {
+            if viewModel.stage == .phone {
+                phoneInputField
+            }
+            if viewModel.stage == .code {
+                codeInputField
             }
         }
-        .scrollDisabled(true)
-        .modifier(FormHiddenBackground())
+        .padding(16)
     }
     
     private var errorMessage: some View {
@@ -82,7 +79,7 @@ struct LoginPageView: View {
     }
     
     private var phoneInputField: some View {
-        GenericTextInput(value: $viewModel.phone, title: "common.phone", placeholder: PhoneFormatter.phonePrefix, keyboardType: .phonePad)
+        KraevedTextInput(value: $viewModel.phone, title: "common.phone", placeholder: PhoneFormatter.phonePrefix, keyboardType: .phonePad)
             .onChange(of: viewModel.phone) {
                 handlePhoneChange()
             }
@@ -91,7 +88,7 @@ struct LoginPageView: View {
     }
     
     private var codeInputField: some View {
-        GenericTextInput(value: $viewModel.code, title: "common.code", placeholder: "", keyboardType: .phonePad)
+        KraevedTextInput(value: $viewModel.code, title: "common.code", placeholder: "", keyboardType: .phonePad)
             .onChange(of: viewModel.code) {
                 handleCodeChange()
             }

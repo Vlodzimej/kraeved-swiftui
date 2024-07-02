@@ -22,6 +22,7 @@ struct KraevedButton: View {
             
         }
         .buttonStyle(.borderedProminent)
+        .tint(Color.Pallete.viridian)
         .padding(16)
     }
 }

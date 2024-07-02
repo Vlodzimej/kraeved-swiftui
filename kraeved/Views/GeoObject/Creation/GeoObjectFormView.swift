@@ -89,7 +89,7 @@ struct GeoObjectFormView: View {
                 }
                 Section {
                     // Title
-                    GenericTextInput(
+                    KraevedTextInput(
                         value: $viewModel.editedGeoObject.name,
                         title: String(localized: "form.title"),
                         placeholder: String(localized: "form.titlePlaceholder"),
@@ -99,7 +99,7 @@ struct GeoObjectFormView: View {
                     .labelsHidden()
                     
                     // Description
-                    GenericTextInput(
+                    KraevedTextInput(
                         value: $viewModel.editedGeoObject.description,
                         title: String(localized: "form.description"),
                         placeholder: String(localized: "form.descriptionPlaceholder"),

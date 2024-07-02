@@ -14,6 +14,8 @@ protocol NetworkManagerProtocol: ApplicationLoggerProtocol {
     func requestStatus(url: String, method: HTTPMethod, parameters: Parameters?) async throws -> Void
     func request<T: Decodable>(url: String, method: HTTPMethod, parameters: Parameters?) async -> Result<T, Error>
     func upload(images: [UIImage]) async throws -> [String]
+    func updateAuthorizationToken()
+    func removeAuthorizationToken()
 }
 
 //MARK: - NetworkManager
@@ -37,6 +39,10 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
            let token = securityManager.getToken(service: Settings.instance.currentEnvironment.rawValue, account: phone) {
             commonHeaders.add(name: "Authorization", value: "Bearer \(token)")
         }
+    }
+    
+    func removeAuthorizationToken() {
+        commonHeaders.remove(name: "Authorization")
     }
     
     func get<T: Decodable>(url: String, parameters: Parameters?) async -> T? {

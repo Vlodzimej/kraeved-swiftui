@@ -12,7 +12,7 @@ struct HistoricalEventFeedView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            MainTitle(title: "main.historicalEventsTitle", image: "titleUnderline")
+            MainTitle(title: "main.historicalEventsTitle", imageName: "titleUnderline")
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: -8, trailing: 0))
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {

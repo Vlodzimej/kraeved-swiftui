@@ -20,12 +20,15 @@ final class UserManager: UserManagerProtocol {
     //MARK: Properties
     private let securityManager: SecurityManagerProtocol
     private let apiManager: UserAPIManagerProtocol
+    private let networkManager: NetworkManagerProtocol
     
     //MARK: Init
     init(securityManager: SecurityManagerProtocol = SecurityManager.shared,
-         apiManager: UserAPIManagerProtocol = KraevedAPIManager.shared) {
+         apiManager: UserAPIManagerProtocol = KraevedAPIManager.shared,
+         networkManager: NetworkManagerProtocol = NetworkManager.shared) {
         self.securityManager = securityManager
         self.apiManager = apiManager
+        self.networkManager = networkManager
     }
     
     //MARK: Public Methods
@@ -48,6 +51,8 @@ final class UserManager: UserManagerProtocol {
         
         securityManager.deletePassword(service: Settings.instance.currentEnvironment.rawValue, account: phone)
         securityManager.deleteToken(service: Settings.instance.currentEnvironment.rawValue, account: phone)
+        
+        networkManager.removeAuthorizationToken()
         
         UserDefaults.standard.removeObject(forKey: "isAuth")
         UserDefaults.standard.removeObject(forKey: "userPhone")

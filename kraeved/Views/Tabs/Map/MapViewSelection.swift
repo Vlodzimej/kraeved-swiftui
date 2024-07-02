@@ -48,14 +48,14 @@ struct MapViewSelection: View {
     
     private var newGeoObjectCoordinateView: some View {
         VStack {
-            GenericTextInput(
+            KraevedTextInput(
                 value: $latitude,
                 title: String(localized: "common.latitude"),
                 placeholder: String(localized: "common.latitude"),
                 keyboardType: .decimalPad
             )
             Divider()
-            GenericTextInput(
+            KraevedTextInput(
                 value: $longitude,
                 title: String(localized: "common.longitude"),
                 placeholder: String(localized: "common.longitude"),

@@ -21,7 +21,6 @@ struct MainView: View {
                 eventFeedView
                 attractionsFeedView
             }
-            .background(Color.Kraeved.mainBackground)
             .refreshable {
                 await reload()
             }

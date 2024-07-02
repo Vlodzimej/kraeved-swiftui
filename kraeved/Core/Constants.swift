@@ -31,6 +31,7 @@ struct ColorConstants {
     static let divider              = "#4E9494"
     static let highlightedText      = "#DD614B"
     static let darkGrey             = "#202126"
+    static let lightGrey            = "#F7F7F9"
 }
 
 

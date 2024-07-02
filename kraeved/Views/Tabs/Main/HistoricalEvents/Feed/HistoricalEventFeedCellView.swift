@@ -33,7 +33,7 @@ struct HistoricalEventFeedCellView: View {
                                 .frame(maxWidth: 128, maxHeight: 128)
                         case .failure:
                             ZStack {
-                                Color.Kraeved.cellBackground
+                                Color.white
                                 Image(systemName: "photo")
                             }
                             

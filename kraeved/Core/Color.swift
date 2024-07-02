@@ -33,18 +33,37 @@ extension Color {
     }
     
     struct Kraeved {
-        static let mainBackground      = Color(hex: ColorConstants.mainBackground)
-        static let secondBackground    = Color(hex: ColorConstants.secondBackground)
-        static let cellBackground      = Color(hex: ColorConstants.cellBackground)
+        static let mainBackground      = Color.white
+        static let secondBackground    = Color.Pallete.mintCream
+        static let cellBackground      = Color.Pallete.azure
         static let cellTextBackground  = Color(hex: ColorConstants.cellTextBackground, alpha: 0.85)
-        static let cellTitleFont       = Color(hex: ColorConstants.cellTitleFont)
-        static let titleFontMain       = Color(hex: ColorConstants.titleFontMain)
-        static let searchFont          = Color(hex: ColorConstants.searchFont)
-        static let mainStroke          = Color(hex: ColorConstants.mainStroke)
-        static let buttonText          = Color(hex: ColorConstants.buttonText)
-        static let divider             = Color(hex: ColorConstants.divider)
-        static let highlightedText     = Color(hex: ColorConstants.highlightedText)
-        static let darkGrey            = Color(hex: ColorConstants.darkGrey)
+        static let cellTitleFont       = Color.Pallete.viridian
+        static let titleFontMain       = Color.Pallete.viridian
+        static let searchFont          = Color.Pallete.cambridgeBlue
+        static let mainStroke          = Color.Pallete.cambridgeBlue
+        static let buttonText          = Color.Pallete.viridian
+        static let divider             = Color.Pallete.mintGreen
+        static let highlightedText     = Color.Pallete.cambridgeBlue
+        
+        struct Gray {
+            static let darkest     = Color(hex: ColorConstants.darkGrey)
+            static let dark        = Color(hex: "#595959")
+            static let middle      = Color(hex: "#7F7F7F")
+            static let silver      = Color(hex: "#A5A5A5")
+            static let silverLight = Color(hex: "#CCCCCC")
+            static let light       = Color(hex: "#F2F2F2")
+            static let lighten     = Color(hex: ColorConstants.lightGrey)
+        }
     }
+    
+    struct Pallete {
+        static let viridian      = Color(hex: "#6b9080")
+        static let cambridgeBlue = Color(hex: "#A4C3B2")
+        static let mintGreen     = Color(hex: "#CCE3DE")
+        static let azure         = Color(hex: "#EAF4F4")
+        static let mintCream     = Color(hex: "#F6FFF8")
+    }
+    
+    
 
 }
