@@ -24,4 +24,15 @@ enum KraevedTabType: String {
         
         return String(localized: resource)
     }
+    
+    var imageName: String {
+        switch self {
+            //MARK: GeoObjectDetails
+            case .description:  "text.justify"
+            case .gallery:      "photo.on.rectangle"
+            case .comments:     "message"
+            case .edit:         "gear"
+        }
+        
+    }
 }

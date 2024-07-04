@@ -13,6 +13,7 @@ struct ForEachDividerView<Data, Content, ID>: View where Data: RandomAccessColle
     var data: Data
     var id: KeyPath<Data.Element, ID>
     var color: Color = .gray
+    var height: CGFloat = 1
     var content: (Data.Element) -> Content
 
     var body: some View {
@@ -24,12 +25,10 @@ struct ForEachDividerView<Data, Content, ID>: View where Data: RandomAccessColle
         /// then, append the `id` key path to `elementKeyPath` to extract the `Hashable` property
         if let fullKeyPath = elementKeyPath.appending(path: id) as? KeyPath<(Data.Index, Data.Element), ID> {
             ForEach(enumerated, id: fullKeyPath) { index, data in
-
                 content(data)
-
                 if let index = index as? Int, index != enumerated.count - 1 {
-                    Divider()
-                        .background(color)
+                    color
+                        .frame(height: height)
                 }
             }
         }

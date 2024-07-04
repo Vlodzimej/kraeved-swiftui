@@ -23,10 +23,8 @@ struct GeoObjectDetailsView: View {
                 Text(viewModel.geoObject?.name ?? "")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(Color.Kraeved.Gray.dark)
-                Divider()
-                    .overlay(Color.Kraeved.divider)
-                    .padding(.bottom, 16)
-                    .padding(.top, 4)
+                    .padding(.bottom, 8)
+                Spacer()
                 GeoObjectDetailsTabView(geoObject: viewModel.geoObject, removeAction: removeAction)
 
             }

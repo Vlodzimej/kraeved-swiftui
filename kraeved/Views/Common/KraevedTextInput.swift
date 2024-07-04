@@ -20,6 +20,7 @@ struct KraevedTextInput: View {
     var axis: Axis = .horizontal
     var titleColor: Color = .Kraeved.Gray.darkest
     var backgroundColor: Color = .Kraeved.Gray.lighten
+    var innerInsets: EdgeInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -30,7 +31,7 @@ struct KraevedTextInput: View {
                 .onReceive(Just(value)) { _ in
                     limitText(limitText)
                 }
-                .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+                .padding(innerInsets)
                 .keyboardType(keyboardType)
                 .lineLimit(lineLimit)
                 .background(backgroundColor)

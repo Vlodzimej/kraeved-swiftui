@@ -12,6 +12,7 @@ struct KraevedTabItem: Identifiable, Hashable {
     var id = UUID()
     var index: Int
     let type: KraevedTabType
+    let imageName: String
 }
 
 protocol KraevedTabItemProtocol {

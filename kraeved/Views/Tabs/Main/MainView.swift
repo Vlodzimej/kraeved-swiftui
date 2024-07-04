@@ -12,9 +12,6 @@ struct MainView: View {
     //@State private var geoObjects: [GeoObjectBrief] = []
     @State private var searchText: String = ""
     
-    let eventFeedView = HistoricalEventFeedView()
-    let attractionsFeedView = AttractionsFeedView()
-    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -34,6 +31,10 @@ struct MainView: View {
 
         //.searchable(text: $searchText, placement: .navigationBarDrawer)
     }
+    
+    let eventFeedView = HistoricalEventFeedView()
+    
+    let attractionsFeedView = AttractionsFeedView()
     
     private func reload() async {
         await eventFeedView.reload()

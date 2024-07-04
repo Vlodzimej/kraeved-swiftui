@@ -18,29 +18,28 @@ struct AttractionsFeedView: View {
     //MARK: Body
     var body: some View {
         VStack(alignment: .leading) {
-            MainTitle(title: "main.attractionsTitle")
-            ScrollView {
-                ForEachDividerView(data: viewModel.attractions ?? .init(repeating: .init(), count: 6), id: \.id, color: Color.Kraeved.Gray.light) { attractionBrief in
-                    NavigationLink(
-                        destination:
-                            GeoObjectDetailsView(id: attractionBrief.id, removeAction: { _ in })
-                            .padding(.top, 16)
-                    ) {
-                        AttractionsFeedCellView(attractionBrief: attractionBrief)
+            ZStack {
+                Color.Kraeved.Gray.lighten
+                ScrollView {
+                    ForEach(viewModel.attractions ?? []) { item in
+                        NavigationLink(
+                            destination:
+                                GeoObjectDetailsView(id: item.id, removeAction: { _ in })
+                        ) {
+                            AttractionsFeedCellView(attractionBrief: item)
+                        }
                     }
                 }
             }
         }
-        .background(.clear)
+        .background(.white)
         .task {
             await viewModel.getAttractions()
         }
     }
     
     func reload() async {
-        Task {
-            await viewModel.getAttractions()
-        }
+        await viewModel.getAttractions()
     }
 }
 
@@ -50,9 +49,6 @@ struct AttractionsFeedView: View {
     return AttractionsFeedView()
         .environmentObject({ () -> NetworkManager in
             let envObj = NetworkManager()
-            //            envObj.geoObject = mockGeoObject
-            //            envObj.geoObjects = mockGeoObjects
-            envObj.isLoading = false
             return envObj
         }())
 }

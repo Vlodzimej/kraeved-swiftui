@@ -61,7 +61,8 @@ struct ProfilePageView: View {
                          placeholder: "profile.enterName",
                          keyboardType: .alphabet,
                          titleColor: Color.Pallete.cambridgeBlue,
-                         backgroundColor: Color.Pallete.azure)
+                         backgroundColor: Color.white,
+                         innerInsets: .init(.zero))
     }
     
     private var surnameInputField: some View {
@@ -70,7 +71,8 @@ struct ProfilePageView: View {
                          placeholder: "profile.enterSurname",
                          keyboardType: .alphabet,
                          titleColor: Color.Pallete.cambridgeBlue,
-                         backgroundColor: Color.Pallete.azure)
+                         backgroundColor: Color.white,
+                         innerInsets: .init(.zero))
     }
     
     private var startDateTextField: some View {

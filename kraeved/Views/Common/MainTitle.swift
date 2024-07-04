@@ -20,9 +20,9 @@ struct MainTitle: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-                .font(.system(size: 18, weight: .semibold))
+                .font(.system(size: 20, weight: .semibold))
                 .offset(CGSize(width: 16, height: 8))
-                .foregroundColor(Color.Pallete.viridian)
+                .foregroundColor(Color.Kraeved.Gray.dark)
             if let imageName {
                 Image(imageName)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))

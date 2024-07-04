@@ -34,9 +34,7 @@ struct HistoricalEventFeedView: View {
     }
     
     func reload() async {
-        Task {
-            await viewModel.getHistoricalEvents()
-        }
+        await viewModel.getHistoricalEvents()
     }
 }
 

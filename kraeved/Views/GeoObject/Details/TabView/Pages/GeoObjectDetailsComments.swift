@@ -10,9 +10,8 @@ import SwiftUI
 //MARK: - GeoObjectDetailsComments
 struct GeoObjectDetailsComments: View {
     var body: some View {
-        Text("common.underConstruction")
-            .font(.system(size: 17))
-            .foregroundStyle(Color.Pallete.mintGreen)
+        EmptyPlacheholderView(image: Image(systemName: "ellipsis.message"),
+                              title: "comments.empty")
     }
 }
 

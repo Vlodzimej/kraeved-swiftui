@@ -11,6 +11,9 @@
         }
       }
     },
+    "5.0" : {
+
+    },
     "cancel.delete" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -24,6 +27,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Удалить"
+          }
+        }
+      }
+    },
+    "comments.empty" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No comments"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Комментарии еще не добавлены"
           }
         }
       }
@@ -243,6 +263,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Дальше"
+          }
+        }
+      }
+    },
+    "common.notFound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Entries not found"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записи не найдены"
           }
         }
       }
@@ -798,6 +835,9 @@
         }
       }
     },
+    "Key" : {
+      "extractionState" : "manual"
+    },
     "main.attractionsTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1049,6 +1089,9 @@
           }
         }
       }
+    },
+    "Калуга, Площадь Победы, 1" : {
+
     }
   },
   "version" : "1.0"

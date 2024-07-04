@@ -33,6 +33,7 @@ extension Color {
     }
     
     struct Kraeved {
+        static let text                = Color(hex: "#1B1E28")
         static let mainBackground      = Color.white
         static let secondBackground    = Color.Pallete.mintCream
         static let cellBackground      = Color.Pallete.azure

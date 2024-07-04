@@ -83,7 +83,6 @@ struct MapView: View {
                                     }
                                 })
                             }
-                            .background(Color.Kraeved.secondBackground)
                         }
                         .sheet(isPresented: $isShowFilter) {
                             Text("common.filter")

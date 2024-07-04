@@ -11,7 +11,7 @@ struct EmptyThumbnailImageView: View {
     var body: some View {
         Image(systemName: "photo")
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
             .foregroundColor(Color.gray)
     }
 }

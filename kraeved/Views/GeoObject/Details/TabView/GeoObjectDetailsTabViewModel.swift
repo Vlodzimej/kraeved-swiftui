@@ -14,7 +14,7 @@ extension GeoObjectDetailsTabView {
         
         @Published var items: [KraevedTabItem] = {
             [.description, .gallery, .comments, .edit].enumerated()
-                .map { (index, type) in.init(index: index, type: type)}
+                .map { (index, type) in.init(index: index, type: type, imageName: type.imageName)}
         }()
     }
 }

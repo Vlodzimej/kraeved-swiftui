@@ -22,9 +22,6 @@ protocol NetworkManagerProtocol: ApplicationLoggerProtocol {
 final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
     static let shared = NetworkManager()
     
-    @Published var isLoading = false
-    @Published var isFailed = false
-    
     private var bearer: String?
     private var commonHeaders: HTTPHeaders = []
     
@@ -87,7 +84,8 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                     Settings.instance.baseUrl + "/" + url,
                     method: method,
                     parameters: parameters,
-                    encoding: JSONEncoding.default
+                    encoding: JSONEncoding.default,
+                    headers: commonHeaders
                 )
                 .responseData { response in
                     switch response.result {
@@ -108,7 +106,7 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                 Settings.instance.baseUrl + "/" + url,
                 method: method,
                 parameters: parameters,
-                encoding: JSONEncoding.default,
+                encoding:    JSONEncoding.default,
                 headers: commonHeaders
             )
             .responseData { response in
@@ -129,6 +127,7 @@ final class NetworkManager: NSObject, ObservableObject, NetworkManagerProtocol {
                         }
                     case .failure(let afError):
                         continuation.resume(returning: .failure(afError))
+                        
                 }
             }
         }

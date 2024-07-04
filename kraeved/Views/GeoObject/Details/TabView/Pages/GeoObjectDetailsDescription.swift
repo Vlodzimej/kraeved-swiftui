@@ -15,7 +15,7 @@ struct GeoObjectDetailsDescription: View {
         ScrollView {
             Text(description)
                 .padding(.horizontal, 16)
-                .font(.system(size: 13))
+                .font(.system(size: 16))
                 .foregroundStyle(Color.Kraeved.Gray.dark)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }

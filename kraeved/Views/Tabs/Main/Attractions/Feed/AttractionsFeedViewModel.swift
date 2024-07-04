@@ -17,6 +17,13 @@ extension AttractionsFeedView {
 
         //MARK: Public Methods
         func getAttractions() async {
+            guard !isLoading else { return }
+            isLoading = true
+            
+            defer {
+                isLoading = false
+            }
+            
             let result = await kraevedAPI.getGeoObjects()
             if case let .success(geoObject) = result {
                 attractions = geoObject

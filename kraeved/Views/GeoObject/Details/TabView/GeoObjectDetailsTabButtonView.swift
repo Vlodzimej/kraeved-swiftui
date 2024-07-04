@@ -20,15 +20,18 @@ struct GeoObjectDetailsTabButtonView: View {
         HStack {
             Spacer()
             Button(action: action) {
-                Text(model.type.title)
-                    .font(.system(size: 16))
-                    .tint(currentPageIndex == model.index ? Color.Kraeved.Gray.dark : Color.Kraeved.Gray.silver)
+                Image(systemName: model.imageName)
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .tint(currentPageIndex == model.index ? Color.Pallete.viridian : Color.Pallete.mintGreen)
             }
             .padding(.vertical, 4)
             .frame(width: 78, height: 24)
             Spacer()
         }
     }
+    
+    
 }
 
 //#Preview {

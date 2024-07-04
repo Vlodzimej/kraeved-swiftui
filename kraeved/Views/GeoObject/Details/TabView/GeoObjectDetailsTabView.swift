@@ -23,6 +23,20 @@ struct GeoObjectDetailsTabView: View {
 
     var body: some View {
         VStack {
+            TabView(selection: $pageIndex) {
+                GeoObjectDetailsDescription(description: geoObject?.description ?? "")
+                    .tag(0)
+                if !images.isEmpty {
+                    GeoObjectDetailsGallery(images: geoObject?.imageUrls ?? [])
+                        .tag(1)
+                }
+                GeoObjectDetailsComments()
+                    .tag(2)
+                GeoObjectDetailsEdit(geoObject: geoObject, removeAction: removeAction)
+                    .tag(3)
+            }
+            .tabViewStyle(.page)
+            .padding(.top, 8)
             HStack {
                 ForEach(viewModel.items, id: \.self) { item in
                     if item.type == .gallery && images.isEmpty {
@@ -34,18 +48,6 @@ struct GeoObjectDetailsTabView: View {
                     }
                 }
             }
-            TabView(selection: $pageIndex) {
-                GeoObjectDetailsDescription(description: geoObject?.description ?? "")
-                    .tag(0)
-                GeoObjectDetailsGallery(images: geoObject?.imageUrls ?? [])
-                    .tag(1)
-                GeoObjectDetailsComments()
-                    .tag(2)
-                GeoObjectDetailsEdit(geoObject: geoObject, removeAction: removeAction)
-                    .tag(3)
-            }
-            .tabViewStyle(.page)
-            .padding(.top, 16)
         }
     }
 }
