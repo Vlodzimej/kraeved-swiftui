@@ -19,7 +19,7 @@ struct AttractionsFeedView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
-                Color.Kraeved.Gray.lighten
+                Color.white
                 ScrollView {
                     ForEach(viewModel.attractions ?? []) { item in
                         NavigationLink(

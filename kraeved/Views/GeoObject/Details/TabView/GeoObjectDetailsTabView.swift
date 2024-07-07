@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 //MARK: - GeoObjectDetailsTabView
 struct GeoObjectDetailsTabView: View {
