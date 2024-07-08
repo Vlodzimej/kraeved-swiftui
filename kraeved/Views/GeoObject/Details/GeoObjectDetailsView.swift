@@ -53,12 +53,19 @@ struct GeoObjectDetailsView: View {
                         .tabViewStyle(.page)
                         .frame(height: geometry.size.width * 0.75)
                     }
-                    
-                    Text(viewModel.geoObject?.name ?? "")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundStyle(Color.Kraeved.Gray.darkest)
-                        .padding(.top, 8)
-                        .padding(.bottom, 8)
+                    VStack(alignment: .center) {
+                        Text(viewModel.geoObject?.name ?? "")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundStyle(Color.Kraeved.Gray.darkest)
+                    }
+                    .padding(.init(top: 8, leading: 16, bottom: 0, trailing: 16))
+                    VStack {
+                        Text(viewModel.geoObject?.description ?? "")
+                            .font(.system(size: 14))
+                            .foregroundStyle(Color.Kraeved.Gray.dark)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.init(top: 4, leading: 16, bottom: 16, trailing: 16))
                 }
                 .isVisible(isVisible: !viewModel.isLoading)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
