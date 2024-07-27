@@ -19,6 +19,8 @@ struct MapView: View {
 
     @ObservedObject private var viewModel = ViewModel()
     
+    private let locationManager = LocationManager()
+    
     @State private var region = MKCoordinateRegion(center: Constants.initialLocation, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
     @State var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: Constants.initialLocation.latitude, longitude: Constants.initialLocation.longitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
@@ -65,8 +67,11 @@ struct MapView: View {
                             if let selectedCoordinate {
                                 Marker("geoObject.newMarker", coordinate: selectedCoordinate)
                             }
+                            UserAnnotation()
                         }
-                        .mapStyle(.standard(pointsOfInterest: .excludingAll))
+                        .mapControls {
+                            MapUserLocationButton()
+                        }
                         .task {
                             await viewModel.getGeoObjects()
                         }
@@ -109,6 +114,9 @@ struct MapView: View {
                                     self.longitude = longitude
                                 }
                             }
+                        }
+                        .onLongPressGesture {
+                            
                         }
                     }
                     if isShowSelection {
@@ -153,10 +161,11 @@ struct MapView: View {
             .toolbar(!isShowSelection ? .visible : .hidden)
             .toolbarBackground(Color.Kraeved.mainBackground, for: .tabBar)
             .toolbarBackground(Color.Kraeved.mainBackground, for: .navigationBar)
-            .onAppear {
-                Task {
-                    await viewModel.getCurrentUserRole()
-                }
+            .task {
+                await viewModel.getCurrentUserRole()
+            }
+            .onAppear() {
+                locationManager.requestAuthorisation()
             }
         }
     }
