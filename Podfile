@@ -6,7 +6,7 @@ target 'kraeved' do
   use_frameworks!
 
   # Pods for kraeved
-  # pod 'YandexMapsMobile', '4.3.1-full'
+  pod 'YandexMapsMobile', '4.6.1-full'
   pod 'Alamofire', '~> 5.2'
 
   target 'kraevedTests' do

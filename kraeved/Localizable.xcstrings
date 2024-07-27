@@ -201,6 +201,7 @@
       }
     },
     "common.filter" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -737,6 +738,7 @@
       }
     },
     "geoObject.newMarker" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

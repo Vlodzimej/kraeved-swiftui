@@ -1,16 +1,20 @@
 PODS:
-  - Alamofire (5.8.1)
+  - Alamofire (5.9.1)
+  - YandexMapsMobile (4.6.1-full)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - YandexMapsMobile (= 4.6.1-full)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - YandexMapsMobile
 
 SPEC CHECKSUMS:
-  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  YandexMapsMobile: b5f4dfeb8d1fe324dc18afb33d772b04d04d34f6
 
-PODFILE CHECKSUM: f86c9cb095bfb20577af6f5d0e7f00671855bd7b
+PODFILE CHECKSUM: 9e6b15371783c112bf2ad6d166c0b2dcc5399d12
 
 COCOAPODS: 1.14.3

@@ -11,6 +11,8 @@ import Pulse
 @main
 struct KraevedApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    
     init() {
         URLSessionProxyDelegate.enableAutomaticRegistration()
     }

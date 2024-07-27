@@ -25,6 +25,10 @@
 		66280CA92C31E2A4005DB91B /* UserOutDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66280CA82C31E2A4005DB91B /* UserOutDto.swift */; };
 		66280CAB2C32A13A005DB91B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66280CAA2C32A13A005DB91B /* UserManager.swift */; };
 		6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629540A2AC7489300E2B155 /* KraevedResponse.swift */; };
+		662B2D142C5561F40054DE3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662B2D132C5561F40054DE3B /* AppDelegate.swift */; };
+		662B2D162C5564040054DE3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662B2D152C5564040054DE3B /* SceneDelegate.swift */; };
+		662B2D182C5568130054DE3B /* YandexMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662B2D172C5568130054DE3B /* YandexMapView.swift */; };
+		662B2D1A2C5569050054DE3B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662B2D192C5569050054DE3B /* MapView.swift */; };
 		66464E092B618E1A00F0034C /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E082B618E1A00F0034C /* ImageObject.swift */; };
 		66464E0D2B61923600F0034C /* HistoricalEventFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0C2B61923600F0034C /* HistoricalEventFeedViewModel.swift */; };
 		66464E0F2B61925D00F0034C /* HistoricalEventBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */; };
@@ -109,7 +113,7 @@
 		66FEAD4A2ABDF90F00ADC551 /* kraevedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD492ABDF90F00ADC551 /* kraevedUITests.swift */; };
 		66FEAD4C2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD4B2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift */; };
 		66FEAD5B2ABDFCD500ADC551 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD5A2ABDFCD500ADC551 /* MainView.swift */; };
-		66FEAD602ABDFD3E00ADC551 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD5F2ABDFD3E00ADC551 /* MapView.swift */; };
+		66FEAD602ABDFD3E00ADC551 /* MapView.old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD5F2ABDFD3E00ADC551 /* MapView.old.swift */; };
 		66FEAD642ABDFD9100ADC551 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD632ABDFD9100ADC551 /* ProfilePageView.swift */; };
 		66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD652ABE10E600ADC551 /* NetworkManager.swift */; };
 		66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD682ABE31D000ADC551 /* GeoObject.swift */; };
@@ -162,6 +166,10 @@
 		66280CA82C31E2A4005DB91B /* UserOutDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOutDto.swift; sourceTree = "<group>"; };
 		66280CAA2C32A13A005DB91B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		6629540A2AC7489300E2B155 /* KraevedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedResponse.swift; sourceTree = "<group>"; };
+		662B2D132C5561F40054DE3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		662B2D152C5564040054DE3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		662B2D172C5568130054DE3B /* YandexMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapView.swift; sourceTree = "<group>"; };
+		662B2D192C5569050054DE3B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		66464E082B618E1A00F0034C /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
 		66464E0C2B61923600F0034C /* HistoricalEventFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventFeedViewModel.swift; sourceTree = "<group>"; };
 		66464E0E2B61925D00F0034C /* HistoricalEventBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventBrief.swift; sourceTree = "<group>"; };
@@ -246,7 +254,7 @@
 		66FEAD492ABDF90F00ADC551 /* kraevedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kraevedUITests.swift; sourceTree = "<group>"; };
 		66FEAD4B2ABDF90F00ADC551 /* kraevedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kraevedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		66FEAD5A2ABDFCD500ADC551 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		66FEAD5F2ABDFD3E00ADC551 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		66FEAD5F2ABDFD3E00ADC551 /* MapView.old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.old.swift; sourceTree = "<group>"; };
 		66FEAD632ABDFD9100ADC551 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		66FEAD652ABE10E600ADC551 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		66FEAD682ABE31D000ADC551 /* GeoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObject.swift; sourceTree = "<group>"; };
@@ -340,11 +348,13 @@
 			isa = PBXGroup;
 			children = (
 				66A9047B2B74DE5B0064F940 /* MapViewSelection.swift */,
-				66FEAD5F2ABDFD3E00ADC551 /* MapView.swift */,
+				66FEAD5F2ABDFD3E00ADC551 /* MapView.old.swift */,
 				6610E34A2B6ACB810053E378 /* MapViewModel.swift */,
 				66A904812B74E4280064F940 /* MapSheetWrapperView.swift */,
 				66A904912B7558AF0064F940 /* MapControlView.swift */,
 				6666A9BE2B7BF093001DB0E8 /* MapAnnotationView.swift */,
+				662B2D172C5568130054DE3B /* YandexMapView.swift */,
+				662B2D192C5569050054DE3B /* MapView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -681,6 +691,8 @@
 				66FEAD342ABDF90F00ADC551 /* Preview Content */,
 				665B915B2B5C66AD009523BD /* Localizable.xcstrings */,
 				66AA58492C33D558000F54D0 /* LaunchScreen.storyboard */,
+				662B2D132C5561F40054DE3B /* AppDelegate.swift */,
+				662B2D152C5564040054DE3B /* SceneDelegate.swift */,
 			);
 			path = kraeved;
 			sourceTree = "<group>";
@@ -771,6 +783,7 @@
 				66FEAD282ABDF90E00ADC551 /* Frameworks */,
 				66FEAD292ABDF90E00ADC551 /* Resources */,
 				35392359E1824F730470246C /* [CP] Embed Pods Frameworks */,
+				793A8673A2ACEFD3CDCC5808 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -815,6 +828,7 @@
 				66FEAD422ABDF90F00ADC551 /* Frameworks */,
 				66FEAD432ABDF90F00ADC551 /* Resources */,
 				FA2533F2B747179356CC13AE /* [CP] Embed Pods Frameworks */,
+				33F06CFA87B066FC532015B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -925,6 +939,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		33F06CFA87B066FC532015B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		35392359E1824F730470246C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -986,6 +1017,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		793A8673A2ACEFD3CDCC5808 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kraeved/Pods-kraeved-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kraeved/Pods-kraeved-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kraeved/Pods-kraeved-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FA2533F2B747179356CC13AE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1015,6 +1063,7 @@
 				66D12B292B666173009A6403 /* DeviceShakeViewModifier.swift in Sources */,
 				667865412AC0BFEA00EDA776 /* HistoricalEventFeedCellView.swift in Sources */,
 				66841FDE2B6FF47C005A8233 /* GeoObjectDetailsTabButtonView.swift in Sources */,
+				662B2D142C5561F40054DE3B /* AppDelegate.swift in Sources */,
 				6616102C2AC99B6D00D32C84 /* GeoObjectBrief.swift in Sources */,
 				66AA58502C33FEDB000F54D0 /* ForEachDividerView.swift in Sources */,
 				66A95EBF2BF9B92C006119AA /* MultipleImageSelectView.swift in Sources */,
@@ -1032,6 +1081,7 @@
 				66841FDC2B6FCD6A005A8233 /* AsyncImage.swift in Sources */,
 				66E6129E2ACC4FA500EBB283 /* AttractionsFeedViewModel.swift in Sources */,
 				66D12B242B6660D9009A6403 /* Notifications.swift in Sources */,
+				662B2D182C5568130054DE3B /* YandexMapView.swift in Sources */,
 				66058CA02C303E34007251A7 /* SecurityManager.swift in Sources */,
 				669DA3242C2F5D8800B69CA8 /* KraevedAPI+Auth.swift in Sources */,
 				66FCDCCE2C373BE3000373AE /* AttractionImageView.swift in Sources */,
@@ -1045,6 +1095,7 @@
 				6610E3452B6AB5530053E378 /* KraevedAPI+GeoObjects.swift in Sources */,
 				6666A9BA2B7BE9F9001DB0E8 /* Int.swift in Sources */,
 				66D12B312B6668FD009A6403 /* LoggerView.swift in Sources */,
+				662B2D1A2C5569050054DE3B /* MapView.swift in Sources */,
 				668B39E22B717103009A2E00 /* GeoObjectDetailsComments.swift in Sources */,
 				666229972BF606C600080200 /* View+asUIImage.swift in Sources */,
 				6662298C2BF5EF3100080200 /* SingleImageUploaderViewModel.swift in Sources */,
@@ -1060,7 +1111,7 @@
 				6662299C2BF685A000080200 /* URLCache+imageCache.swift in Sources */,
 				668B39DB2B714169009A2E00 /* GeoObjectDetailsDescription.swift in Sources */,
 				66E4437D2AC46E6700D1943F /* UIColor.swift in Sources */,
-				66FEAD602ABDFD3E00ADC551 /* MapView.swift in Sources */,
+				66FEAD602ABDFD3E00ADC551 /* MapView.old.swift in Sources */,
 				66A95EC32BF9C520006119AA /* UploadImageState.swift in Sources */,
 				66E4437B2AC44D6400D1943F /* AttractionsFeedView.swift in Sources */,
 				66464E0F2B61925D00F0034C /* HistoricalEventBrief.swift in Sources */,
@@ -1094,6 +1145,7 @@
 				66FEAD2F2ABDF90E00ADC551 /* KraevedApp.swift in Sources */,
 				66A904922B7558AF0064F940 /* MapControlView.swift in Sources */,
 				66058CA42C30BAF1007251A7 /* User.swift in Sources */,
+				662B2D162C5564040054DE3B /* SceneDelegate.swift in Sources */,
 				66A95EC52BFA2495006119AA /* GeoObjectDetailsEdit.swift in Sources */,
 				66D12B3A2B66E68A009A6403 /* KraevedAPIManager.swift in Sources */,
 				66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */,
