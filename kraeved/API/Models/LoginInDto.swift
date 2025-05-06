@@ -9,6 +9,7 @@ import Foundation
 
 struct LoginInDto: Decodable {
     
+    let email: String?
     let password: String?
     let token: String?
 }

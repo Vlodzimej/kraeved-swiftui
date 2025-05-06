@@ -51,7 +51,7 @@ struct LoginPageView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .isVisible(isVisible: viewModel.isLoading)
         }
-        .alert("profile.successfulLogin", isPresented: $showingAlert) {
+        .alert("login.success", isPresented: $showingAlert) {
             Button("common.return", role: .cancel) {
                 dismiss()
             }

@@ -12,6 +12,8 @@ protocol AuthAPIManagerProtocol {
     func sendPhone(phone: String) async -> Result<Bool, Error>
     func sendCode(phone: String, code: String) async -> Result<LoginInDto, Error>
     func login(phone: String, password: String) async -> Result<LoginInDto, Error>
+    func register(email: String, password: String) async -> Result<UserInDto, Error>
+    func login(email: String, password: String) async -> Result<LoginInDto, Error>
 }
 
 extension KraevedAPIManager: AuthAPIManagerProtocol{
@@ -34,7 +36,25 @@ extension KraevedAPIManager: AuthAPIManagerProtocol{
         let url = "auth/login"
         let parameters: [String: Any] = [
             "phone" : phone,
+            "password" : password
+        ]
+        return await networkManager.request(url: url, method: .post, parameters: parameters)
+    }
+    
+    func register(email: String, password: String) async -> Result<UserInDto, Error> {
+        let url = "auth/registration"
+        let parameters: [String: Any] = [
+            "email" : email,
             "password"  : password
+        ]
+        return await networkManager.request(url: url, method: .post, parameters: parameters)
+    }
+    
+    func login(email: String, password: String) async -> Result<LoginInDto, Error> {
+        let url = "auth/login"
+        let parameters: [String: Any] = [
+            "email" : email,
+            "password" : password
         ]
         return await networkManager.request(url: url, method: .post, parameters: parameters)
     }

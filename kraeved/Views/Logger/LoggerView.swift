@@ -10,7 +10,6 @@ import Pulse
 import PulseUI
 
 struct LoggerView: View {
-
     
     var body: some View {
         NavigationView {

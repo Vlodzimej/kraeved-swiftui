@@ -14,6 +14,9 @@
     "5.0" : {
 
     },
+    "c" : {
+      "extractionState" : "manual"
+    },
     "cancel.delete" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -32,7 +35,7 @@
       }
     },
     "comments.empty" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -183,6 +186,18 @@
         }
       }
     },
+    "common.email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E-mail"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "common.entry" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -280,6 +295,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Записи не найдены"
+          }
+        }
+      }
+    },
+    "common.password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Password"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
           }
         }
       }
@@ -835,8 +867,56 @@
         }
       }
     },
-    "Key" : {
-      "extractionState" : "manual"
+    "login.enterEmail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter email"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter email"
+          }
+        }
+      }
+    },
+    "login.submit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Login"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войти"
+          }
+        }
+      }
+    },
+    "login.success" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Successful login"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Успешный вход"
+          }
+        }
+      }
     },
     "main.attractionsTitle" : {
       "extractionState" : "manual",
@@ -1056,23 +1136,6 @@
         }
       }
     },
-    "profile.successfulLogin" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Successful login"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Успешный вход"
-          }
-        }
-      }
-    },
     "profile.surname" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1091,6 +1154,9 @@
       }
     },
     "Калуга, Площадь Победы, 1" : {
+
+    },
+    "Назад" : {
 
     }
   },

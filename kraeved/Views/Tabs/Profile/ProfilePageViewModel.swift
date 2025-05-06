@@ -19,12 +19,12 @@ extension ProfilePageView {
             initialUser != editedUser
         }
         
-        private let userManager: UserManagerProtocol
+        private let authManager: AuthManagerProtocol
         private let apiManager: UserAPIManagerProtocol
         
-        init(userManager: UserManagerProtocol = UserManager.shared, apiManager: UserAPIManagerProtocol = KraevedAPIManager.shared) {
+        init(authManager: AuthManagerProtocol = AuthManager.shared, apiManager: UserAPIManagerProtocol = KraevedAPIManager.shared) {
             self.isAuth = UserDefaults.standard.bool(forKey: "isAuth")
-            self.userManager = userManager
+            self.authManager = authManager
             self.apiManager = apiManager
         }
         
@@ -32,7 +32,7 @@ extension ProfilePageView {
             isLoading = true
             defer { isLoading = false }
             
-            userManager.logout()
+            authManager.logout()
             isAuth = false
         }
         
@@ -48,7 +48,7 @@ extension ProfilePageView {
                         initialUser = user
                         editedUser = user
                     case .failure(let error):
-                        userManager.logout()
+                        authManager.logout()
                         isAuth = false
                         debugPrint(error)
                 }
@@ -71,6 +71,10 @@ extension ProfilePageView {
                         debugPrint(error)
                 }
             }
+        }
+        
+        func updateAuthStatus() {
+            isAuth = authManager.getUserPhone() != nil
         }
     }
 }

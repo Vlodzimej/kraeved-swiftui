@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		66058CA02C303E34007251A7 /* SecurityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058C9F2C303E34007251A7 /* SecurityManager.swift */; };
-		66058CA42C30BAF1007251A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058CA32C30BAF1007251A7 /* User.swift */; };
 		66058CA62C30BBA0007251A7 /* KraevedAPI+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66058CA52C30BBA0007251A7 /* KraevedAPI+User.swift */; };
 		6610E3402B6AB10D0053E378 /* HistoricalEventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */; };
 		6610E3422B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E3412B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift */; };
@@ -17,12 +16,13 @@
 		6610E34B2B6ACB810053E378 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610E34A2B6ACB810053E378 /* MapViewModel.swift */; };
 		6616102C2AC99B6D00D32C84 /* GeoObjectBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616102B2AC99B6D00D32C84 /* GeoObjectBrief.swift */; };
 		661610352ACAC3E400D32C84 /* AttractionsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661610342ACAC3E400D32C84 /* AttractionsDetailsView.swift */; };
+		6618A4E02DC92EAF0013F774 /* LoginEmailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6618A4DF2DC92EAF0013F774 /* LoginEmailPageView.swift */; };
+		6618A4E22DC92F220013F774 /* LoginEmailPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6618A4E12DC92F220013F774 /* LoginEmailPageViewModel.swift */; };
 		662096592B583CD9003D489B /* ServerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662096582B583CD9003D489B /* ServerLocation.swift */; };
 		6620965B2B583E2C003D489B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620965A2B583E2C003D489B /* Settings.swift */; };
 		662096672B584335003D489B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662096662B584335003D489B /* Configuration.swift */; };
 		6620966B2B5989C1003D489B /* AttractionsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */; };
 		66280CA72C31D7CE005DB91B /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66280CA62C31D7CE005DB91B /* CustomDateFormatter.swift */; };
-		66280CA92C31E2A4005DB91B /* UserOutDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66280CA82C31E2A4005DB91B /* UserOutDto.swift */; };
 		66280CAB2C32A13A005DB91B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66280CAA2C32A13A005DB91B /* UserManager.swift */; };
 		6629540B2AC7489300E2B155 /* KraevedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629540A2AC7489300E2B155 /* KraevedResponse.swift */; };
 		66464E092B618E1A00F0034C /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66464E082B618E1A00F0034C /* ImageObject.swift */; };
@@ -93,6 +93,7 @@
 		66D12B332B666B6B009A6403 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B322B666B6B009A6403 /* Logger.swift */; };
 		66D12B382B66E2F6009A6403 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 66D12B372B66E2F6009A6403 /* Alamofire */; };
 		66D12B3A2B66E68A009A6403 /* KraevedAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D12B392B66E68A009A6403 /* KraevedAPIManager.swift */; };
+		66D2E3C52DCA7164006B4155 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2E3C42DCA7164006B4155 /* AuthManager.swift */; };
 		66E443712AC411F500D1943F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E443702AC411F500D1943F /* Color.swift */; };
 		66E443762AC4387000D1943F /* MainTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E443752AC4387000D1943F /* MainTitle.swift */; };
 		66E4437B2AC44D6400D1943F /* AttractionsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4437A2AC44D6400D1943F /* AttractionsFeedView.swift */; };
@@ -145,7 +146,6 @@
 		54084E112EEB41F7BFF49857 /* Pods-kraeved.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.testing.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.testing.xcconfig"; sourceTree = "<group>"; };
 		60C0AD42AB9142E0CEB4A079 /* Pods-kraeved.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.development.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.development.xcconfig"; sourceTree = "<group>"; };
 		66058C9F2C303E34007251A7 /* SecurityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityManager.swift; sourceTree = "<group>"; };
-		66058CA32C30BAF1007251A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		66058CA52C30BBA0007251A7 /* KraevedAPI+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KraevedAPI+User.swift"; sourceTree = "<group>"; };
 		6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventDetailsView.swift; sourceTree = "<group>"; };
 		6610E3412B6AB1190053E378 /* HistoricalEventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -154,12 +154,13 @@
 		6610E34A2B6ACB810053E378 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		6616102B2AC99B6D00D32C84 /* GeoObjectBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectBrief.swift; sourceTree = "<group>"; };
 		661610342ACAC3E400D32C84 /* AttractionsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsView.swift; sourceTree = "<group>"; };
+		6618A4DF2DC92EAF0013F774 /* LoginEmailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailPageView.swift; sourceTree = "<group>"; };
+		6618A4E12DC92F220013F774 /* LoginEmailPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailPageViewModel.swift; sourceTree = "<group>"; };
 		662096582B583CD9003D489B /* ServerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLocation.swift; sourceTree = "<group>"; };
 		6620965A2B583E2C003D489B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		662096662B584335003D489B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6620966A2B5989C1003D489B /* AttractionsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsDetailsViewModel.swift; sourceTree = "<group>"; };
 		66280CA62C31D7CE005DB91B /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
-		66280CA82C31E2A4005DB91B /* UserOutDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOutDto.swift; sourceTree = "<group>"; };
 		66280CAA2C32A13A005DB91B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		6629540A2AC7489300E2B155 /* KraevedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedResponse.swift; sourceTree = "<group>"; };
 		66464E082B618E1A00F0034C /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
@@ -227,6 +228,7 @@
 		66D12B302B6668FD009A6403 /* LoggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerView.swift; sourceTree = "<group>"; };
 		66D12B322B666B6B009A6403 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		66D12B392B66E68A009A6403 /* KraevedAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KraevedAPIManager.swift; sourceTree = "<group>"; };
+		66D2E3C42DCA7164006B4155 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		66E443702AC411F500D1943F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		66E443752AC4387000D1943F /* MainTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitle.swift; sourceTree = "<group>"; };
 		66E4437A2AC44D6400D1943F /* AttractionsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsFeedView.swift; sourceTree = "<group>"; };
@@ -261,6 +263,10 @@
 		CB4A1933A9130EE372DCEEC2 /* Pods-kraeved.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.release.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.release.xcconfig"; sourceTree = "<group>"; };
 		F39823CD0B09CE8CF9CD842B /* Pods-kraevedTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraevedTests.development.xcconfig"; path = "Target Support Files/Pods-kraevedTests/Pods-kraevedTests.development.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		66D2E3CD2DCA81A5006B4155 /* User */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = User; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		66FEAD282ABDF90E00ADC551 /* Frameworks */ = {
@@ -347,6 +353,15 @@
 				6666A9BE2B7BF093001DB0E8 /* MapAnnotationView.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		6618A4DE2DC92E8F0013F774 /* EmailLogin */ = {
+			isa = PBXGroup;
+			children = (
+				6618A4DF2DC92EAF0013F774 /* LoginEmailPageView.swift */,
+				6618A4E12DC92F220013F774 /* LoginEmailPageViewModel.swift */,
+			);
+			path = EmailLogin;
 			sourceTree = "<group>";
 		};
 		662096682B59894C003D489B /* Feed */ = {
@@ -465,6 +480,7 @@
 				66058C9F2C303E34007251A7 /* SecurityManager.swift */,
 				66280CAA2C32A13A005DB91B /* UserManager.swift */,
 				6688A9042C428B3F007327F4 /* LocationManager.swift */,
+				66D2E3C42DCA7164006B4155 /* AuthManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -539,6 +555,7 @@
 		66A904782B7177BD0064F940 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				6618A4DE2DC92E8F0013F774 /* EmailLogin */,
 				66FEAD632ABDFD9100ADC551 /* ProfilePageView.swift */,
 				66AA584D2C33E6B3000F54D0 /* ProfilePageViewModel.swift */,
 			);
@@ -732,8 +749,7 @@
 				6616102B2AC99B6D00D32C84 /* GeoObjectBrief.swift */,
 				66464E082B618E1A00F0034C /* ImageObject.swift */,
 				669DA3252C2F637300B69CA8 /* LoginInDto.swift */,
-				66058CA32C30BAF1007251A7 /* User.swift */,
-				66280CA82C31E2A4005DB91B /* UserOutDto.swift */,
+				66D2E3CD2DCA81A5006B4155 /* User */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -775,6 +791,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				66D2E3CD2DCA81A5006B4155 /* User */,
 			);
 			name = kraeved;
 			packageProductDependencies = (
@@ -1029,6 +1048,7 @@
 				66E6129C2ACC4F3900EBB283 /* NetworkError.swift in Sources */,
 				66E443712AC411F500D1943F /* Color.swift in Sources */,
 				6678653F2AC0BE9E00EDA776 /* HistoricalEvent.swift in Sources */,
+				66D2E3C52DCA7164006B4155 /* AuthManager.swift in Sources */,
 				66841FDC2B6FCD6A005A8233 /* AsyncImage.swift in Sources */,
 				66E6129E2ACC4FA500EBB283 /* AttractionsFeedViewModel.swift in Sources */,
 				66D12B242B6660D9009A6403 /* Notifications.swift in Sources */,
@@ -1051,6 +1071,7 @@
 				66A95EC82BFA2721006119AA /* GeoObjectRemoveActionView.swift in Sources */,
 				669DA3282C2F700800B69CA8 /* KraevedErrorMessage.swift in Sources */,
 				66A904842B752E340064F940 /* GeoObjectDetailsTabView.swift in Sources */,
+				6618A4E02DC92EAF0013F774 /* LoginEmailPageView.swift in Sources */,
 				6666A9BF2B7BF093001DB0E8 /* MapAnnotationView.swift in Sources */,
 				66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */,
 				6662299E2BF689A600080200 /* EmptyThumbnailImageView.swift in Sources */,
@@ -1075,13 +1096,13 @@
 				66E443762AC4387000D1943F /* MainTitle.swift in Sources */,
 				669DA3202C2F1E6000B69CA8 /* FormHiddenBackground.swift in Sources */,
 				66C049342B8BCAAF00068BFF /* KraevedButton.swift in Sources */,
-				66280CA92C31E2A4005DB91B /* UserOutDto.swift in Sources */,
 				66464E0D2B61923600F0034C /* HistoricalEventFeedViewModel.swift in Sources */,
 				66D12B332B666B6B009A6403 /* Logger.swift in Sources */,
 				6688A9052C428B3F007327F4 /* LocationManager.swift in Sources */,
 				668B39E02B7170B7009A2E00 /* GalleryItem.swift in Sources */,
 				66058CA62C30BBA0007251A7 /* KraevedAPI+User.swift in Sources */,
 				66FEAD6C2AC022F000ADC551 /* Constants.swift in Sources */,
+				6618A4E22DC92F220013F774 /* LoginEmailPageViewModel.swift in Sources */,
 				6678653D2AC0BCF400EDA776 /* HistoricalEventFeedView.swift in Sources */,
 				66A9048C2B7549630064F940 /* TabItem.swift in Sources */,
 				66AA584E2C33E6B3000F54D0 /* ProfilePageViewModel.swift in Sources */,
@@ -1093,7 +1114,6 @@
 				66FEAD642ABDFD9100ADC551 /* ProfilePageView.swift in Sources */,
 				66FEAD2F2ABDF90E00ADC551 /* KraevedApp.swift in Sources */,
 				66A904922B7558AF0064F940 /* MapControlView.swift in Sources */,
-				66058CA42C30BAF1007251A7 /* User.swift in Sources */,
 				66A95EC52BFA2495006119AA /* GeoObjectDetailsEdit.swift in Sources */,
 				66D12B3A2B66E68A009A6403 /* KraevedAPIManager.swift in Sources */,
 				66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */,
@@ -1215,6 +1235,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kraeved/Preview Content\"";
@@ -1239,6 +1260,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vlodzimej.kraeved.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

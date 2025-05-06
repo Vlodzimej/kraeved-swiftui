@@ -12,6 +12,7 @@ struct ProfilePageView: View {
     
 
     @State var showingAlert: Bool = false
+    @State var showingLogin: Bool = false
     
     @ObservedObject private var viewModel = ViewModel()
     
@@ -54,6 +55,7 @@ struct ProfilePageView: View {
             }
         }
     }
+
     
     private var nameInputField: some View {
         KraevedTextInput(value: $viewModel.editedUser.surname, 
@@ -111,14 +113,20 @@ struct ProfilePageView: View {
     private var emptyProfile: some View {
         VStack(spacing: 20) {
             Text("profile.authorizationInfo")
-            NavigationLink(destination: LoginPageView(), label: {
+            Button(action: {
+                showingLogin.toggle()
+            }) {
                 Text("common.entry")
-            })
+            }
+            .fullScreenCover(isPresented: $showingLogin, onDismiss: {
+                viewModel.updateAuthStatus()
+            }) { LoginEmailPageView() }
             .buttonStyle(.borderedProminent)
             .tint(Color.Pallete.viridian)
         }
         .padding(16)
     }
+    
 }
 
 #Preview {

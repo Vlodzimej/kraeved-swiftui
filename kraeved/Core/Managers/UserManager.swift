@@ -10,8 +10,8 @@ import Foundation
 //MARK: - UserManagerProtocol
 protocol UserManagerProtocol {
     func getCurrentUserRole() async -> UserRole
-    func logout()
 }
+
 //MARK: - UserManager
 final class UserManager: UserManagerProtocol {
     
@@ -44,18 +44,5 @@ final class UserManager: UserManagerProtocol {
         }
         
         return .unknown
-    }
-    
-    func logout() {
-        guard let phone = UserDefaults.standard.string(forKey: "userPhone") else { return }
-        
-        securityManager.deletePassword(service: Settings.instance.currentEnvironment.rawValue, account: phone)
-        securityManager.deleteToken(service: Settings.instance.currentEnvironment.rawValue, account: phone)
-        
-        networkManager.removeAuthorizationToken()
-        
-        UserDefaults.standard.removeObject(forKey: "isAuth")
-        UserDefaults.standard.removeObject(forKey: "userPhone")
-        UserDefaults.standard.removeObject(forKey: "currentUserRole")
     }
 }
