@@ -1,0 +1,33 @@
+{
+  "originHash" : "949ad02c8fa2aea1e417ec2d7bd850b447b5dd712547b4113e950c2b34b42979",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "3f99050e75bbc6fe71fc323adabb039756680016",
+        "version" : "5.11.1"
+      }
+    },
+    {
+      "identity" : "pulse",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kean/Pulse",
+      "state" : {
+        "revision" : "3ac5ee35ab233e900aa484919803d51791d1e351",
+        "version" : "4.2.7"
+      }
+    },
+    {
+      "identity" : "swiftui-cached-async-image",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Vlodzimej/swiftui-cached-async-image",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4f111f2b7aab7ec52a60716cedb673df5203743c"
+      }
+    }
+  ],
+  "version" : 3
+}

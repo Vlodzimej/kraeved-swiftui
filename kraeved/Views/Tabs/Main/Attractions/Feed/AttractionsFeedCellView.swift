@@ -104,12 +104,12 @@ struct AttractionsFeedCellView: View {
         AttractionsFeedCellView(attractionBrief: .init(id: 0,
                                                        name: "Площадь Победы",
                                                        shortDescription: "В мае 1965 года п",
-                                                       type: .theater,
+																											 type: .alley,
                                                        thumbnailUrl: "https://ambassadorkaluga.com/wp-content/uploads/2018/08/ploshad-pobedy.jpg"))
         AttractionsFeedCellView(attractionBrief: .init(id: 0,
                                                        name: "Площадь Победы",
                                                        shortDescription: "В мае 1965 года площадь Социализма была переименована в площадь Победы. В декабре 1966 года, к 25-летию освобождения Калуги от немецко-фашистских захватчиков, на площади был установлен обелиск, возвышающийся на 30 метров. Вечный огонь Славы был зажжен 9 мая 1970 года. В марте 1973 года на вершине обелиска установили семиметровую статую Родины-матери, держащей в руках серебряную ленту реки Оки и первый искусственный спутник Земли — как символ победы советского народа и в освоении космического пространства. Авторами проекта площади Победы были архитекторы Павел Перминов и Евгений Киреев",
-                                                       type: .theater,
+																											 type: .alley,
                                                        thumbnailUrl: "https://ambassadorkaluga.com/wp-content/uploads/2018/08/ploshad-pobedy.jpg"))
     }
 }

@@ -115,9 +115,6 @@
 		66FEAD662ABE10E600ADC551 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD652ABE10E600ADC551 /* NetworkManager.swift */; };
 		66FEAD692ABE31D000ADC551 /* GeoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD682ABE31D000ADC551 /* GeoObject.swift */; };
 		66FEAD6C2AC022F000ADC551 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FEAD6B2AC022F000ADC551 /* Constants.swift */; };
-		8286EB486918A2AD9C46C6CF /* Pods_kraeved_kraevedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61867B70A3A9E51A08979B7 /* Pods_kraeved_kraevedUITests.framework */; };
-		92A4AF8F0162AD670D3D6798 /* Pods_kraevedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35BFEF4287B0C364091DFC9 /* Pods_kraevedTests.framework */; };
-		E76E0B958048552D89EADFFE /* Pods_kraeved.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CD325E7753728807F95174 /* Pods_kraeved.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,13 +135,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0428130625ADBC57F8B5CC14 /* Pods-kraevedTests.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraevedTests.testing.xcconfig"; path = "Target Support Files/Pods-kraevedTests/Pods-kraevedTests.testing.xcconfig"; sourceTree = "<group>"; };
-		07CD325E7753728807F95174 /* Pods_kraeved.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kraeved.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BBDEEF386523E51F4736B70 /* Pods-kraeved.localdevelopment.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.localdevelopment.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.localdevelopment.xcconfig"; sourceTree = "<group>"; };
-		2D6685CCAC15E68B5E87F5DC /* Pods-kraeved-kraevedUITests.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved-kraevedUITests.testing.xcconfig"; path = "Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests.testing.xcconfig"; sourceTree = "<group>"; };
-		2ED2B1421BC060648CDA5F81 /* Pods-kraeved-kraevedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved-kraevedUITests.release.xcconfig"; path = "Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests.release.xcconfig"; sourceTree = "<group>"; };
-		54084E112EEB41F7BFF49857 /* Pods-kraeved.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.testing.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.testing.xcconfig"; sourceTree = "<group>"; };
-		60C0AD42AB9142E0CEB4A079 /* Pods-kraeved.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.development.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.development.xcconfig"; sourceTree = "<group>"; };
 		66058C9F2C303E34007251A7 /* SecurityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityManager.swift; sourceTree = "<group>"; };
 		66058CA52C30BBA0007251A7 /* KraevedAPI+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KraevedAPI+User.swift"; sourceTree = "<group>"; };
 		6610E33F2B6AB10D0053E378 /* HistoricalEventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalEventDetailsView.swift; sourceTree = "<group>"; };
@@ -254,18 +244,20 @@
 		66FEAD682ABE31D000ADC551 /* GeoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObject.swift; sourceTree = "<group>"; };
 		66FEAD6B2AC022F000ADC551 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		66FEAD6D2AC0281C00ADC551 /* YandexMapsMobile */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YandexMapsMobile; path = Pods/YandexMapsMobile; sourceTree = "<group>"; };
-		92786EE7F8A6F890737EB1EC /* Pods-kraeved-kraevedUITests.localdevelopment.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved-kraevedUITests.localdevelopment.xcconfig"; path = "Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests.localdevelopment.xcconfig"; sourceTree = "<group>"; };
-		A35BFEF4287B0C364091DFC9 /* Pods_kraevedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kraevedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A61867B70A3A9E51A08979B7 /* Pods_kraeved_kraevedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kraeved_kraevedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A62295921D9D4272CED05234 /* Pods-kraevedTests.localdevelopment.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraevedTests.localdevelopment.xcconfig"; path = "Target Support Files/Pods-kraevedTests/Pods-kraevedTests.localdevelopment.xcconfig"; sourceTree = "<group>"; };
-		BFF0745C9488D3E7D9DAA625 /* Pods-kraevedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraevedTests.release.xcconfig"; path = "Target Support Files/Pods-kraevedTests/Pods-kraevedTests.release.xcconfig"; sourceTree = "<group>"; };
-		C9A81DD11684F557EB63BB66 /* Pods-kraeved-kraevedUITests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved-kraevedUITests.development.xcconfig"; path = "Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests.development.xcconfig"; sourceTree = "<group>"; };
-		CB4A1933A9130EE372DCEEC2 /* Pods-kraeved.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraeved.release.xcconfig"; path = "Target Support Files/Pods-kraeved/Pods-kraeved.release.xcconfig"; sourceTree = "<group>"; };
-		F39823CD0B09CE8CF9CD842B /* Pods-kraevedTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kraevedTests.development.xcconfig"; path = "Target Support Files/Pods-kraevedTests/Pods-kraevedTests.development.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		66D2E3CD2DCA81A5006B4155 /* User */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = User; sourceTree = "<group>"; };
+		66D2E3CD2DCA81A5006B4155 /* User */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,7 +269,6 @@
 				6662299A2BF61B1700080200 /* CachedAsyncImage in Frameworks */,
 				66D12B382B66E2F6009A6403 /* Alamofire in Frameworks */,
 				66D12B2D2B666392009A6403 /* PulseUI in Frameworks */,
-				E76E0B958048552D89EADFFE /* Pods_kraeved.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +276,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A4AF8F0162AD670D3D6798 /* Pods_kraevedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +283,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8286EB486918A2AD9C46C6CF /* Pods_kraeved_kraevedUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,18 +292,6 @@
 		2EF3C7E4900D2504D4CA5CB2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0BBDEEF386523E51F4736B70 /* Pods-kraeved.localdevelopment.xcconfig */,
-				60C0AD42AB9142E0CEB4A079 /* Pods-kraeved.development.xcconfig */,
-				54084E112EEB41F7BFF49857 /* Pods-kraeved.testing.xcconfig */,
-				CB4A1933A9130EE372DCEEC2 /* Pods-kraeved.release.xcconfig */,
-				92786EE7F8A6F890737EB1EC /* Pods-kraeved-kraevedUITests.localdevelopment.xcconfig */,
-				C9A81DD11684F557EB63BB66 /* Pods-kraeved-kraevedUITests.development.xcconfig */,
-				2D6685CCAC15E68B5E87F5DC /* Pods-kraeved-kraevedUITests.testing.xcconfig */,
-				2ED2B1421BC060648CDA5F81 /* Pods-kraeved-kraevedUITests.release.xcconfig */,
-				A62295921D9D4272CED05234 /* Pods-kraevedTests.localdevelopment.xcconfig */,
-				F39823CD0B09CE8CF9CD842B /* Pods-kraevedTests.development.xcconfig */,
-				0428130625ADBC57F8B5CC14 /* Pods-kraevedTests.testing.xcconfig */,
-				BFF0745C9488D3E7D9DAA625 /* Pods-kraevedTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -323,9 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				66FEAD6D2AC0281C00ADC551 /* YandexMapsMobile */,
-				07CD325E7753728807F95174 /* Pods_kraeved.framework */,
-				A61867B70A3A9E51A08979B7 /* Pods_kraeved_kraevedUITests.framework */,
-				A35BFEF4287B0C364091DFC9 /* Pods_kraevedTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -782,11 +756,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66FEAD4F2ABDF90F00ADC551 /* Build configuration list for PBXNativeTarget "kraeved" */;
 			buildPhases = (
-				164911AD44BD95A1FD1CA275 /* [CP] Check Pods Manifest.lock */,
 				66FEAD272ABDF90E00ADC551 /* Sources */,
 				66FEAD282ABDF90E00ADC551 /* Frameworks */,
 				66FEAD292ABDF90E00ADC551 /* Resources */,
-				35392359E1824F730470246C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -810,7 +782,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66FEAD522ABDF90F00ADC551 /* Build configuration list for PBXNativeTarget "kraevedTests" */;
 			buildPhases = (
-				501904FBEC8370CE90F1228B /* [CP] Check Pods Manifest.lock */,
 				66FEAD372ABDF90F00ADC551 /* Sources */,
 				66FEAD382ABDF90F00ADC551 /* Frameworks */,
 				66FEAD392ABDF90F00ADC551 /* Resources */,
@@ -829,11 +800,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66FEAD552ABDF90F00ADC551 /* Build configuration list for PBXNativeTarget "kraevedUITests" */;
 			buildPhases = (
-				627EF040456EADC6B741080C /* [CP] Check Pods Manifest.lock */,
 				66FEAD412ABDF90F00ADC551 /* Sources */,
 				66FEAD422ABDF90F00ADC551 /* Frameworks */,
 				66FEAD432ABDF90F00ADC551 /* Resources */,
-				FA2533F2B747179356CC13AE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -920,109 +889,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		164911AD44BD95A1FD1CA275 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-kraeved-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		35392359E1824F730470246C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kraeved/Pods-kraeved-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kraeved/Pods-kraeved-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kraeved/Pods-kraeved-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		501904FBEC8370CE90F1228B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-kraevedTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		627EF040456EADC6B741080C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-kraeved-kraevedUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA2533F2B747179356CC13AE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kraeved-kraevedUITests/Pods-kraeved-kraevedUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		66FEAD272ABDF90E00ADC551 /* Sources */ = {
@@ -1230,7 +1096,6 @@
 		};
 		6620965F2B5842CE003D489B /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60C0AD42AB9142E0CEB4A079 /* Pods-kraeved.development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1272,7 +1137,6 @@
 		};
 		662096602B5842CE003D489B /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F39823CD0B09CE8CF9CD842B /* Pods-kraevedTests.development.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1293,7 +1157,6 @@
 		};
 		662096612B5842CE003D489B /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9A81DD11684F557EB63BB66 /* Pods-kraeved-kraevedUITests.development.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1378,7 +1241,6 @@
 		};
 		662096632B5842D8003D489B /* Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54084E112EEB41F7BFF49857 /* Pods-kraeved.testing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1418,7 +1280,6 @@
 		};
 		662096642B5842D8003D489B /* Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0428130625ADBC57F8B5CC14 /* Pods-kraevedTests.testing.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1439,7 +1300,6 @@
 		};
 		662096652B5842D8003D489B /* Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D6685CCAC15E68B5E87F5DC /* Pods-kraeved-kraevedUITests.testing.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1583,7 +1443,6 @@
 		};
 		66FEAD502ABDF90F00ADC551 /* LocalDevelopment */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BBDEEF386523E51F4736B70 /* Pods-kraeved.localdevelopment.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1623,7 +1482,6 @@
 		};
 		66FEAD512ABDF90F00ADC551 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB4A1933A9130EE372DCEEC2 /* Pods-kraeved.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1665,7 +1523,6 @@
 		};
 		66FEAD532ABDF90F00ADC551 /* LocalDevelopment */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A62295921D9D4272CED05234 /* Pods-kraevedTests.localdevelopment.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1686,7 +1543,6 @@
 		};
 		66FEAD542ABDF90F00ADC551 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFF0745C9488D3E7D9DAA625 /* Pods-kraevedTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1707,7 +1563,6 @@
 		};
 		66FEAD562ABDF90F00ADC551 /* LocalDevelopment */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92786EE7F8A6F890737EB1EC /* Pods-kraeved-kraevedUITests.localdevelopment.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1726,7 +1581,6 @@
 		};
 		66FEAD572ABDF90F00ADC551 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2ED2B1421BC060648CDA5F81 /* Pods-kraeved-kraevedUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
