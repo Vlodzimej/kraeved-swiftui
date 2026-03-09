@@ -42,23 +42,23 @@ struct User: Codable, Comparable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         let dateString = try container.decode(String.self, forKey: .startDate)
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.Date.format
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'" // Формат для даты с миллисекундами
+		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+		dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         
         guard let date = dateFormatter.date(from: dateString) else {
             throw DecodingError.dataCorruptedError(forKey: .startDate, in: container, debugDescription: "Date string does not match format expected by formatter.")
         }
         
         self.startDate = date
-        self.id = try container.decode(Int.self, forKey: .id)
-        self.phone = try container.decode(String.self, forKey: .phone)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.surname = try container.decode(String.self, forKey: .surname)
-        self.role = try container.decode(UserRole.self, forKey: .role)
+		self.id = try container.decode(Int.self, forKey: .id)
+		self.phone = try container.decode(String.self, forKey: .phone)
+		self.name = try container.decode(String.self, forKey: .name)
+		self.surname = try container.decode(String.self, forKey: .surname)
+		self.role = try container.decode(UserRole.self, forKey: .role)
     }
 }

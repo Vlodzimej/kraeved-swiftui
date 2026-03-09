@@ -216,6 +216,7 @@
       }
     },
     "common.filter" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -880,6 +881,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enter email"
+          }
+        }
+      }
+    },
+    "login.registration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Registration"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистрация"
           }
         }
       }

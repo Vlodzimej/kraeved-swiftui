@@ -69,6 +69,7 @@ struct MapView: View {
                             }
                             UserAnnotation()
                         }
+						.mapStyle(.standard(pointsOfInterest: .excludingAll))
                         .mapControls {
                             MapUserLocationButton()
                         }
@@ -89,9 +90,9 @@ struct MapView: View {
                                 })
                             }
                         }
-                        .sheet(isPresented: $isShowFilter) {
-                            Text("common.filter")
-                        }
+//                        .sheet(isPresented: $isShowFilter) {
+//                            Text("common.filter")
+//                        }
                         .fullScreenCover(isPresented: $isShowCreation, onDismiss: {
                             removeSelectedGeoObject()
                             isShowSelection = false

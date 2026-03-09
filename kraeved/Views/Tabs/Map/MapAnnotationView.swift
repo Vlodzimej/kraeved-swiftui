@@ -13,10 +13,19 @@ struct MapAnnotationView: View {
     
     var body: some View {
         ZStack {
+            Circle()
+				.stroke(Color.Pallete.viridian, lineWidth: 1)
+				.fill(Color.Pallete.cambridgeBlue.opacity(0.8))
+                .frame(width: 48, height: 48)
+				.shadow(radius: 10)
+            
             type.icon
                 .resizable()
-                .frame(width: 48, height: 48)
+                .frame(width: 24, height: 24)
+                .opacity(0.8)
+				.foregroundColor(Color.Pallete.azure)
         }
+		.foregroundStyle(.opacity(0.8))
     }
 }
 
